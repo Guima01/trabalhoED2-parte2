@@ -6,10 +6,23 @@
 #include <chrono>
 #include <vector>
 #include <algorithm>
+#include "RegistrosCoordenados.h"
 
 using namespace std;
 
-//remove acentos by: Guilherme Marques
+vector<string> split(const string &s, char delim)
+{
+    vector<string> result;
+    stringstream ss(s);
+    string item;
+
+    while (getline(ss, item, delim))
+    {
+        result.push_back(item);
+    }
+    return result;
+}
+
 void removeAccents(string &str)
 {
     string accent_chars = "ÁÀÃÂÇáàãâçÉÊéêÍíÑÓÔÕñóôõÚÜúü";
@@ -51,7 +64,24 @@ void leLinha(ifstream &arq)
     {
         if (i != 0)
         {
-            cout << str << endl;
+            RegistrosCoordenados *registrosCoordenados = new RegistrosCoordenados();
+            vector<string> stringDados = split(str, ',');
+            registrosCoordenados->setStateCode(atoi(stringDados[0].c_str()));
+            registrosCoordenados->setCityCode(atoi(stringDados[1].c_str()));
+            removeAccents(stringDados[2]); //não sei se vai ser necessário
+            registrosCoordenados->setCityName(stringDados[2]);
+
+            registrosCoordenados->setLatitude(stod(stringDados[3].c_str()));
+            registrosCoordenados->setLongitude(stod(stringDados[4].c_str()));
+
+            if (stringDados[5] == "FALSE")
+            {
+                registrosCoordenados->setCapital(false);
+            }
+            else
+            {
+                registrosCoordenados->setCapital(true);
+            }
         }
     }
 }
