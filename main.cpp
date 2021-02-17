@@ -6,7 +6,7 @@
 #include <chrono>
 #include <vector>
 #include <algorithm>
-#include "RegistrosCoordenados.h"
+#include "QuadTree.h"
 
 using namespace std;
 
@@ -58,32 +58,35 @@ void removeAccents(string &str)
 
 void leLinha(ifstream &arq)
 {
-
+    QuadTree quad;
     string str;
     for (int i = 0; getline(arq, str); i++)
     {
         if (i != 0)
         {
-            RegistrosCoordenados *registrosCoordenados = new RegistrosCoordenados();
+            RegistrosCoordenados *registroCoordenado = new RegistrosCoordenados();
             vector<string> stringDados = split(str, ',');
-            registrosCoordenados->setStateCode(atoi(stringDados[0].c_str()));
-            registrosCoordenados->setCityCode(atoi(stringDados[1].c_str()));
+            registroCoordenado->setStateCode(atoi(stringDados[0].c_str()));
+            registroCoordenado->setCityCode(atoi(stringDados[1].c_str()));
             removeAccents(stringDados[2]); //não sei se vai ser necessário
-            registrosCoordenados->setCityName(stringDados[2]);
+            registroCoordenado->setCityName(stringDados[2]);
 
-            registrosCoordenados->setLatitude(stod(stringDados[3].c_str()));
-            registrosCoordenados->setLongitude(stod(stringDados[4].c_str()));
+            registroCoordenado->setLatitude(stod(stringDados[3].c_str()));
+            registroCoordenado->setLongitude(stod(stringDados[4].c_str()));
 
             if (stringDados[5] == "FALSE")
             {
-                registrosCoordenados->setCapital(false);
+                registroCoordenado->setCapital(false);
             }
             else
             {
-                registrosCoordenados->setCapital(true);
+                registroCoordenado->setCapital(true);
             }
+            NoquadTree *no = new NoquadTree(registroCoordenado);
+            quad.insert(no);
         }
     }
+    cout<<quad.getRaiz().getNe()->getRegistroCoordenado().getCityName();
 }
 
 int main(int argc, char const *argv[])
