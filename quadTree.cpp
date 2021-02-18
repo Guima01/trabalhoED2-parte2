@@ -95,7 +95,7 @@ void QuadTree::busca(double latitude, double longitude)
     {
         if (aux->getCoordX() == latitude && aux->getCoordY() == longitude)
         {
-            cout << "encontrado";
+            cout<<aux->getRegistroCoordenado().getCityName();
             break;
         }
         if (latitude < aux->getCoordX())

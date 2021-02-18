@@ -86,7 +86,7 @@ void leLinha(ifstream &arq)
             quad.insert(no);
         }
     }
-    //quad.busca(-9.62101, -49.1518);
+    quad.busca(-22.2779, -46.3716);
 }
 
 int main(int argc, char const *argv[])
