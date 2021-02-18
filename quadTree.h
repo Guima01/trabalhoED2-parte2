@@ -14,5 +14,6 @@ public:
     ~QuadTree();
     NoquadTree getRaiz();
     void insert(NoquadTree *no);
+    void busca (double latitude, double longitude);
     NoquadTree compara(NoquadTree *r, NoquadTree *p);
 };

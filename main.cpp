@@ -86,7 +86,7 @@ void leLinha(ifstream &arq)
             quad.insert(no);
         }
     }
-    cout<<quad.getRaiz().getNe()->getRegistroCoordenado().getCityName();
+    //quad.busca(-9.62101, -49.1518);
 }
 
 int main(int argc, char const *argv[])

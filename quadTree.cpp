@@ -87,6 +87,73 @@ void QuadTree::insert(NoquadTree *no)
         aux = no;
     }
 }
+void QuadTree::busca(double latitude, double longitude)
+{
+
+    NoquadTree *aux = raiz;
+    while (true)
+    {
+        if (aux->getCoordX() == latitude && aux->getCoordY() == longitude)
+        {
+            cout << "encontrado";
+            break;
+        }
+        if (latitude < aux->getCoordX())
+        {
+            if (longitude < aux->getCoordY())
+            {
+                if (aux->getSw() == 0)
+                {
+                    cout<<"não encontrado";
+                    break;
+                }
+                else
+                {
+                    aux = aux->getSw();
+                }
+            }
+            else
+            {
+                if (aux->getNw() == 0)
+                {
+                    cout<<"não encontrado";
+                    break;
+                }
+                else
+                {
+                    aux = aux->getNw();
+                }
+            }
+        }
+        else
+        {
+            if (longitude < aux->getCoordY())
+            {
+                if (aux->getSe() == 0)
+                {
+                    cout<<"não encontrado";
+                    break;
+                }
+                else
+                {
+                    aux = aux->getSe();
+                }
+            }
+            else
+            {
+                if (aux->getNe() == 0)
+                {
+                    cout<<"não encontrado";
+                    break;
+                }
+                else
+                {
+                    aux = aux->getNe();
+                }
+            }
+        }
+    }
+}
 
 /*NoquadTree QuadTree::compara(NoquadTree *r, NoquadTree *p)
 {
