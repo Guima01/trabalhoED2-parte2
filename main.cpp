@@ -7,6 +7,7 @@
 #include <vector>
 #include <algorithm>
 #include "QuadTree.h"
+#include "Registro.h"
 
 using namespace std;
 
@@ -89,14 +90,56 @@ void leLinha(ifstream &arq)
     quad.busca(-22.2779, -46.3716);
 }
 
+void leLinhaArquivoProcessado(vector<Registro> &registros, ifstream &arq)
+{
+
+    string str;
+    int cases, deaths;
+    for (int i = 0; getline(arq, str); i++)
+    {
+        if (i != 0)
+        {
+            Registro *registra = new Registro();
+
+            vector<string> stringDados = split(str, ',');
+
+            cases = atoi(stringDados[4].c_str());
+            deaths = atoi(stringDados[5].c_str());
+
+            registra->setDate(stringDados[0]);
+            registra->setState(stringDados[1]);
+            registra->setName(stringDados[2]);
+            registra->setCode(stringDados[3]);
+            registra->setCases(cases);
+            registra->setDeaths(deaths);
+
+            registros.push_back(*registra);
+        } 
+    }
+    cout << "Leitura do arquivo brazil_covid19_cities_processado.csv finalizada." << endl<< endl;
+}
+
+
 int main(int argc, char const *argv[])
 {
 
-    string path = argv[1];
-    path = path + "brazil_cities_coordinates.csv";
-    ifstream arquivo;
-    arquivo.open(path, ios::in);
-    leLinha(arquivo);
+    // string path = argv[1];
+    // path = path + "brazil_cities_coordinates.csv";
+    // ifstream arquivo;
+    // arquivo.open(path, ios::in);
+    // leLinha(arquivo);
+
+
+    /// Testes -> Registros diários e tabela hash
+
+    vector<Registro> registros;
+    string caminho = argv[1];
+    caminho +="brazil_covid19_cities_processado.csv";
+    ifstream arquivoProcessado;
+    arquivoProcessado.open(caminho, ios::in);
+    leLinhaArquivoProcessado(registros,arquivoProcessado);
 
     return 0;
 }
+//g++ -o parte2 -O3 *.cpp
+//./parte2.exe ./Arquivos/
