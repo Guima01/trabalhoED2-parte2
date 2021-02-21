@@ -5,9 +5,12 @@
 #include <cstdlib>
 #include <chrono>
 #include <vector>
+#include <math.h>
 #include <algorithm>
 #include "QuadTree.h"
 #include "Registro.h"
+#include "HashTable.h"
+#define TAMANHOREG 1431490;
 
 using namespace std;
 
@@ -90,11 +93,11 @@ void leLinha(ifstream &arq)
     quad.busca(-22.2779, -46.3716);
 }
 
-void leLinhaArquivoProcessado(vector<Registro> &registros, ifstream &arq)
+int leLinhaArquivoProcessado(vector<Registro> &registros, ifstream &arq)
 {
-
+    HashTable *hashzada = new HashTable(1431490);
     string str;
-    int cases, deaths;
+    int cases, deaths, cont = 0;
     for (int i = 0; getline(arq, str); i++)
     {
         if (i != 0)
@@ -109,15 +112,19 @@ void leLinhaArquivoProcessado(vector<Registro> &registros, ifstream &arq)
             registra->setDate(stringDados[0]);
             registra->setState(stringDados[1]);
             registra->setName(stringDados[2]);
-            registra->setCode(stringDados[3]);
+            registra->setCode(stringDados[3].substr(0, 6));
             registra->setCases(cases);
             registra->setDeaths(deaths);
 
             registros.push_back(*registra);
-        } 
+        }
+        cont++;
     }
-    cout << "Leitura do arquivo brazil_covid19_cities_processado.csv finalizada." << endl<< endl;
+    cout << "Leitura do arquivo brazil_covid19_cities_processado.csv finalizada." << cont - 1 << endl
+         << endl;
+    return cont - 1;
 }
+
 
 
 int main(int argc, char const *argv[])
@@ -129,17 +136,27 @@ int main(int argc, char const *argv[])
     // arquivo.open(path, ios::in);
     // leLinha(arquivo);
 
-
     /// Testes -> Registros diários e tabela hash
 
     vector<Registro> registros;
     string caminho = argv[1];
-    caminho +="brazil_covid19_cities_processado.csv";
+    caminho += "brazil_covid19_cities_processado.csv";
     ifstream arquivoProcessado;
     arquivoProcessado.open(caminho, ios::in);
-    leLinhaArquivoProcessado(registros,arquivoProcessado);
 
+    int tam = leLinhaArquivoProcessado(registros, arquivoProcessado);
+
+    HashTable *hashzada = new HashTable(tam);
+
+    for(int i=0 ; i<tam ; i++){
+        hashzada->insert(&registros[i]);
+    }
+    // 2020-05-04,MG,Senador Amaral,316557.0,0,0
+    int hashIndex = hashzada->searchFromCodeAndDate("316557","2020-05-04");
+    cout<<hashzada->getRegistroFromTable(hashIndex)->getName()<< " "<<hashzada->getRegistroFromTable(hashIndex)->getDate();
+    
     return 0;
 }
 //g++ -o parte2 -O3 *.cpp
 //./parte2.exe ./Arquivos/
+//https://www.hackerearth.com/practice/data-structures/hash-tables/basics-of-hash-tables/tutorial/
