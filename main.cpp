@@ -7,9 +7,10 @@
 #include <vector>
 #include <math.h>
 #include <algorithm>
-#include "QuadTree.h"
+#include "quadTree.h"
 #include "Registro.h"
 #include "HashTable.h"
+#include "ArvoreB.h"
 #define TAMANHOREG 1431490;
 
 using namespace std;
@@ -147,14 +148,28 @@ int main(int argc, char const *argv[])
     int tam = leLinhaArquivoProcessado(registros, arquivoProcessado);
 
     HashTable *hashzada = new HashTable(tam);
-
-    for(int i=0 ; i<tam ; i++){
-        hashzada->insert(&registros[i]);
+    ArvoreB *arvb = new ArvoreB(5,hashzada);
+    int hashIndex;
+    for(int i=0 ; i<tam ; i++)
+    {
+        if( i == 10)         
+            break;
+        else
+        {
+            hashzada->insert(&registros[i]);
+            hashIndex = hashzada->searchFromCodeAndDate(registros[i].getCode(),registros[i].getDate());
+            arvb->insere(arvb->getRaiz(),hashIndex);
+        }
     }
-    // 2020-05-04,MG,Senador Amaral,316557.0,0,0
-    int hashIndex = hashzada->searchFromCodeAndDate("316557","2020-05-04");
-    cout<<hashzada->getRegistroFromTable(hashIndex)->getName()<< " "<<hashzada->getRegistroFromTable(hashIndex)->getDate();
-    
+
+
+
+    cout << endl << endl;
+
+    arvb->imprimeArvore(arvb->getRaiz());
+    cout << arvb->getRaiz()->getKeys().size() << endl;
+    //arvb->insere(arvb->getRaiz(),hashIndex);
+    arvb->busca(0);
     return 0;
 }
 //g++ -o parte2 -O3 *.cpp

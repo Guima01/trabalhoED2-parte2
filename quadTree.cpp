@@ -2,7 +2,7 @@
 #include <fstream>
 #include <string>
 #include <cstdlib>
-#include "QuadTree.h"
+#include "quadTree.h"
 
 using namespace std;
 
