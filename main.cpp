@@ -146,19 +146,22 @@ int main(int argc, char const *argv[])
     arquivoProcessado.open(caminho, ios::in);
 
     int tam = leLinhaArquivoProcessado(registros, arquivoProcessado);
-
     HashTable *hashzada = new HashTable(tam);
     ArvoreB *arvb = new ArvoreB(5,hashzada);
     int hashIndex;
     for(int i=0 ; i<tam ; i++)
     {
-        if( i == 10)         
+        if( i == 15)         
             break;
         else
         {
+            cout << "Retornou na main" << endl;
             hashzada->insert(&registros[i]);
             hashIndex = hashzada->searchFromCodeAndDate(registros[i].getCode(),registros[i].getDate());
-            arvb->insere(arvb->getRaiz(),hashIndex);
+            if(i < 5)
+            arvb->insere(arvb->getRaiz(), hashIndex, true);
+            else
+            arvb->insere(arvb->getRaiz(),hashIndex,false);
         }
     }
 
@@ -168,8 +171,17 @@ int main(int argc, char const *argv[])
 
     arvb->imprimeArvore(arvb->getRaiz());
     cout << arvb->getRaiz()->getKeys().size() << endl;
+    int i=0;
+    
+    while(i < arvb->getRaiz()->getFilhos().size())
+    {
+        if(arvb->getRaiz()->getFilhos()[i] != nullptr)
+        cout << i << " " <<arvb->getRaiz()->getFilhos()[i]->getKeys().size() << endl;    
+        i++;
+    }
+    
     //arvb->insere(arvb->getRaiz(),hashIndex);
-    arvb->busca(0);
+    //arvb->busca(0);
     return 0;
 }
 //g++ -o parte2 -O3 *.cpp

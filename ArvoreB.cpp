@@ -93,109 +93,137 @@ bool ArvoreB::busca(int key)
     }
 }
 
-void ArvoreB::auxInsere(NoB *raiz, int key, int keyz)
+int ArvoreB::searchPosition(NoB* raiz, int key)
 {
-    NoB *aux = new NoB();
-    NoB *esq = new NoB();
-    NoB *dir = new NoB();
-    aux->addKeys(key);
-    for (int i = 0; i < raiz->getKeys().size(); i++)
+    int i;
+    for(int i=0; i < raiz->getKeys().size() ; i++)
     {
-        if (keyz == key)
+        if (registros->searchFromKey(key) != -1)
         {
             if (menorElemento(registros->getRegistroFromTable(key), registros->getRegistroFromTable(raiz->getKeys()[i])))
             {
-                dir->addKeys(raiz->getKeys()[i]);
-            }
-            else
-            {
-                esq->addKeys(raiz->getKeys()[i]);
-            }
-        }
-        else if (raiz->getKeys()[i] != key)
-        {
-            if (menorElemento(registros->getRegistroFromTable(key), registros->getRegistroFromTable(raiz->getKeys()[i])))
-            {
-                dir->addKeys(raiz->getKeys()[i]);
-            }
-            else
-            {
-                esq->addKeys(raiz->getKeys()[i]);
+                return i;
             }
         }
     }
-    if (keyz != key)
-    {
-        esq->addKeys(key);
-    }
-
-    aux->addFilho(esq);
-    aux->addFilho(dir);
-
-    aux->setFolha();
-    *raiz = *aux;
+    return i+1;
 }
 
-void ArvoreB::insere(NoB *raiz, int key)
+int ArvoreB::keyPivo(NoB *no, int key)
 {
-    if (raiz->getFolha())
+    if (registros->searchFromKey(key) != -1)
     {
-        if (raiz->getN())
+        if (no->getN() % 2)
         {
-            if (raiz->getN() == ordem - 1)
+            if (menorElemento(registros->getRegistroFromTable(key), registros->getRegistroFromTable(no->getKeys()[(no->getN() / 2) - 1])))
             {
-                if (raiz->getN() % 2)
-                {
-                    if (menorElemento(registros->getRegistroFromTable(key), registros->getRegistroFromTable(raiz->getKeys()[(raiz->getN() / 2) - 1])))
-                    {
-                        auxInsere(raiz, raiz->getKeys()[(raiz->getN() / 2) - 1], key);
-                    }
-                    else
-                    {
-                        auxInsere(raiz, key, key);
-                    }
-                }
-                else
-                {
-                    if (menorElemento(registros->getRegistroFromTable(key), registros->getRegistroFromTable(raiz->getKeys()[(raiz->getN() / 2)])))
-                    {
-                        auxInsere(raiz, raiz->getKeys()[(raiz->getN() / 2)], key);
-                    }
-                    else
-                    {
-                        auxInsere(raiz, key, key);
-                    }
-                }
-            }
-            else
-            {
-                raiz->addKeys(key);
-
-                for (int i = 0; i < raiz->getN(); i++)
-                {
-                    if (menorElemento(registros->getRegistroFromTable(key), registros->getRegistroFromTable(raiz->getKeys()[i])))
-                    {
-                        swap(raiz->getKeys()[raiz->getKeys().size() - 1], raiz->getKeys()[i]);
-                    }
-                }
+                return no->getKeys()[(no->getN() / 2) - 1];
             }
         }
         else
         {
+
+            return no->getKeys()[(no->getN() / 2)];
+        }
+    }
+    return key;
+}
+
+NoB *ArvoreB::split(NoB *raiz, int pivo, int key)
+{
+    NoB *aux = new NoB();
+    NoB *esq = new NoB();
+    NoB *dir = new NoB();
+    aux->addKeys(pivo);
+    for (int i = 0; i < raiz->getKeys().size(); i++)
+    {
+        if (key == pivo)
+        {
+            if (menorElemento(registros->getRegistroFromTable(pivo), registros->getRegistroFromTable(raiz->getKeys()[i])))
+            {
+                dir->addKeys(raiz->getKeys()[i]);
+                dir->addFilho(raiz->getFilhos()[i], i);
+            }
+            else
+            {
+                esq->addKeys(raiz->getKeys()[i]);
+                esq->addFilho(raiz->getFilhos()[i], i);
+            }
+        }
+        else if (raiz->getKeys()[i] != pivo)
+        {
+            if (menorElemento(registros->getRegistroFromTable(pivo), registros->getRegistroFromTable(raiz->getKeys()[i])))
+            {
+                dir->addKeys(raiz->getKeys()[i]);
+                dir->addFilho(raiz->getFilhos()[i], i);
+            }
+            else
+            {
+                esq->addKeys(raiz->getKeys()[i]);
+                esq->addFilho(raiz->getFilhos()[i], i);
+            }
+        }
+    }
+
+    if (key != pivo)
+    {
+        if (menorElemento(registros->getRegistroFromTable(pivo), registros->getRegistroFromTable(key)))
+        {
+            insere(dir, key, dir->getFolha());
+        }
+        else
+        {
+            insere(esq, key, esq->getFolha());
+        }
+    }
+    aux->addFilho(esq, 0);
+    aux->addFilho(dir, 1);
+    aux->setFolha();
+
+    if (raiz->getKeys()[0] == this->raiz->getKeys()[0])
+    {
+        this->raiz = aux;
+    }
+
+
+    return aux;
+}
+
+void ArvoreB::insere(NoB *raiz, int key, bool ehFolha)
+{
+    if (ehFolha)
+    {
+        if (raiz->getN() == ordem - 1)
+        {
+            raiz = split(raiz, keyPivo(raiz, key), key);
+        }
+        else
+        {
             raiz->addKeys(key);
+
+            for (int i = 0, j = raiz->getN(); i < raiz->getN(); i++)
+            {
+                if (!menorElemento(registros->getRegistroFromTable(key), registros->getRegistroFromTable(raiz->getKeys()[i])))
+                {
+                    while (j > i + 1)
+                    {
+                        swap(raiz->getKeys()[j], raiz->getKeys()[j]);
+                        if (!raiz->getFolha())
+                        {
+                            raiz->addFilho(raiz->getFilhos()[j - 1], j);
+                        }
+                        j--;
+                    }
+                    j = raiz->getN();
+                }
+            }
         }
     }
     else
-    for (int i = 0; i < raiz->getKeys().size(); i++)
     {
-        if (menorElemento(registros->getRegistroFromTable(key), registros->getRegistroFromTable(raiz->getKeys()[i])))
-        {
-            insere(raiz->getFilhos()[i], key);
-        }
-        else if (i == raiz->getKeys().size() - 1)
-        {
-            insere(raiz->getFilhos()[i + 1], key);
-        }
+        int position = searchPosition(raiz,key);
+        cout << position << endl;
+        insere(raiz->getFilhos()[position], key, true);
     }
 }
 
@@ -215,10 +243,12 @@ void ArvoreB::imprimeArvore(NoB *raiz)
         {
             for (int i = 0; i < raiz->getKeys().size(); i++)
             {
-                imprimeArvore(raiz->getFilhos()[i]);
+                if (raiz->getFilhos()[i] != nullptr)
+                    imprimeArvore(raiz->getFilhos()[i]);
                 cout << registros->getRegistroFromTable(raiz->getKeys()[i])->getCode() << " ";
                 cout << registros->getRegistroFromTable(raiz->getKeys()[i])->getDate() << endl;
-                imprimeArvore(raiz->getFilhos()[i + 1]);
+                if (raiz->getFilhos()[i + 1] != nullptr)
+                    imprimeArvore(raiz->getFilhos()[i + 1]);
             }
         }
     }

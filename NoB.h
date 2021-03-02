@@ -16,7 +16,7 @@ class NoB
     NoB();
     ~NoB();
 
-    void addFilho(NoB* filho);
+    void addFilho(NoB* filho, int i);
     void addKeys(int key);
     void setN();
     void setFolha();

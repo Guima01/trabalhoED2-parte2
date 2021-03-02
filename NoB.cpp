@@ -10,6 +10,11 @@ NoB::NoB()
 {
     this->folha = true;
     this->n = 0;
+
+    for(int i=0 ; i < 5 ; i++)
+    {
+        this->filhos.push_back(nullptr);
+    }
 }
 
 NoB::~NoB()
@@ -53,7 +58,8 @@ void NoB::addKeys(int key)
     this->n++;
 }
 
-void NoB::addFilho(NoB *filho)
+void NoB::addFilho(NoB *filho, int i)
 {
-    this->filhos.push_back(filho);
+
+    this->filhos[i] = filho;
 }
