@@ -189,13 +189,14 @@ NoB *ArvoreB::split(NoB *raiz, int pivo, int key)
     return aux;
 }
 
-void ArvoreB::insere(NoB *raiz, int key, bool ehFolha)
+bool ArvoreB::insere(NoB *raiz, int key, bool ehFolha)
 {
-    if (ehFolha)
+    if ( ehFolha || raiz->getFolha())
     {
         if (raiz->getN() == ordem - 1)
         {
             raiz = split(raiz, keyPivo(raiz, key), key);
+            return true;
         }
         else
         {
@@ -217,14 +218,20 @@ void ArvoreB::insere(NoB *raiz, int key, bool ehFolha)
                     j = raiz->getN();
                 }
             }
+            return false;
         }
     }
     else
     {
+
         int position = searchPosition(raiz,key);
         cout << position << endl;
-        insere(raiz->getFilhos()[position], key, true);
+        if( insere(raiz->getFilhos()[position], key, raiz->getFilhos()[position]->getFolha()) )
+        {
+            while(insere(raiz,raiz->getFilhos()[position]->getKeys()[0],true));
+        }
     }
+    return false;
 }
 
 void ArvoreB::imprimeArvore(NoB *raiz)

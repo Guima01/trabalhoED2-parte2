@@ -25,7 +25,7 @@ class ArvoreB
     bool auxBusca(NoB* no, int key);
     int searchPosition(NoB* raiz, int key);
 
-    void insere(NoB* raiz, int key,bool ehFolha);
+    bool insere(NoB* raiz, int key,bool ehFolha);
     
     NoB* split(NoB* raiz, int pivo, int key);
 

@@ -151,7 +151,7 @@ int main(int argc, char const *argv[])
     int hashIndex;
     for(int i=0 ; i<tam ; i++)
     {
-        if( i == 15)         
+        if( i == 7)         
             break;
         else
         {
