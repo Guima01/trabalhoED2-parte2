@@ -151,37 +151,20 @@ int main(int argc, char const *argv[])
     int hashIndex;
     for(int i=0 ; i<tam ; i++)
     {
-        if( i == 7)         
+        if( i == 20)         
             break;
         else
         {
-            cout << "Retornou na main" << endl;
             hashzada->insert(&registros[i]);
             hashIndex = hashzada->searchFromCodeAndDate(registros[i].getCode(),registros[i].getDate());
-            if(i < 5)
-            arvb->insere(arvb->getRaiz(), hashIndex, true);
-            else
-            arvb->insere(arvb->getRaiz(),hashIndex,false);
+            arvb->insere(hashIndex);
         }
     }
 
-
-
     cout << endl << endl;
 
-    arvb->imprimeArvore(arvb->getRaiz());
-    cout << arvb->getRaiz()->getKeys().size() << endl;
-    int i=0;
-    
-    while(i < arvb->getRaiz()->getFilhos().size())
-    {
-        if(arvb->getRaiz()->getFilhos()[i] != nullptr)
-        cout << i << " " <<arvb->getRaiz()->getFilhos()[i]->getKeys().size() << endl;    
-        i++;
-    }
-    
-    //arvb->insere(arvb->getRaiz(),hashIndex);
-    //arvb->busca(0);
+    arvb->getRaiz()->imprime(hashzada);
+    cout << arvb->busca(hashIndex) << endl;
     return 0;
 }
 //g++ -o parte2 -O3 *.cpp
