@@ -279,4 +279,5 @@ bool AVLtree::verificaDesbalanceamento(NoAVL *raiz)
             return false;
         }
     }
+    return false;
 }

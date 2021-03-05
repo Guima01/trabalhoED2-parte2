@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 #include <algorithm>
 #include "ArvoreB.h"
 #include "HashTable.h"
@@ -43,7 +42,7 @@ bool ArvoreB::menorElemento(Registro *candidatoInicio, Registro *candidatoFim)
     return false;
 }
 
-bool ArvoreB::auxBusca(NoB *no, int key)
+bool ArvoreB::auxSearch(NoB *no, int key)
 {
     for (int i = 0; i < no->getN(); i++)
     {
@@ -58,14 +57,14 @@ bool ArvoreB::auxBusca(NoB *no, int key)
                 if (menorElemento(registros->getRegistroFromTable(key), registros->getRegistroFromTable(no->getKeys()[i])))
                 {
                     if (!no->getFolha())
-                        return auxBusca(no->getFilhos()[i], key);
+                        return auxSearch(no->getFilhos()[i], key);
                 }
                 else
                 {
                     if (i == no->getN() - 1)
                     {
                         if (!no->getFolha())
-                            return auxBusca(no->getFilhos()[i + 1], key);
+                            return auxSearch(no->getFilhos()[i + 1], key);
                     }
                 }
             }
@@ -74,7 +73,7 @@ bool ArvoreB::auxBusca(NoB *no, int key)
     return false;
 }
 
-bool ArvoreB::busca(int key)
+bool ArvoreB::search(int key)
 {
     if (raiz->getFolha())
     {
@@ -89,34 +88,35 @@ bool ArvoreB::busca(int key)
     }
     else
     {
-        return auxBusca(raiz, key);
+        return auxSearch(raiz, key);
     }
 }
 
 void ArvoreB::insere(int key)
 {
+    
     if (this->raiz == NULL)
     {
         this->raiz = new NoB(ordem,true);
         this->raiz->getKeys()[0] = key;
         this->raiz->setN(1);
     }
-    else
+    else 
     {
-        if (raiz->getN() == 2*ordem - 1 )
+        if (raiz->getN() == ordem - 1 ) 
         {
             NoB* aux = new NoB(ordem,false);
-
+       
             aux->addFilho(raiz,0);
-            aux->split(0,raiz,registros);
-            int i = 0;
+            aux->split(0, raiz, registros, &key); 
 
-            if(menorElemento(registros->getRegistroFromTable(aux->getKeys()[i]),registros->getRegistroFromTable(key))){
+            int i=0;
+            if(menorElemento(registros->getRegistroFromTable(aux->getKeys()[i]),registros->getRegistroFromTable(key)))
+            {
                 i++; 
             }
-            aux->getFilhos()[i]->insereFilho(key,registros);
+            aux->getFilhos()[i]->insereFilho(key,registros); 
             this->raiz = aux;
-            //aux->insereFilho(aux->getFilhos()[position],key);
             
         }
         else

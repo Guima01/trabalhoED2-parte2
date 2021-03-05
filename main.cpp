@@ -163,8 +163,8 @@ int main(int argc, char const *argv[])
 
     cout << endl << endl;
 
-    arvb->getRaiz()->imprime(hashzada);
-    cout << arvb->busca(hashIndex) << endl;
+    arvb->getRaiz()->print(hashzada);
+    cout << arvb->search(hashIndex) << endl;
     return 0;
 }
 //g++ -o parte2 -O3 *.cpp

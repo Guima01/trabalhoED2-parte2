@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 #include "NoB.h"
 #include "HashEntry.h"
 
@@ -12,22 +11,12 @@ NoB::NoB(int tamanho, bool folha)
 
     this->n = 0;
 
-    keys = new int[2 * ordem - 1];
-    filhos = new NoB *[2 * ordem];
+    keys = new int[ordem - 1];
+    filhos = new NoB *[ordem];
 }
 
 NoB::~NoB()
 {
-}
-
-void NoB::setN(int i)
-{
-    this->n = i;
-}
-
-void NoB::setFolha()
-{
-    this->folha = false;
 }
 
 int NoB::getN()
@@ -35,26 +24,19 @@ int NoB::getN()
     return this->n;
 }
 
+void NoB::setN(int i)
+{
+    this->n = i;
+}
+
 bool NoB::getFolha()
 {
     return this->folha;
 }
 
-
-void NoB::imprime(HashTable *registros)
-{
-
-    int i;
-    for (i = 0; i < n; i++)
-    {
-        if (!folha)
-            filhos[i]->imprime(registros);
-        cout << registros->getRegistroFromTable(getKeys()[i])->getCode() << " ";
-        cout << registros->getRegistroFromTable(getKeys()[i])->getDate() << endl;
-    }
-
-    if (!folha)
-        filhos[i]->imprime(registros);
+int* NoB::getKeys()
+{ 
+    return this->keys;
 }
 
 void NoB::addFilho(NoB *filho, int i)
@@ -62,44 +44,24 @@ void NoB::addFilho(NoB *filho, int i)
     this->filhos[i] = filho;
 }
 
-void NoB::split(int i, NoB *raiz, HashTable *registros)
+NoB** NoB::getFilhos() 
+{ 
+    return this->filhos;
+}
+
+void NoB::print(HashTable *registros)
 {
-    NoB *aux = new NoB(ordem, raiz->getFolha());
-    aux->n = ordem - 1;
-
-    int k;
-
-    for (int j = 0; j < ordem - 1; j++)
+    int i;
+    for (i = 0; i < n; i++)
     {
-        aux->keys[j] = raiz->keys[j + ordem];
-
-    }
-    if (!raiz->getFolha())
-    {
-        for (int i = 0; i < ordem; i++)
-        {
-            aux->addFilho(raiz->getFilhos()[i + ordem], i);
-        }
+        if (!folha)
+            filhos[i]->print(registros);
+        cout << registros->getRegistroFromTable(getKeys()[i])->getCode() << " ";
+        cout << registros->getRegistroFromTable(getKeys()[i])->getDate() << endl;
     }
 
-    raiz->n = ordem - 1;
-
-    for (int j = n; j >= i + 1; j--)
-    {
-        filhos[j + 1] = filhos[j];
-    }
-
-    addFilho(aux, i + 1);
-
-
-    for (int j = n - 1; j >= i; j--)
-    {
-        keys[j + 1] = keys[j];
-
-    }
-    keys[i] = raiz->keys[ordem - 1];
-
-    n++;
+    if (!folha)
+        filhos[i]->print(registros);
 }
 
 bool NoB::menorElemento(Registro *candidatoInicio, Registro *candidatoFim)
@@ -124,8 +86,106 @@ bool NoB::menorElemento(Registro *candidatoInicio, Registro *candidatoFim)
     return false;
 }
 
+int NoB::searchPosition(int key, HashTable *registros)
+{
+    int i = 0;
+    while ( i < getN() )
+    {
+        if (registros->searchFromKey(key) != -1)
+        {
+            if (menorElemento(registros->getRegistroFromTable(key), registros->getRegistroFromTable(keys[0])))
+            {
+                return i;
+            }
+        }
+        i++;
+    }
+    return i;
+}
+
+int NoB::keyPivo(NoB *no, int key, HashTable *registros)
+{
+    if (registros->searchFromKey(key) != -1)
+    {
+        if (no->getN() % 2)
+        {
+            if (menorElemento(registros->getRegistroFromTable(key), registros->getRegistroFromTable(no->getKeys()[(no->getN() / 2) - 1])))
+            {
+                return no->getKeys()[(no->getN() / 2) - 1];
+            }
+        }
+        else
+        {
+
+            return no->getKeys()[(no->getN() / 2)];
+        }
+    }
+    return key;
+}
+
+void NoB::split(int position, NoB *raiz, HashTable *registros, int *keyPivo)
+{
+    NoB *direita = new NoB(ordem, raiz->getFolha());
+    int novasKeys[ordem];
+    int k = 0, i;
+
+    int pos = raiz->searchPosition(*keyPivo,registros);
+
+    for ( i = 0; i < raiz->getN() ; i++)
+    {
+        novasKeys[i] = raiz->getKeys()[i];
+    }
+    novasKeys[i] = *keyPivo;
+
+    while(i >= pos)
+    {
+        swap(novasKeys[i],novasKeys[pos]);
+        i--;
+    }
+
+    *keyPivo = novasKeys[ordem-1];
+
+    for (int j = (ordem / 2)+1; j < ordem - 1; j++)
+    {
+        direita->keys[k] = novasKeys[j];
+        k++;
+        direita->setN(k);
+    }
+
+    raiz->n -= k+1;
+
+
+    if (!raiz->getFolha())
+    {
+        k = i = 0;
+        for (int i = (ordem / 2)+1; i < ordem; i++)
+        {
+            direita->addFilho(raiz->getFilhos()[i], k);
+            k++;
+        }
+    }
+
+    for (int j = n; j >= position + 1; j--)
+    {
+        filhos[j + 1] = filhos[j];
+    }
+
+    addFilho(direita, position + 1);
+
+    for (int j = n - 1; j >= position; j--)
+    {
+        keys[j + 1] = keys[j];
+    }
+
+    keys[position] = novasKeys[ordem / 2];
+
+    n++;
+
+}
+
 void NoB::insereFilho(int key, HashTable *registros)
 {
+
     int i = n - 1;
     if (folha)
     {
@@ -139,18 +199,16 @@ void NoB::insereFilho(int key, HashTable *registros)
     }
     else
     {
-        while (i >= 0 && menorElemento(registros->getRegistroFromTable(key), registros->getRegistroFromTable(keys[i])))
+        int position = searchPosition(key, registros);
+
+        if (filhos[position]->getN() == ordem - 1)
         {
-            i--;
-        }
-        if (filhos[i + 1]->getN() == ordem - 1)
-        {
-            split(i + 1, filhos[i + 1], registros);
-            if (!menorElemento(registros->getRegistroFromTable(key), registros->getRegistroFromTable(keys[i + 1])))
+            split(position, filhos[position], registros, &key);
+            if (!menorElemento(registros->getRegistroFromTable(key), registros->getRegistroFromTable(keys[i])))
             {
-                i++;
+                position++;
             }
         }
-        filhos[i + 1]->insereFilho(key, registros);
+        filhos[position]->insereFilho(key, registros);
     }
 }
