@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include "HashTable.h"
 
 using namespace std;
@@ -15,31 +16,24 @@ class NoB
     public:
     NoB(int tamanho, bool folha);
     ~NoB();
-
-    int getN();
-    void setN(int i);
-
-    bool getFolha();
-    void setFolha(bool trueOrfalse) {   folha = trueOrfalse;}
-
-    int* getKeys();
-    void setKeys(int key, int pos) { keys[pos] = key;}
+    int * getKeys() { return this->keys;}
+    void reduzN() {       this->n--;}
     void addFilho(NoB* filho, int i);
-
-    NoB* encontraNoFolha(NoB* raiz,int key,HashTable *registros);
+    void addKeys(int key);
+    void setN(int i);
+    void setFolha();
+    void setChave(int i,int ch){keys[i]=ch;};
+    int getN();
+    //vector<int> getKeys();
+    void imprime(HashTable *registros);
     
-    NoB** getFilhos();
+    NoB** getFilhos() { return this->filhos;}
+    bool getFolha();
 
-    void print(HashTable *registros);
-
+    void split(int key,NoB* raiz, HashTable *tabela);
     int searchPosition(int key,HashTable *tabela);
-
     bool menorElemento(Registro *candidatoInicio, Registro *candidatoFim);
-
-    int keyPivo(NoB *no, int key,HashTable *registros);
-
-    NoB* split(int position,NoB* raiz, HashTable *tabela,int *keyPivo);
-
     void insereFilho(int key, HashTable *tabela);
 
+    
 };
