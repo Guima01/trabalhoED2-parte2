@@ -20,9 +20,13 @@ class NoB
     void setN(int i);
 
     bool getFolha();
+    void setFolha(bool trueOrfalse) {   folha = trueOrfalse;}
 
     int* getKeys();
+    void setKeys(int key, int pos) { keys[pos] = key;}
     void addFilho(NoB* filho, int i);
+
+    NoB* encontraNoFolha(NoB* raiz,int key,HashTable *registros);
     
     NoB** getFilhos();
 
@@ -34,7 +38,7 @@ class NoB
 
     int keyPivo(NoB *no, int key,HashTable *registros);
 
-    void split(int key,NoB* raiz, HashTable *tabela,int *keyPivo);
+    NoB* split(int position,NoB* raiz, HashTable *tabela,int *keyPivo);
 
     void insereFilho(int key, HashTable *tabela);
 

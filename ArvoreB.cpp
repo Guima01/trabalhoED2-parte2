@@ -92,36 +92,81 @@ bool ArvoreB::search(int key)
     }
 }
 
-void ArvoreB::insere(int key)
+int ArvoreB::insere(int key, NoB *folha, NoB *noPromovido)
 {
-    
+
     if (this->raiz == NULL)
     {
-        this->raiz = new NoB(ordem,true);
+        this->raiz = new NoB(ordem, true);
         this->raiz->getKeys()[0] = key;
         this->raiz->setN(1);
     }
-    else 
+    else
     {
-        if (raiz->getN() == ordem - 1 ) 
-        {
-            NoB* aux = new NoB(ordem,false);
-       
-            aux->addFilho(raiz,0);
-            aux->split(0, raiz, registros, &key); 
 
-            int i=0;
-            if(menorElemento(registros->getRegistroFromTable(aux->getKeys()[i]),registros->getRegistroFromTable(key)))
+        // descer até a folha
+        //identifiquei a folha , eu insiro e entro no if abaixo
+        // verificar para cada nó se ele esta cheio
+        // só criar nó quando estiver na raiz;
+
+        // aux insere retorna no
+        // arvb ed1
+
+        // tenta inserir
+        // verificar se era raiz
+        // se era preciso criar raiz, caso contrario split
+        // criar função para verificar
+
+        if (folha->getFolha())
+        {
+            if (folha->getN() == ordem - 1)
             {
-                i++; 
+                if (folha == this->raiz)
+                {
+                    NoB *aux = new NoB(ordem, false);
+                    aux->addFilho(folha, 0);
+                    aux->split(0, folha, registros, &key);
+                    aux->insereFilho(key, registros);
+                    this->raiz = aux;
+                }
+                else
+                {
+                    noPromovido->split(0, folha, registros, &key);
+                    cout << "G "<< noPromovido->getN() << endl;
+                    return key;
+                }
             }
-            aux->getFilhos()[i]->insereFilho(key,registros); 
-            this->raiz = aux;
-            
+            else
+            {
+                folha->insereFilho(key, registros);
+            }
+            return 0;
         }
         else
         {
-            raiz->insereFilho(key,registros);
+            int position = folha->searchPosition(key, registros); // 0
+            NoB* promoted = new NoB(ordem,folha->getFolha());
+            promoted->setN(folha->getN());
+            key = insere(key, folha->getFilhos()[position], promoted);      //
+
+
+            if (key)
+            {
+                cout << "G "<< promoted->getN() << endl;
+                if (folha->getN() == ordem - 1)
+                {
+                    noPromovido = folha->split(position, folha, registros, &key);
+                    
+                    return key;
+                }
+                else
+                {
+                    cout << "aq " << endl;
+                    folha->addFilho(promoted,position+1);
+                    folha->insereFilho(key,registros);
+                }
+            }
         }
     }
+    return 0;
 }

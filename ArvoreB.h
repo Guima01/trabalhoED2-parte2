@@ -22,8 +22,8 @@ class ArvoreB
 
     bool auxSearch(NoB* no, int key);
     bool search(int key);
-    
-    void insere(int key);
+    int searchPosition(int key,HashTable *tabela);
+    int insere(int key,NoB *folha,NoB* noPromovido);
 
 
 };
