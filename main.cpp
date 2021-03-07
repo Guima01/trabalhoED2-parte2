@@ -61,9 +61,8 @@ void removeAccents(string &str)
     }
 }
 
-void leLinha(ifstream &arq)
+void leLinha(QuadTree &quad, ifstream &arq, int linhas)
 {
-    QuadTree quad;
     string str;
     for (int i = 0; getline(arq, str); i++)
     {
@@ -89,9 +88,12 @@ void leLinha(ifstream &arq)
             }
             NoquadTree *no = new NoquadTree(registroCoordenado);
             quad.insert(no);
+            
+            if(i == linhas){
+                break;
+            }
         }
     }
-    quad.busca(-22.2779, -46.3716);
 }
 
 int leLinhaArquivoProcessado(vector<Registro> &registros, ifstream &arq)
@@ -126,47 +128,157 @@ int leLinhaArquivoProcessado(vector<Registro> &registros, ifstream &arq)
     return cont - 1;
 }
 
+void moduloTesteAlgoritmos(string path, int id, int numeroRegistros)
+{
+    int identificaOrdenacao;
 
+    cout << endl;
+
+    cout << "Escolha a estrutura de dados" << endl;
+    cout << "[1] QuadTree " << endl;
+    cout << "[2] HashTable " << endl;
+    cout << "[3] AVLTree " << endl;
+    cout << "[4] BTree " << endl;
+    cout << "[0] BTree " << endl;
+
+    do
+    {
+        cin >> identificaOrdenacao;
+
+    } while (identificaOrdenacao < 0 && identificaOrdenacao > 4);
+
+    if (identificaOrdenacao == 1)
+    {
+        if (id == 1)
+        {
+            QuadTree quad;
+            path = path + "brazil_cities_coordinates.csv";
+            ifstream arquivo;
+            arquivo.open(path, ios::in);
+            leLinha(quad, arquivo, numeroRegistros);
+            arquivo.close();
+            quad.imprimePorNivel(quad.getRaiz(), 0);
+        }
+        else if (id == 2)
+        {
+        }
+    }
+
+    else if (identificaOrdenacao == 2)
+    {
+    }
+    else if (identificaOrdenacao == 3)
+    {
+    }
+    else if (identificaOrdenacao == 0)
+    {
+        return;
+    }
+}
+
+void moduloTeste(string path)
+{
+    int id;
+    do
+    {
+        int n;
+        cout << "------------------------------" << endl;
+        cout << "Digite o numero de registros:" << endl;
+        cin >> n;
+        if (n <= 20)
+        {
+            moduloTesteAlgoritmos(path, 1, n);
+        }
+        else if (n > 20)
+        {
+            moduloTesteAlgoritmos(path, 2, n);
+        }
+    } while (id != 0);
+}
+
+int menu()
+{
+    int selecao;
+
+    cout << "MENU" << endl;
+    cout << "----" << endl;
+    cout << "[1] Modulo de testes" << endl;
+    cout << "[0] Sair" << endl;
+
+    cin >> selecao;
+
+    return selecao;
+}
+
+void seleciona(int selecao, string path)
+{
+    vector<Registro> registros;
+    switch (selecao)
+    {
+    case 1:
+    {
+        moduloTeste(path);
+        break;
+    }
+    case 2:
+    {
+
+        break;
+    }
+    case 3:
+    {
+    }
+    }
+}
+
+void mainMenu(string path)
+{
+    int selecao = menu();
+    while (selecao != 0)
+    {
+        seleciona(selecao, path);
+        selecao = menu();
+    }
+}
 
 int main(int argc, char const *argv[])
 {
 
-    // string path = argv[1];
+    string path = argv[1];
+    mainMenu(path);
     // path = path + "brazil_cities_coordinates.csv";
     // ifstream arquivo;
     // arquivo.open(path, ios::in);
-    // leLinha(arquivo);
+    //leLinha(arquivo);
 
-    /// Testes -> Registros diários e tabela hash
+    // Testes -> Registros diários e tabela hash
 
-    vector<Registro> registros;
-    string caminho = argv[1];
-    caminho += "brazil_covid19_cities_processado.csv";
-    ifstream arquivoProcessado;
-    arquivoProcessado.open(caminho, ios::in);
+    // vector<Registro> registros;
+    // string caminho = argv[1];
+    // caminho += "brazil_covid19_cities_processado.csv";
+    // ifstream arquivoProcessado;
+    // arquivoProcessado.open(caminho, ios::in);
 
-    int tam = leLinhaArquivoProcessado(registros, arquivoProcessado);
-    HashTable *hashzada = new HashTable(tam);
-    ArvoreB *arvb = new ArvoreB(3,hashzada);
+    // int tam = leLinhaArquivoProcessado(registros, arquivoProcessado);
+    // HashTable *hashzada = new HashTable(tam);
+    // ArvoreB *arvb = new ArvoreB(3,hashzada);
 
-    int hashIndex;
+    // int hashIndex;
 
+    // for(int i = 0 ; i<tam ; i++)
+    // {
+    //     if( i == 25)
+    //         break;
+    //     else
+    //     {
+    //         hashzada->insert(&registros[i]);
+    //         hashIndex = hashzada->searchFromCodeAndDate(registros[i].getCode(),registros[i].getDate());
+    //         arvb->insert(hashIndex);
+    //     }
+    // }
 
-    for(int i = 0 ; i<tam ; i++)
-    {
-        if( i == 25)         
-            break;
-        else
-        {
-            hashzada->insert(&registros[i]);
-            hashIndex = hashzada->searchFromCodeAndDate(registros[i].getCode(),registros[i].getDate());
-            arvb->insert(hashIndex);
-        }
-    }
-
-    cout << endl << endl;
-    arvb->getRaiz()->print(hashzada,0);
-    //cout << arvb->search(hashIndex) << endl;
+    // cout << endl << endl;
+    // arvb->getRaiz()->print(hashzada,0);
 
     return 0;
 }

@@ -12,8 +12,9 @@ private:
 public:
     QuadTree();
     ~QuadTree();
-    NoquadTree getRaiz();
+    NoquadTree* getRaiz();
     void insert(NoquadTree *no);
     void busca (double latitude, double longitude);
     NoquadTree compara(NoquadTree *r, NoquadTree *p);
+    void imprimePorNivel(NoquadTree *p, int nivel);
 };

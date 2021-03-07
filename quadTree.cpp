@@ -12,9 +12,9 @@ QuadTree::QuadTree()
 }
 QuadTree::~QuadTree() {}
 
-NoquadTree QuadTree::getRaiz()
+NoquadTree* QuadTree::getRaiz()
 {
-    return *this->raiz;
+    return this->raiz;
 }
 
 void QuadTree::insert(NoquadTree *no)
@@ -95,7 +95,7 @@ void QuadTree::busca(double latitude, double longitude)
     {
         if (aux->getCoordX() == latitude && aux->getCoordY() == longitude)
         {
-            cout<<aux->getRegistroCoordenado().getCityName();
+            cout << aux->getRegistroCoordenado().getCityName();
             break;
         }
         if (latitude < aux->getCoordX())
@@ -104,7 +104,7 @@ void QuadTree::busca(double latitude, double longitude)
             {
                 if (aux->getSw() == 0)
                 {
-                    cout<<"não encontrado";
+                    cout << "Nao encontrado";
                     break;
                 }
                 else
@@ -116,7 +116,7 @@ void QuadTree::busca(double latitude, double longitude)
             {
                 if (aux->getNw() == 0)
                 {
-                    cout<<"não encontrado";
+                    cout << "Nao encontrado";
                     break;
                 }
                 else
@@ -131,7 +131,7 @@ void QuadTree::busca(double latitude, double longitude)
             {
                 if (aux->getSe() == 0)
                 {
-                    cout<<"não encontrado";
+                    cout << "Nao encontrado";
                     break;
                 }
                 else
@@ -143,7 +143,7 @@ void QuadTree::busca(double latitude, double longitude)
             {
                 if (aux->getNe() == 0)
                 {
-                    cout<<"não encontrado";
+                    cout << "Nao encontrado";
                     break;
                 }
                 else
@@ -152,6 +152,25 @@ void QuadTree::busca(double latitude, double longitude)
                 }
             }
         }
+    }
+}
+
+void QuadTree::imprimePorNivel(NoquadTree *p, int nivel)
+{
+    if (p != nullptr)
+    {
+        cout << "(" << nivel << ")";
+        for (int i = 1; i <= nivel; i++)
+            cout << "--";
+        cout << "(";
+        cout << p->getRegistroCoordenado().getLatitude();
+        cout<<", ";
+        cout << p->getRegistroCoordenado().getLongitude();
+        cout << ")"<<endl;
+        imprimePorNivel(p->getNw(), nivel + 1);
+        imprimePorNivel(p->getNe(), nivel + 1);
+        imprimePorNivel(p->getSw(), nivel + 1);
+        imprimePorNivel(p->getSe(), nivel + 1);
     }
 }
 
