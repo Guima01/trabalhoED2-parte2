@@ -147,36 +147,27 @@ int main(int argc, char const *argv[])
 
     int tam = leLinhaArquivoProcessado(registros, arquivoProcessado);
     HashTable *hashzada = new HashTable(tam);
-    ArvoreB *arvb = new ArvoreB(5,hashzada);
+    ArvoreB *arvb = new ArvoreB(3,hashzada);
 
     int hashIndex;
-    int v[100];
-    int i;
 
-    for(i=0 ; i<tam ; i++)
+
+    for(int i = 0 ; i<tam ; i++)
     {
-        if( i == 8)         
+        if( i == 25)         
             break;
         else
         {
             hashzada->insert(&registros[i]);
             hashIndex = hashzada->searchFromCodeAndDate(registros[i].getCode(),registros[i].getDate());
-            v[i] = hashIndex;
+            arvb->insert(hashIndex);
         }
     }
 
-    i--;
-
-    while(i >=0)
-    {
-        arvb->insere(v[i],arvb->getRaiz(),nullptr);
-        i--;
-    }
-
     cout << endl << endl;
-    arvb->getRaiz()->print(hashzada);
-
+    arvb->getRaiz()->print(hashzada,0);
     //cout << arvb->search(hashIndex) << endl;
+
     return 0;
 }
 //g++ -o parte2 -O3 *.cpp

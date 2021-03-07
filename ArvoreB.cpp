@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 #include <algorithm>
 #include "ArvoreB.h"
 #include "HashTable.h"
@@ -16,11 +15,22 @@ ArvoreB::~ArvoreB()
 {
 }
 
+int ArvoreB::getOrdem()
+{
+    return this->ordem;
+}
+
 NoB *ArvoreB::getRaiz()
 {
     return this->raiz;
 }
 
+HashTable* ArvoreB::getHashTable()
+{
+    return this->registros;
+}
+
+//Retorna true se candidatoInicio seja um elemento anterior ao candidatoFim apos ordenaçao
 bool ArvoreB::menorElemento(Registro *candidatoInicio, Registro *candidatoFim)
 {
     bool verificaCode = (candidatoInicio->getCode() == candidatoFim->getCode());
@@ -43,7 +53,8 @@ bool ArvoreB::menorElemento(Registro *candidatoInicio, Registro *candidatoFim)
     return false;
 }
 
-bool ArvoreB::auxBusca(NoB *no, int key)
+//Retorna verdade caso seja encontrado a chave 
+bool ArvoreB::auxSearch(NoB *no, int key)
 {
     for (int i = 0; i < no->getN(); i++)
     {
@@ -53,19 +64,20 @@ bool ArvoreB::auxBusca(NoB *no, int key)
         }
         else
         {
-            if (registros->searchFromKey(key) != -1)
+            // Se a key existir na tabela hash
+            if (this->getHashTable()->searchFromKey(key) != -1)
             {
-                if (menorElemento(registros->getRegistroFromTable(key), registros->getRegistroFromTable(no->getKeys()[i])))
+                if (menorElemento(this->getHashTable()->getRegistroFromTable(key), this->getHashTable()->getRegistroFromTable(no->getKeys()[i])))
                 {
                     if (!no->getFolha())
-                        return auxBusca(no->getFilhos()[i], key);
+                        return auxSearch(no->getFilhos()[i], key);
                 }
                 else
                 {
                     if (i == no->getN() - 1)
                     {
                         if (!no->getFolha())
-                            return auxBusca(no->getFilhos()[i + 1], key);
+                            return auxSearch(no->getFilhos()[i + 1], key);
                     }
                 }
             }
@@ -74,13 +86,13 @@ bool ArvoreB::auxBusca(NoB *no, int key)
     return false;
 }
 
-bool ArvoreB::busca(int key)
+bool ArvoreB::search(int key)
 {
-    if (raiz->getFolha())
+    if (this->getRaiz()->getFolha())
     {
-        for (int i = 0; i < raiz->getN(); i++)
+        for (int i = 0; i < this->getRaiz()->getN(); i++)
         {
-            if (raiz->getKeys()[i] == key)
+            if (this->getRaiz()->getKeys()[i] == key)
             {
                 return true;
             }
@@ -89,39 +101,37 @@ bool ArvoreB::busca(int key)
     }
     else
     {
-        return auxBusca(raiz, key);
+        return auxSearch(this->getRaiz(), key);
     }
 }
 
-void ArvoreB::insere(int key)
+void ArvoreB::insert(int key)
 {
     if (this->raiz == NULL)
     {
-        this->raiz = new NoB(ordem,true);
+        this->raiz = new NoB(this->getOrdem(),true);
         this->raiz->getKeys()[0] = key;
         this->raiz->setN(1);
     }
     else
     {
-        if (raiz->getN() == 2*ordem - 1 )
+        if (this->raiz->getN() == 2 * this->getOrdem() - 1 )
         {
-            NoB* aux = new NoB(ordem,false);
+            NoB* novaRaiz = new NoB(this->getOrdem(),false);
 
-            aux->addFilho(raiz,0);
-            aux->split(0,raiz,registros);
-            int i = 0;
+            novaRaiz->setFilhos(raiz,0);
 
-            if(menorElemento(registros->getRegistroFromTable(aux->getKeys()[i]),registros->getRegistroFromTable(key))){
-                i++; 
-            }
-            aux->getFilhos()[i]->insereFilho(key,registros);
-            this->raiz = aux;
-            //aux->insereFilho(aux->getFilhos()[position],key);
-            
+            novaRaiz->split(0,raiz,this->getHashTable());
+
+            int position = novaRaiz->searchPosition(key,this->getHashTable());
+
+            novaRaiz->getFilhos()[position]->insertFilho(key,this->getHashTable());
+
+            this->raiz = novaRaiz;
         }
         else
         {
-            raiz->insereFilho(key,registros);
+            raiz->insertFilho(key,this->getHashTable());
         }
     }
 }

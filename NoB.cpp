@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 #include "NoB.h"
 #include "HashEntry.h"
 
@@ -12,22 +11,22 @@ NoB::NoB(int tamanho, bool folha)
 
     this->n = 0;
 
-    keys = new int[2 * ordem - 1];
-    filhos = new NoB *[2 * ordem];
+    this->keys = new int[2 * ordem - 1];
+    this->filhos = new NoB *[2 * ordem];
 }
 
 NoB::~NoB()
 {
 }
 
+int NoB::getOrdem()
+{
+    return this->ordem;
+}
+
 void NoB::setN(int i)
 {
     this->n = i;
-}
-
-void NoB::setFolha()
-{
-    this->folha = false;
 }
 
 int NoB::getN()
@@ -40,68 +39,49 @@ bool NoB::getFolha()
     return this->folha;
 }
 
-
-void NoB::imprime(HashTable *registros)
+void NoB::setFolha(bool trueOrfalse)
 {
-
-    int i;
-    for (i = 0; i < n; i++)
-    {
-        if (!folha)
-            filhos[i]->imprime(registros);
-        cout << registros->getRegistroFromTable(getKeys()[i])->getCode() << " ";
-        cout << registros->getRegistroFromTable(getKeys()[i])->getDate() << endl;
-    }
-
-    if (!folha)
-        filhos[i]->imprime(registros);
+    this->folha = trueOrfalse;
 }
 
-void NoB::addFilho(NoB *filho, int i)
+int* NoB::getKeys()
+{
+    return this->keys;
+}
+
+void NoB::setKeys(int key, int position)
+{
+    this->keys[ position ] = key;
+}
+
+NoB** NoB::getFilhos()
+{ 
+    return this->filhos;
+}
+
+void NoB::setFilhos(NoB *filho, int i)
 {
     this->filhos[i] = filho;
 }
 
-void NoB::split(int i, NoB *raiz, HashTable *registros)
+void NoB::print(HashTable *registros,int nivel)
 {
-    NoB *aux = new NoB(ordem, raiz->getFolha());
-    aux->n = ordem - 1;
-
-    int k;
-
-    for (int j = 0; j < ordem - 1; j++)
+    int i;
+    for (i = 0; i < n; i++)
     {
-        aux->keys[j] = raiz->keys[j + ordem];
+        if (!folha)
+            filhos[i]->print(registros,nivel+1);
+        cout << "( " << nivel << " ) " ;
+        cout << registros->getRegistroFromTable(getKeys()[i])->getCode() << " ";
+        cout << registros->getRegistroFromTable(getKeys()[i])->getDate() << endl;
 
     }
-    if (!raiz->getFolha())
-    {
-        for (int i = 0; i < ordem; i++)
-        {
-            aux->addFilho(raiz->getFilhos()[i + ordem], i);
-        }
-    }
 
-    raiz->n = ordem - 1;
-
-    for (int j = n; j >= i + 1; j--)
-    {
-        filhos[j + 1] = filhos[j];
-    }
-
-    addFilho(aux, i + 1);
-
-
-    for (int j = n - 1; j >= i; j--)
-    {
-        keys[j + 1] = keys[j];
-
-    }
-    keys[i] = raiz->keys[ordem - 1];
-
-    n++;
+    if (!folha)
+        filhos[i]->print(registros,nivel+1);
 }
 
+//Retorna true se candidatoInicio seja um elemento anterior ao candidatoFim apos ordena
 bool NoB::menorElemento(Registro *candidatoInicio, Registro *candidatoFim)
 {
     bool verificaCode = (candidatoInicio->getCode() == candidatoFim->getCode());
@@ -124,33 +104,108 @@ bool NoB::menorElemento(Registro *candidatoInicio, Registro *candidatoFim)
     return false;
 }
 
-void NoB::insereFilho(int key, HashTable *registros)
+//Verifica a posicao de insercao
+int NoB::searchPosition(int key, HashTable *registros)
 {
-    int i = n - 1;
-    if (folha)
+    int i = 0;
+    while ( i < getN() )
     {
-        while (i >= 0 && menorElemento(registros->getRegistroFromTable(key), registros->getRegistroFromTable(keys[i])))
+        if (registros->searchFromKey(key) != -1)
         {
-            keys[i + 1] = keys[i];
-            i--;
+            if (menorElemento(registros->getRegistroFromTable(key), registros->getRegistroFromTable(keys[0])))
+            {
+                return i;
+            }
         }
-        keys[i + 1] = key;
-        n++;
+        i++;
+    }
+    return i;
+}
+
+void NoB::insertFilho(int key, HashTable *registros)
+{
+    // Começa pelo ultimo elemento
+    int position = this->getN() - 1;
+
+    if ( this->getFolha() )
+    {
+        //Percorrer o no e reeordenar as chaves até encontrar a posição de insercao 
+        while ( position >= 0 && menorElemento(registros->getRegistroFromTable(key) , registros->getRegistroFromTable( this->getKeys()[position])))
+        {
+            this->setKeys( this->getKeys()[position], position + 1);
+            position--;
+        }
+
+        this->setKeys( key, position + 1);
+        this->setN( this->getN() + 1);
     }
     else
     {
-        while (i >= 0 && menorElemento(registros->getRegistroFromTable(key), registros->getRegistroFromTable(keys[i])))
+        //Encontre a posição de inserção    
+        while (position >= 0 && menorElemento(registros->getRegistroFromTable(key), registros->getRegistroFromTable(this->getKeys()[position])))
         {
-            i--;
+            position--;
         }
-        if (filhos[i + 1]->getN() == ordem - 1)
+        // Se o filho estiver cheio realizar a cisao
+        if (this->getFilhos()[position + 1]->getN() == 2 * this->getOrdem() - 1)
         {
-            split(i + 1, filhos[i + 1], registros);
-            if (!menorElemento(registros->getRegistroFromTable(key), registros->getRegistroFromTable(keys[i + 1])))
+            split(position + 1,this->getFilhos()[position + 1], registros);
+            //Verifica a posição correta de inserçao
+            if (!menorElemento(registros->getRegistroFromTable(key), registros->getRegistroFromTable(keys[position + 1])))
             {
-                i++;
+                position++;
             }
         }
-        filhos[i + 1]->insereFilho(key, registros);
+        // Insere no filho
+        this->getFilhos()[position + 1]->insertFilho(key, registros);
     }
+}
+
+void NoB::split(int position, NoB *raiz, HashTable *registros)
+{
+    NoB *direita = new NoB (raiz->getOrdem(), raiz->getFolha());
+
+    int elementsDireita = 0;
+
+    // Aloca a 2º metade das chaves da raiz 
+    // Define aumento de chaves do novo nó
+
+    while( elementsDireita < raiz->getOrdem() - 1 )
+    {
+        direita->setKeys(raiz->getKeys()[ elementsDireita + raiz->getOrdem()], elementsDireita);
+        elementsDireita++;
+        direita->setN(elementsDireita);
+    }
+
+    // Cisao na raiz, agora ela tera metade de suas chaves 
+    raiz->setN( elementsDireita );
+
+    // Se a raiz não é folha, entao raiz tem filhos, alocar a 2º metade de filhos de raiz no novo nó 
+    if (!raiz->getFolha())
+    {
+        for (int i = 0; i <= raiz->getOrdem() ; i++)
+        {
+            direita->setFilhos(raiz->getFilhos()[i + raiz->getOrdem() ], i);
+        }
+    }
+
+    // Mover os nós filhos para poder alocar o novo nó
+    for (int j = raiz->getN(); j >= position + 1; j--)
+    {
+        this->setFilhos( this->getFilhos()[j], j + 1);
+    }
+
+    this->setFilhos(direita, position + 1);
+
+    // Mover as chaves até a posicao de insercao
+    for (int j = raiz->getN() - 1; j >= position; j--)
+    {
+        this->setKeys( this->getKeys()[j], j + 1 );
+    }
+
+    // Alocar o elemento mediano da raiz 
+    this->setKeys(raiz->getKeys()[raiz->getOrdem() - 1], position);
+    this->setN( this->getN() + 1);
+
+
 }
