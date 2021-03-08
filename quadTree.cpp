@@ -12,7 +12,7 @@ QuadTree::QuadTree()
 }
 QuadTree::~QuadTree() {}
 
-NoquadTree* QuadTree::getRaiz()
+NoquadTree *QuadTree::getRaiz()
 {
     return this->raiz;
 }
@@ -164,13 +164,32 @@ void QuadTree::imprimePorNivel(NoquadTree *p, int nivel)
             cout << "--";
         cout << "(";
         cout << p->getRegistroCoordenado().getLatitude();
-        cout<<", ";
+        cout << ", ";
         cout << p->getRegistroCoordenado().getLongitude();
-        cout << ")"<<endl;
+        cout << ")" << endl;
         imprimePorNivel(p->getNw(), nivel + 1);
         imprimePorNivel(p->getNe(), nivel + 1);
         imprimePorNivel(p->getSw(), nivel + 1);
         imprimePorNivel(p->getSe(), nivel + 1);
+    }
+}
+
+void QuadTree::ImprimeArquivoTexto(NoquadTree *p, int nivel, ofstream &saida)
+{
+    if (p != nullptr)
+    {
+        saida << "(" << nivel << ")";
+        for (int i = 1; i <= nivel; i++)
+            saida << "--";
+        saida << "(";
+        saida << p->getRegistroCoordenado().getLatitude();
+        saida << ", ";
+        saida << p->getRegistroCoordenado().getLongitude();
+        saida << ")" << endl;
+        ImprimeArquivoTexto(p->getNw(), nivel + 1, saida);
+        ImprimeArquivoTexto(p->getNe(), nivel + 1, saida);
+        ImprimeArquivoTexto(p->getSw(), nivel + 1, saida);
+        ImprimeArquivoTexto(p->getSe(), nivel + 1, saida);
     }
 }
 

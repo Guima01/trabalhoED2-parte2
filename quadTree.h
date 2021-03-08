@@ -17,4 +17,5 @@ public:
     void busca (double latitude, double longitude);
     NoquadTree compara(NoquadTree *r, NoquadTree *p);
     void imprimePorNivel(NoquadTree *p, int nivel);
+    void ImprimeArquivoTexto(NoquadTree *p, int nivel, ofstream &arq);
 };

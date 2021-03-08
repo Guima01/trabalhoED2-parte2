@@ -88,8 +88,9 @@ void leLinha(QuadTree &quad, ifstream &arq, int linhas)
             }
             NoquadTree *no = new NoquadTree(registroCoordenado);
             quad.insert(no);
-            
-            if(i == linhas){
+
+            if (i == linhas)
+            {
                 break;
             }
         }
@@ -149,18 +150,20 @@ void moduloTesteAlgoritmos(string path, int id, int numeroRegistros)
 
     if (identificaOrdenacao == 1)
     {
+        QuadTree quad;
+        path = path + "brazil_cities_coordinates.csv";
+        ifstream arquivo;
+        arquivo.open(path, ios::in);
+        leLinha(quad, arquivo, numeroRegistros);
+        arquivo.close();
         if (id == 1)
         {
-            QuadTree quad;
-            path = path + "brazil_cities_coordinates.csv";
-            ifstream arquivo;
-            arquivo.open(path, ios::in);
-            leLinha(quad, arquivo, numeroRegistros);
-            arquivo.close();
             quad.imprimePorNivel(quad.getRaiz(), 0);
         }
         else if (id == 2)
         {
+            ofstream saida("saidaQuadTree.txt");
+            quad.ImprimeArquivoTexto(quad.getRaiz(), 0, saida);
         }
     }
 
