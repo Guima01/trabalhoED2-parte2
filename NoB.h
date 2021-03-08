@@ -31,6 +31,8 @@ class NoB
     NoB** getFilhos();
     void setFilhos(NoB* filho, int i);
 
+    void salvaArquivo(HashTable *registros,int nivel, ofstream &saida);
+    
     void print(HashTable *registros,int nivel);
     
     bool menorElemento(Registro *candidatoInicio, Registro *candidatoFim);

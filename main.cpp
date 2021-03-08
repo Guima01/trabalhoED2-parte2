@@ -140,7 +140,7 @@ void moduloTesteAlgoritmos(string path, int id, int numeroRegistros)
     cout << "[2] HashTable " << endl;
     cout << "[3] AVLTree " << endl;
     cout << "[4] BTree " << endl;
-    cout << "[0] BTree " << endl;
+    cout << "[0] Sair " << endl;
 
     do
     {
@@ -173,8 +173,40 @@ void moduloTesteAlgoritmos(string path, int id, int numeroRegistros)
     else if (identificaOrdenacao == 3)
     {
     }
-    else if (identificaOrdenacao == 0)
+    else if (identificaOrdenacao == 4)
     {
+        vector<Registro> registros;
+        string caminho = path;
+        caminho += "brazil_covid19_cities_processado.csv";
+        ifstream arquivoProcessado;
+        arquivoProcessado.open(caminho, ios::in);
+
+        int tam = leLinhaArquivoProcessado(registros, arquivoProcessado);
+        HashTable *hashzada = new HashTable(tam);
+        ArvoreB *arvb = new ArvoreB(5, hashzada);
+
+        int hashIndex;
+
+        for (int i = 0; i < tam; i++)
+        {
+            if (i == numeroRegistros)
+            {
+                break;
+            }
+            hashzada->insert(&registros[i]);
+            hashIndex = hashzada->searchFromCodeAndDate(registros[i].getCode(), registros[i].getDate());
+            arvb->insert(hashIndex);
+        }
+        
+        if (id == 1)
+        {
+            arvb->getRaiz()->print(hashzada,0);
+        }
+        else if (id == 2)
+        {
+            ofstream saida("saidaBTree.txt");
+            arvb->getRaiz()->salvaArquivo(hashzada,0,saida);
+        }
         return;
     }
 }
@@ -270,14 +302,11 @@ int main(int argc, char const *argv[])
 
     // for(int i = 0 ; i<tam ; i++)
     // {
-    //     if( i == 25)
-    //         break;
-    //     else
-    //     {
+
     //         hashzada->insert(&registros[i]);
     //         hashIndex = hashzada->searchFromCodeAndDate(registros[i].getCode(),registros[i].getDate());
     //         arvb->insert(hashIndex);
-    //     }
+    //
     // }
 
     // cout << endl << endl;
