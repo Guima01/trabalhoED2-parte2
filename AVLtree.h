@@ -1,36 +1,40 @@
-#ifndef ARVBINBUSCA_H_INCLUDED
-#define ARVBINBUSCA_H_INCLUDED
+#include <fstream>
 #include "NoAVL.h"
+
+using namespace std;
 
 class AVLtree
 {
 public:
-    AVLtree();
-    ~AVLtree();
-    bool vazia(); // verifica se a �rvore est� vazia
-    NoAVL* busca(int val);
-    void insere(int val);
-    void remove(int val);
-    void imprime();
-    int altura (NoAVL* raiz);
+    
+    AVLtree();  // CONSTRUTOR
+    ~AVLtree(); // DESTRUTOR
+
+    bool vazia(); // VERIFICA SE A ÁRVORE ESTÁ VAZIA
+
+    NoAVL* busca(int val); // BUSCA
+    void insere(int val); // INSERÇÃO
+
+    void imprime(); // IMPRESSÃO NO TERMINAL
+
+    void saidaArqv(ofstream &saida); // IMPRESSÃO POR ARQUIVO
+
+    int altura (NoAVL* raiz); // CALCULA A ALTURA DE UM NÓ
 
 private:
-    NoAVL* raiz; // ponteiro para o No raiz da �rvore
-    NoAVL* auxBusca(NoAVL *p, int val);
-    NoAVL* auxInsere(NoAVL *p, int val);
-    NoAVL* auxRemove(NoAVL *p, int val);
-    NoAVL* menorSubArvDireita(NoAVL *p);
-    NoAVL* removeFolha(NoAVL *p);
-    NoAVL* remove1Filho(NoAVL *p);
-    void imprimePorNivel(NoAVL* p, int nivel);
-    NoAVL* libera(NoAVL *p);
+    NoAVL* raiz; // PONTEIRO PARA A RAIZ DA ÁRVORE
 
-    void rebalanceamentoUp(NoAVL* no);
-    void rebalancear(NoAVL* no);
+    // FUNÇÕES AUX
+    NoAVL* auxBusca(NoAVL *p, int val); // BUSCA
+    NoAVL* auxInsere(NoAVL *p, int val); // INSERÇÃO
+    void auxSaidaArqv(NoAVL *p, int nivel, ofstream &saida); // IMPRESSÃO POR ARQUIVO
+    
+    void imprimePorNivel(NoAVL* p, int nivel); // IMPRESSÃO NO TERMINAL
+    
+    NoAVL* libera(NoAVL *p); // AUXILIAR DO DESTRUTOR
+
     int calculaFB(NoAVL* no);
+    // ROTAÇÕES
     NoAVL* rotacaoEsquerda(NoAVL* no);
     NoAVL* rotacaoDireita(NoAVL* no);
-    bool verificaDesbalanceamento(NoAVL *raiz);
 };
-
-#endif // ARVBINBUSCA_H_INCLUDED

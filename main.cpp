@@ -11,6 +11,7 @@
 #include "Registro.h"
 #include "HashTable.h"
 #include "ArvoreB.h"
+#include "AVLtree.h"
 #define TAMANHOREG 1431490;
 
 using namespace std;
@@ -129,6 +130,43 @@ int leLinhaArquivoProcessado(vector<Registro> &registros, ifstream &arq)
     return cont - 1;
 }
 
+int leLinhaArquivoProcessadoPraN(vector<Registro> &registros, ifstream &arq, int n)
+{
+    HashTable *hashzada = new HashTable(1431490);
+    string str;
+    int cases, deaths, cont = 0;
+    for (int i = 0; getline(arq, str); i++)
+    {
+        if (i != 0)
+        {
+            Registro *registra = new Registro();
+
+            vector<string> stringDados = split(str, ',');
+
+            cases = atoi(stringDados[4].c_str());
+            deaths = atoi(stringDados[5].c_str());
+
+            registra->setDate(stringDados[0]);
+            registra->setState(stringDados[1]);
+            registra->setName(stringDados[2]);
+            registra->setCode(stringDados[3].substr(0, 6));
+            registra->setCases(cases);
+            registra->setDeaths(deaths);
+
+            registros.push_back(*registra);
+
+            if (i == n)
+            {
+                break;
+            }
+        }
+        cont++;
+    }
+    cout << "Leitura do arquivo brazil_covid19_cities_processado.csv finalizada." << cont - 1 << endl
+         << endl;
+    return cont - 1;
+}
+
 void moduloTesteAlgoritmos(string path, int id, int numeroRegistros)
 {
     int identificaOrdenacao;
@@ -172,6 +210,40 @@ void moduloTesteAlgoritmos(string path, int id, int numeroRegistros)
     }
     else if (identificaOrdenacao == 3)
     {
+        vector<Registro> registros;
+        string caminho = path;
+        caminho += "brazil_covid19_cities_processado.csv";
+        ifstream arquivoProcessado;
+        arquivoProcessado.open(caminho, ios::in);
+
+        int tam = leLinhaArquivoProcessadoPraN(registros, arquivoProcessado, numeroRegistros);
+        HashTable *hashzada = new HashTable(tam);
+        AVLtree *AVL = new AVLtree();
+
+        int hashIndex;
+
+        for (int i = 0; i < tam; i++)
+        {
+            if (i == numeroRegistros)
+            {
+                break;
+            }
+            hashzada->insert(&registros[i]);
+            hashIndex = hashzada->searchFromCodeAndDate(registros[i].getCode(), registros[i].getDate());
+            AVL->insere(hashIndex);
+        }
+        
+        if (id == 1)
+        {
+            AVL->imprime();
+        }
+        else if (id == 2)
+        {
+            ofstream saida("saidaAVLTree.txt");
+            cout << "SAIDA POR ARQUIVO" << endl;
+            AVL->saidaArqv(saida);
+        }
+        return;
     }
     else if (identificaOrdenacao == 4)
     {
@@ -181,7 +253,7 @@ void moduloTesteAlgoritmos(string path, int id, int numeroRegistros)
         ifstream arquivoProcessado;
         arquivoProcessado.open(caminho, ios::in);
 
-        int tam = leLinhaArquivoProcessado(registros, arquivoProcessado);
+        int tam = leLinhaArquivoProcessadoPraN(registros, arquivoProcessado, numeroRegistros);
         HashTable *hashzada = new HashTable(tam);
         ArvoreB *arvb = new ArvoreB(5, hashzada);
 
@@ -209,6 +281,9 @@ void moduloTesteAlgoritmos(string path, int id, int numeroRegistros)
         }
         return;
     }
+
+    else if (identificaOrdenacao == 0)
+        return;
 }
 
 void moduloTeste(string path)
@@ -223,10 +298,12 @@ void moduloTeste(string path)
         if (n <= 20)
         {
             moduloTesteAlgoritmos(path, 1, n);
+            return;
         }
         else if (n > 20)
         {
             moduloTesteAlgoritmos(path, 2, n);
+            return;
         }
     } while (id != 0);
 }

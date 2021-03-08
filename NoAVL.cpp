@@ -2,6 +2,7 @@
 #include <iostream>
 #include "NoAVL.h"
 
+// CONSTRUTOR / DESTRUTOR
 NoAVL::NoAVL()
 {
 }
@@ -10,6 +11,7 @@ NoAVL::~NoAVL()
 {
 }
 
+// SETS
 void NoAVL::setEsq(NoAVL *p)
 {
     this->esq = p;
@@ -25,11 +27,13 @@ void NoAVL::setAltura(int val)
     this->altura = val;
 }
 
-
 void NoAVL::setDir(NoAVL *p)
 {   
     this->dir = p;
 }
+
+
+// GETS
 NoAVL* NoAVL::getEsq()
 {
     return this->esq;
