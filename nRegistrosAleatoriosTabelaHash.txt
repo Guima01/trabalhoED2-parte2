@@ -1,0 +1,573 @@
+date,state,name,code,cases,deaths
+2020-11-03,TO,Taguatinga,172090,0,4
+2020-07-07,TO,Nova Rosalandia,171500,0,0
+2020-09-07,TO,Santa Rosa Do Tocantins,171890,0,0
+2020-06-23,SP,Santa Clara D'Oeste,354610,1,0
+2020-07-07,TO,Sao Sebastiao Do Tocantins,172030,0,0
+2020-11-21,SP,Turiuba,355520,0,1
+2020-06-06,SP,Sao Joao Das Duas Pontes,354920,0,1
+2020-08-30,TO,Babaculandia,170300,0,2
+2020-09-26,TO,Gurupi,170950,38,45
+2020-04-12,SP,Torre De Pedra,355465,0,0
+2020-09-16,TO,Juarina,171180,1,1
+2020-06-17,TO,Babaculandia,170300,2,0
+2020-11-22,SP,Tuiuti,355495,0,1
+2020-12-01,SP,Vinhedo,355670,30,42
+2020-12-08,TO,Monte Do Carmo,171360,1,1
+2020-04-16,TO,Novo Acordo,171510,0,0
+2020-11-28,SP,Urania,355580,9,13
+2020-08-08,TO,Ananas,170100,1,3
+2020-10-23,SP,Varzea Paulista,355650,8,72
+2020-12-06,SP,Colina,351200,0,16
+2020-08-14,SP,Santo Expedito,354830,0,0
+2020-08-27,TO,Luzinopolis,171245,8,2
+2020-06-26,TO,Itapiratins,171090,0,0
+2020-06-01,SP,Taquaral,355365,0,0
+2020-04-14,SP,Tiete,355450,0,0
+2020-06-17,SP,Torre De Pedra,355465,0,2
+2020-07-19,TO,Angico,170105,0,0
+2020-05-23,TO,Pindorama Do Tocantins,171700,0,0
+2020-07-01,TO,Goianorte,170830,0,0
+2020-05-31,TO,Riachinho,171855,0,0
+2020-05-18,TO,Sandolandia,171884,0,0
+2020-06-16,TO,Brejinho De Nazare,170370,0,0
+2020-11-25,TO,Xambioa,172210,1,15
+2020-05-23,SP,Sandovalina,354550,0,0
+2020-09-23,TO,Itaguatins,171070,0,2
+2020-11-07,TO,Nova Rosalandia,171500,0,4
+2020-05-07,SP,Motuca,353205,0,0
+2020-09-07,SP,Santana De Parnaiba,354730,1,89
+2020-06-29,TO,Sao Sebastiao Do Tocantins,172030,0,0
+2020-07-25,TO,Colmeia,171670,-1,0
+2020-11-21,TO,Itacaja,171050,0,7
+2020-10-23,SP,Uchoa,355560,0,9
+2020-07-16,TO,Xambioa,172210,5,7
+2020-06-29,TO,Pindorama Do Tocantins,171700,0,0
+2020-06-09,TO,Tupiratins,172130,0,0
+2020-04-21,SP,Tambau,355330,0,0
+2020-11-06,SP,Ribeirao Preto,354340,0,863
+2020-10-15,SP,Varzea Paulista,355650,0,72
+2020-06-19,TO,Porto Nacional,171820,18,3
+2020-04-25,TO,Jau Do Tocantins,171150,0,0
+2020-10-26,TO,Tupiratins,172130,0,0
+2020-05-21,TO,Oliveira De Fatima,171550,0,0
+2020-08-22,SP,Serrana,355150,4,33
+2020-04-06,TO,Chapada Da Natividade,170510,0,0
+2020-08-01,TO,Sao Miguel Do Tocantins,172020,0,6
+2020-05-08,TO,Porto Alegre Do Tocantins,171800,0,0
+2020-09-05,TO,Rio Dos Bois,171870,0,0
+2020-07-20,SP,Paulistania,353657,0,0
+2020-04-02,TO,Wanderlandia,172208,0,0
+2020-09-03,TO,Praia Norte,171830,0,2
+2020-09-08,TO,Taguatinga,172090,0,3
+2020-08-20,TO,Bandeirantes Do Tocantins,170305,-1,1
+2020-07-16,SP,Vera Cruz,355660,0,1
+2020-09-17,SP,Ubirajara,355550,0,1
+2020-05-29,SP,Valinhos,355620,9,5
+2020-09-28,SP,Sao Carlos,354890,0,43
+2020-06-30,TO,Sao Felix Do Tocantins,172015,0,0
+2020-11-07,TO,Rio Sono,171875,0,1
+2020-07-02,TO,Sitio Novo Do Tocantins,172080,3,4
+2020-06-27,SP,Conchal,351220,0,0
+2020-08-02,TO,Bandeirantes Do Tocantins,170305,0,1
+2020-06-10,TO,Taipas Do Tocantins,172093,0,0
+2020-10-21,TO,Sao Valerio,172049,0,0
+2020-11-01,TO,Porto Alegre Do Tocantins,171800,0,0
+2020-03-28,TO,Wanderlandia,172208,0,0
+2020-08-09,SP,Suzano,355250,25,171
+2020-06-27,SP,Sao Jose Do Rio Pardo,354970,5,4
+2020-08-20,SE,Riachao Do Dantas,280580,5,17
+2020-04-08,TO,Itapora Do Tocantins,171110,0,0
+2020-04-08,TO,Lajeado,171200,0,0
+2020-11-18,TO,Parana,171620,0,2
+2020-08-15,TO,Dianopolis,170700,3,5
+2020-05-14,SP,Viradouro,355680,0,1
+2020-10-16,TO,Monte Do Carmo,171360,0,1
+2020-08-15,TO,Peixe,171660,0,2
+2020-06-14,SP,Sao Joao Das Duas Pontes,354920,1,1
+2020-06-28,TO,Peixe,171660,0,0
+2020-08-17,TO,Riachinho,171855,0,0
+2020-09-03,TO,Augustinopolis,170255,2,7
+2020-08-29,TO,Sao Felix Do Tocantins,172015,0,0
+2020-05-10,TO,Lizarda,171240,0,1
+2020-06-21,TO,Cachoeirinha,170382,0,0
+2020-11-01,TO,Taguatinga,172090,0,3
+2020-07-23,TO,Santa Maria Do Tocantins,171888,2,0
+2020-04-04,SP,Salto Grande,354540,0,0
+2020-11-01,SP,Sao Jose Dos Campos,354990,16,465
+2020-11-13,SP,Sorocaba,355220,56,457
+2020-09-24,TO,Nova Olinda,171488,5,16
+2020-09-10,SP,Tabapua,355260,4,13
+2020-04-22,SP,Monte Azul Paulista,353150,0,0
+2020-04-20,TO,Santa Terezinha Do Tocantins,172000,0,0
+2020-11-07,TO,Pugmil,171845,0,0
+2020-11-16,SP,Torrinha,355470,0,6
+2020-04-25,SP,Pirajui,353890,0,0
+2020-05-10,SP,Sao Pedro,355040,0,0
+2020-04-26,TO,Sao Felix Do Tocantins,172015,0,0
+2020-04-22,TO,Sao Salvador Do Tocantins,172025,0,0
+2020-04-25,TO,Porto Nacional,171820,0,0
+2020-04-10,TO,Itapora Do Tocantins,171110,0,0
+2020-09-11,SP,Ribeirao Do Sul,354320,0,1
+2020-07-15,SP,Sao Francisco,354900,0,0
+2020-04-16,SP,Glicerio,351710,0,0
+2020-09-02,SP,Restinga,354270,1,0
+2020-05-31,SP,Tres Fronteiras,355490,0,0
+2020-10-15,TO,Tabocao,170825,0,3
+2020-09-09,SP,Zacarias,355715,4,1
+2020-07-24,TO,Wanderlandia,172208,0,4
+2020-05-08,TO,Wanderlandia,172208,2,0
+2020-11-24,SP,Turmalina,355530,0,0
+2020-07-01,SP,Sao Luiz Do Paraitinga,355000,0,1
+2020-09-14,TO,Tupiratins,172130,0,0
+2020-05-24,SP,Jacarei,352440,4,7
+2020-07-26,SP,Viradouro,355680,1,5
+2020-10-10,TO,Crixas Do Tocantins,170625,3,0
+2020-05-17,TO,Wanderlandia,172208,0,0
+2020-11-28,TO,Sitio Novo Do Tocantins,172080,1,5
+2020-11-15,SP,Santa Mercedes,354710,0,1
+2020-05-12,TO,Itapora Do Tocantins,171110,0,0
+2020-11-21,TO,Sao Sebastiao Do Tocantins,172030,0,1
+2020-08-14,TO,Aurora Do Tocantins,170270,0,0
+2020-06-01,TO,Lagoa Da Confusao,171190,2,0
+2020-09-16,TO,Sao Bento Do Tocantins,172010,3,2
+2020-05-31,SP,Santa Maria Da Serra,354700,0,0
+2020-09-29,TO,Jau Do Tocantins,171150,0,2
+2020-10-22,SP,Santa Salete,354765,0,1
+2020-11-19,TO,Combinado,170555,0,4
+2020-08-11,TO,Araguacu,170200,4,4
+2020-10-17,SP,Mairinque,352840,2,20
+2020-10-26,TO,Tocantinopolis,172120,0,21
+2020-08-06,TO,Pium,171750,0,0
+2020-05-18,TO,Maurilandia Do Tocantins,171280,0,0
+2020-12-02,TO,Lagoa Do Tocantins,171195,0,4
+2020-08-30,TO,Santa Tereza Do Tocantins,171900,0,1
+2020-10-27,TO,Santa Terezinha Do Tocantins,172000,0,2
+2020-08-08,SP,Taboao Da Serra,355280,170,210
+2020-12-02,SP,Rubineia,354450,0,2
+2020-06-16,TO,Babaculandia,170300,0,0
+2020-11-11,TO,Sitio Novo Do Tocantins,172080,0,5
+2020-11-08,SP,Serra Negra,355160,0,1
+2020-10-23,SP,Igaracu Do Tiete,352000,4,13
+2020-08-21,TO,Novo Alegre,171515,0,1
+2020-06-15,TO,Santa Terezinha Do Tocantins,172000,0,0
+2020-05-12,TO,Presidente Kennedy,171840,0,0
+2020-06-19,TO,Sao Valerio,172049,0,0
+2020-04-17,TO,Palmeirante,171570,0,0
+2020-06-13,TO,Parana,171620,0,0
+2020-08-30,SP,Vinhedo,355670,1,28
+2020-07-29,TO,Sampaio,171880,1,3
+2020-09-04,TO,Peixe,171660,1,3
+2020-09-05,TO,Praia Norte,171830,9,2
+2020-07-21,SP,Salto De Pirapora,354530,2,8
+2020-06-30,TO,Santa Terezinha Do Tocantins,172000,2,0
+2020-05-28,TO,Santa Tereza Do Tocantins,171900,0,0
+2020-07-08,TO,Colinas Do Tocantins,170550,8,3
+2020-05-18,SP,Trabiju,355475,0,0
+2020-04-27,SE,Carira,280140,0,0
+2020-07-31,TO,Pugmil,171845,0,0
+2020-09-26,TO,Sao Miguel Do Tocantins,172020,0,7
+2020-03-30,SP,Tiete,355450,0,0
+2020-05-06,SP,Vinhedo,355670,2,2
+2020-06-30,TO,Novo Alegre,171515,0,1
+2020-11-27,TO,Pugmil,171845,0,0
+2020-07-02,TO,Palmeiropolis,171575,0,0
+2020-08-27,TO,Porto Nacional,171820,34,29
+2020-10-21,SP,Tejupa,355420,0,0
+2020-09-19,TO,Novo Alegre,171515,0,1
+2020-11-02,TO,Taguatinga,172090,0,3
+2020-11-17,SP,Uchoa,355560,3,9
+2020-04-21,SP,Presidente Prudente,354140,2,2
+2020-11-22,SP,Santo Antonio Da Alegria,354790,0,3
+2020-04-23,SP,Vitoria Brasil,355695,0,0
+2020-05-18,TO,Itaguatins,171070,0,0
+2020-06-06,TO,Taipas Do Tocantins,172093,0,0
+2020-08-24,TO,Duere,170730,6,1
+2020-06-08,SP,Zacarias,355715,0,0
+2020-08-16,TO,Esperantina,170740,0,5
+2020-11-15,TO,Caseara,170390,0,3
+2020-04-12,TO,Esperantina,170740,0,0
+2020-04-12,TO,Presidente Kennedy,171840,0,0
+2020-08-10,SP,Palmital,353530,0,1
+2020-08-14,SP,Nova Campina,353282,0,0
+2020-06-21,TO,Lagoa Do Tocantins,171195,0,0
+2020-04-04,TO,Sao Salvador Do Tocantins,172025,0,0
+2020-07-01,TO,Ponte Alta Do Bom Jesus,171780,0,0
+2020-05-25,TO,Xambioa,172210,1,2
+2020-10-10,SP,Varzea Paulista,355650,0,71
+2020-10-23,TO,Pau D'Arco,171630,0,6
+2020-07-26,SP,Redencao Da Serra,354230,0,0
+2020-05-05,SP,Teodoro Sampaio,355430,0,0
+2020-05-12,TO,Itapiratins,171090,0,0
+2020-10-04,TO,Novo Acordo,171510,0,0
+2020-09-15,SP,Tambau,355330,0,8
+2020-11-16,TO,Praia Norte,171830,0,2
+2020-11-03,TO,Piraque,171720,0,1
+2020-05-02,SP,Sao Paulo,355030,407,1661
+2020-07-29,SP,Osvaldo Cruz,353460,1,2
+2020-10-03,TO,Carrasco Bonito,170389,3,0
+2020-05-19,TO,Santa Terezinha Do Tocantins,172000,0,0
+2020-05-13,SP,Sao Jose Da Bela Vista,354950,0,0
+2020-11-12,TO,Guarai,170930,13,24
+2020-07-05,TO,Luzinopolis,171245,0,0
+2020-09-20,TO,Tocantinia,172110,0,5
+2020-04-14,SP,Ilha Solteira,352044,0,0
+2020-06-09,TO,Pindorama Do Tocantins,171700,0,0
+2020-09-26,TO,Araguacu,170200,7,7
+2020-04-29,SP,Tupa,355500,0,1
+2020-09-16,SP,Marilia,352900,49,42
+2020-10-24,TO,Oliveira De Fatima,171550,0,1
+2020-05-31,SP,Rubineia,354450,0,0
+2020-07-04,SP,Sarapui,355110,0,0
+2020-04-19,TO,Nazare,171430,0,0
+2020-07-30,TO,Gurupi,170950,10,9
+2020-10-14,SP,Rio Grande Da Serra,354410,1,26
+2020-04-27,TO,Combinado,170555,0,0
+2020-04-02,SP,Sao Joao De Iracema,354925,0,0
+2020-06-21,TO,Tabocao,170825,0,0
+2020-06-06,SP,Oleo,353380,0,0
+2020-06-18,SP,Ribeirao Dos Indios,354323,0,0
+2020-05-17,TO,Piraque,171720,0,0
+2020-10-30,TO,Crixas Do Tocantins,170625,0,0
+2020-10-05,SP,Pedranopolis,353690,0,1
+2020-11-16,TO,Riachinho,171855,0,0
+2020-09-28,TO,Peixe,171660,0,3
+2020-10-15,SP,Santa Cruz Das Palmeiras,354630,1,20
+2020-10-11,TO,Pugmil,171845,0,0
+2020-04-19,SP,Nhandeara,353260,0,0
+2020-11-16,SP,Porangaba,354050,0,0
+2020-07-20,TO,Sao Miguel Do Tocantins,172020,0,6
+2020-04-11,TO,Praia Norte,171830,0,0
+2020-11-03,TO,Natividade,171420,0,1
+2020-04-10,SP,Sarapui,355110,0,0
+2020-10-06,TO,Guarai,170930,5,19
+2020-11-27,SP,Potirendaba,354080,4,12
+2020-10-17,TO,Dianopolis,170700,1,9
+2020-04-09,TO,Barra Do Ouro,170307,0,0
+2020-04-26,SP,Rubineia,354450,0,0
+2020-10-27,TO,Ponte Alta Do Tocantins,171790,0,3
+2020-08-17,TO,Ponte Alta Do Tocantins,171790,1,1
+2020-04-22,TO,Rio Da Conceicao,171865,0,0
+2020-08-01,SP,Sao Roque,355060,7,17
+2020-04-19,TO,Formoso Do Araguaia,170820,0,0
+2020-06-07,TO,Arapoema,170230,-1,0
+2020-06-12,TO,Babaculandia,170300,0,0
+2020-06-09,TO,Campos Lindos,170384,0,0
+2020-08-17,SP,Salmourao,354510,0,0
+2020-06-02,TO,Nazare,171430,0,0
+2020-08-16,SP,Piquerobi,353830,0,0
+2020-04-22,TO,Alianca Do Tocantins,170035,0,0
+2020-07-05,SP,Sete Barras,355180,2,1
+2020-06-04,SP,Sao Francisco,354900,1,0
+2020-04-27,TO,Conceicao Do Tocantins,170560,0,0
+2020-11-07,SP,Torrinha,355470,0,6
+2020-09-23,TO,Ponte Alta Do Tocantins,171790,0,2
+2020-09-16,SP,Porto Feliz,354060,4,13
+2020-04-27,TO,Cachoeirinha,170382,0,0
+2020-05-25,TO,Porto Alegre Do Tocantins,171800,0,0
+2020-04-04,SP,Timburi,355460,0,0
+2020-12-07,TO,Pindorama Do Tocantins,171700,0,0
+2020-06-08,SP,Potirendaba,354080,1,1
+2020-04-16,TO,Bom Jesus Do Tocantins,170330,0,0
+2020-04-13,TO,Taguatinga,172090,0,0
+2020-10-11,TO,Oliveira De Fatima,171550,0,1
+2020-08-12,TO,Sao Valerio,172049,0,0
+2020-10-27,TO,Rio Da Conceicao,171865,0,0
+2020-04-22,TO,Pequizeiro,171665,0,0
+2020-09-24,SP,Platina,353970,0,0
+2020-10-03,TO,Rio Sono,171875,0,1
+2020-11-11,TO,Colmeia,171670,1,8
+2020-09-26,SP,Terra Roxa,355440,0,5
+2020-10-25,TO,Santa Maria Do Tocantins,171888,0,0
+2020-05-26,TO,Riachinho,171855,0,0
+2020-11-18,SP,Sao Sebastiao,355070,7,42
+2020-07-11,SP,Salesopolis,354500,1,6
+2020-05-11,TO,Santa Maria Do Tocantins,171888,0,0
+2020-08-08,SP,Indiana,352060,1,0
+2020-09-24,SP,Timburi,355460,0,1
+2020-05-01,TO,Parana,171620,0,0
+2020-11-03,TO,Goianorte,170830,0,2
+2020-08-14,TO,Aguiarnopolis,170030,7,6
+2020-10-09,TO,Silvanopolis,172065,4,6
+2020-09-28,TO,Santa Tereza Do Tocantins,171900,0,1
+2020-09-04,SP,Sao Luiz Do Paraitinga,355000,0,5
+2020-08-07,TO,Recursolandia,171850,0,0
+2020-07-13,TO,Formoso Do Araguaia,170820,0,4
+2020-07-23,SP,Vera Cruz,355660,0,1
+2020-11-13,TO,Divinopolis Do Tocantins,170710,0,0
+2020-09-04,TO,Campos Lindos,170384,12,2
+2020-06-19,SP,Severinia,355190,1,0
+2020-04-15,SP,Sao Lourenco Da Serra,354995,0,0
+2020-05-22,TO,Silvanopolis,172065,0,0
+2020-08-04,SP,Santo Antonio Da Alegria,354790,3,2
+2020-11-26,TO,Wanderlandia,172208,1,6
+2020-12-04,TO,Goiatins,170900,0,5
+2020-05-06,TO,Alvorada,170070,0,0
+2020-10-24,SP,Tarabai,355390,0,5
+2020-12-05,TO,Porto Alegre Do Tocantins,171800,0,1
+2020-12-01,TO,Palmeiropolis,171575,0,7
+2020-04-05,TO,Ponte Alta Do Bom Jesus,171780,0,0
+2020-09-03,TO,Ponte Alta Do Tocantins,171790,2,1
+2020-06-22,SP,Sao Joao De Iracema,354925,1,0
+2020-06-22,TO,Aparecida Do Rio Negro,170110,0,0
+2020-03-27,TO,Mateiros,171270,0,0
+2020-09-03,TO,Aragominas,170130,12,2
+2020-08-29,TO,Taguatinga,172090,1,3
+2020-09-17,SP,Santo Antonio Do Aracangua,354805,2,6
+2020-11-29,SP,Santana De Parnaiba,354730,8,114
+2020-04-02,TO,Aguiarnopolis,170030,0,0
+2020-06-03,TO,Aurora Do Tocantins,170270,0,0
+2020-10-09,TO,Alianca Do Tocantins,170035,2,2
+2020-03-30,TO,Tupirama,172125,0,0
+2020-10-08,SP,Santa Cruz Das Palmeiras,354630,1,20
+2020-09-11,TO,Xambioa,172210,28,11
+2020-06-13,TO,Santa Rosa Do Tocantins,171890,0,0
+2020-12-05,TO,Gurupi,170950,23,59
+2020-09-09,SP,Terra Roxa,355440,0,3
+2020-04-16,TO,Pium,171750,0,0
+2020-10-26,TO,Mateiros,171270,0,0
+2020-04-14,TO,Itacaja,171050,0,0
+2020-12-06,TO,Monte Do Carmo,171360,0,1
+2020-03-29,SP,Sarapui,355110,0,0
+2020-10-08,TO,Recursolandia,171850,0,1
+2020-12-07,SP,Turiuba,355520,0,2
+2020-07-12,TO,Caseara,170390,0,1
+2020-04-03,TO,Taguatinga,172090,0,0
+2020-12-03,TO,Tupiratins,172130,0,0
+2020-09-06,TO,Tabocao,170825,0,3
+2020-08-29,TO,Conceicao Do Tocantins,170560,0,3
+2020-05-02,TO,Recursolandia,171850,0,0
+2020-06-26,TO,Colinas Do Tocantins,170550,9,3
+2020-08-21,SP,Jaboticabal,352430,18,25
+2020-06-19,SP,Tupa,355500,1,2
+2020-08-17,TO,Aragominas,170130,0,2
+2020-05-02,SP,Salesopolis,354500,0,1
+2020-10-21,TO,Arapoema,170230,2,4
+2020-09-30,TO,Carmolandia,170388,0,1
+2020-10-01,TO,Nova Rosalandia,171500,4,4
+2020-10-17,TO,Miracema Do Tocantins,171320,8,9
+2020-11-30,SP,Sao Jose Da Bela Vista,354950,0,4
+2020-10-09,SP,Vitoria Brasil,355695,0,0
+2020-05-12,SP,Sertaozinho,355170,2,2
+2020-07-16,TO,Pedro Afonso,171650,1,2
+2020-03-27,SP,Sao Miguel Arcanjo,355020,0,0
+2020-11-02,TO,Tocantinopolis,172120,0,21
+2020-06-10,TO,Figueiropolis,170765,0,1
+2020-08-02,TO,Sao Salvador Do Tocantins,172025,0,0
+2020-09-17,TO,Taipas Do Tocantins,172093,7,0
+2020-06-24,TO,Parana,171620,0,0
+2020-06-20,TO,Nazare,171430,1,2
+2020-08-27,TO,Rio Sono,171875,3,1
+2020-07-08,SP,Sorocaba,355220,75,152
+2020-11-23,TO,Darcinopolis,170650,0,5
+2020-10-03,TO,Buriti Do Tocantins,170380,0,0
+2020-09-01,SP,Osvaldo Cruz,353460,7,6
+2020-04-22,SP,Presidente Epitacio,354130,0,0
+2020-11-11,SP,Vargem,355635,0,1
+2020-07-17,SP,Tabapua,355260,0,10
+2020-11-10,TO,Barrolandia,170310,1,4
+2020-05-25,TO,Pugmil,171845,0,0
+2020-06-09,TO,Guarai,170930,4,4
+2020-05-05,SP,Salesopolis,354500,2,1
+2020-12-02,SP,Pompeia,354000,1,4
+2020-12-06,SP,Pindorama,353810,0,17
+2020-05-19,TO,Pequizeiro,171665,0,0
+2020-11-14,TO,Porto Nacional,171820,4,51
+2020-06-07,TO,Formoso Do Araguaia,170820,-3,1
+2020-11-05,TO,Novo Acordo,171510,0,0
+2020-05-24,SP,Taquaral,355365,0,0
+2020-08-19,TO,Recursolandia,171850,0,0
+2020-12-05,TO,Porto Nacional,171820,14,54
+2020-10-25,SP,Itatinga,352350,0,7
+2020-05-30,TO,Brejinho De Nazare,170370,0,0
+2020-12-03,TO,Aparecida Do Rio Negro,170110,0,2
+2020-09-04,TO,Itaguatins,171070,0,2
+2020-06-04,TO,Sandolandia,171884,0,0
+2020-03-28,TO,Abreulandia,170025,0,0
+2020-10-03,SP,Uniao Paulista,355570,0,2
+2020-04-16,SP,Fernando Prestes,351560,0,0
+2020-09-14,TO,Sao Miguel Do Tocantins,172020,0,7
+2020-04-13,SP,Varzea Paulista,355650,0,0
+2020-10-01,TO,Lavandeira,171215,0,0
+2020-08-21,SP,Santo Andre,354780,43,473
+2020-07-11,SP,Santana Da Ponte Pensa,354720,0,0
+2020-04-17,TO,Miracema Do Tocantins,171320,0,0
+2020-07-04,TO,Colinas Do Tocantins,170550,2,3
+2020-05-18,SP,Sao Vicente,355100,10,21
+2020-04-20,TO,Juarina,171180,0,0
+2020-07-21,TO,Sitio Novo Do Tocantins,172080,1,4
+2020-04-09,TO,Muricilandia,171395,0,0
+2020-11-19,TO,Palmeiropolis,171575,0,7
+2020-09-02,TO,Nova Rosalandia,171500,1,1
+2020-08-08,SP,Tarabai,355390,2,2
+2020-09-02,TO,Sao Sebastiao Do Tocantins,172030,1,0
+2020-09-08,TO,Carmolandia,170388,0,1
+2020-08-21,TO,Santa Maria Do Tocantins,171888,0,0
+2020-06-26,TO,Jau Do Tocantins,171150,0,0
+2020-08-04,SP,Tarabai,355390,1,2
+2020-10-21,TO,Wanderlandia,172208,0,5
+2020-06-18,TO,Tocantinia,172110,1,0
+2020-04-04,TO,Dianopolis,170700,1,0
+2020-05-13,TO,Pugmil,171845,0,0
+2020-11-02,SP,Rincao,354370,0,4
+2020-10-31,TO,Dois Irmaos Do Tocantins,170720,0,5
+2020-12-03,TO,Sitio Novo Do Tocantins,172080,0,5
+2020-07-27,TO,Filadelfia,170770,0,3
+2020-05-07,TO,Itapora Do Tocantins,171110,0,0
+2020-08-30,TO,Bandeirantes Do Tocantins,170305,0,1
+2020-08-22,TO,Santa Tereza Do Tocantins,171900,0,1
+2020-07-19,TO,Miracema Do Tocantins,171320,0,2
+2020-11-10,TO,Piraque,171720,0,1
+2020-11-22,TO,Mateiros,171270,0,0
+2020-10-11,SP,Pontes Gestal,354030,0,3
+2020-04-15,SP,Vargem Grande Do Sul,355640,0,0
+2020-11-16,TO,Novo Acordo,171510,0,0
+2020-05-09,TO,Wanderlandia,172208,1,0
+2020-04-03,TO,Sao Felix Do Tocantins,172015,0,0
+2020-10-30,SP,Sao Jose Do Rio Preto,354980,140,708
+2020-05-08,SP,Floreal,351590,0,0
+2020-11-14,TO,Sao Miguel Do Tocantins,172020,0,7
+2020-05-25,TO,Novo Jardim,171525,0,0
+2020-10-21,SP,Varzea Paulista,355650,5,72
+2020-07-27,SP,Sud Mennucci,355230,0,0
+2020-05-27,TO,Carmolandia,170388,0,0
+2020-07-23,TO,Bernardo Sayao,170320,1,0
+2020-06-08,TO,Recursolandia,171850,0,0
+2020-11-21,TO,Tocantinopolis,172120,1,21
+2020-04-18,SP,Macatuba,352800,0,0
+2020-11-10,TO,Cariri Do Tocantins,170386,0,4
+2020-09-05,TO,Palmeirante,171570,5,3
+2020-07-12,TO,Aguiarnopolis,170030,1,4
+2020-06-08,TO,Sitio Novo Do Tocantins,172080,0,3
+2020-11-03,SP,Serra Azul,355140,0,4
+2020-09-29,TO,Rio Sono,171875,0,1
+2020-08-21,SP,Presidente Bernardes,354120,2,5
+2020-04-26,TO,Pequizeiro,171665,0,0
+2020-08-13,SP,Fernao,351565,0,0
+2020-10-13,TO,Aurora Do Tocantins,170270,0,0
+2020-06-13,SP,Lagoinha,352630,0,0
+2020-03-31,TO,Novo Acordo,171510,0,0
+2020-05-20,TO,Darcinopolis,170650,3,0
+2020-04-13,TO,Aparecida Do Rio Negro,170110,0,0
+2020-07-15,TO,Centenario,170410,0,0
+2020-10-08,TO,Buriti Do Tocantins,170380,4,0
+2020-07-22,TO,Itapiratins,171090,0,0
+2020-10-26,TO,Riachinho,171855,0,0
+2020-10-11,SP,Sebastianopolis Do Sul,355130,1,0
+2020-11-01,TO,Praia Norte,171830,0,2
+2020-09-17,TO,Barrolandia,170310,2,1
+2020-09-30,SP,Piraju,353880,0,7
+2020-12-06,TO,Figueiropolis,170765,0,7
+2020-10-05,TO,Divinopolis Do Tocantins,170710,0,0
+2020-11-29,TO,Sao Felix Do Tocantins,172015,0,0
+2020-08-28,TO,Arraias,170240,0,0
+2020-12-01,TO,Bom Jesus Do Tocantins,170330,0,0
+2020-06-19,SP,Teodoro Sampaio,355430,-1,0
+2020-05-28,TO,Ponte Alta Do Bom Jesus,171780,0,0
+2020-05-01,TO,Araguacu,170200,0,0
+2020-04-18,TO,Tabocao,170825,0,0
+2020-05-29,TO,Crixas Do Tocantins,170625,0,0
+2020-05-28,TO,Sao Sebastiao Do Tocantins,172030,1,0
+2020-06-10,TO,Ponte Alta Do Tocantins,171790,0,0
+2020-05-27,TO,Lajeado,171200,0,0
+2020-04-23,SP,Tremembe,355480,0,0
+2020-08-08,TO,Almas,170040,0,2
+2020-11-06,SP,Santo Antonio De Posse,354800,0,10
+2020-04-06,TO,Cariri Do Tocantins,170386,0,0
+2020-08-23,TO,Juarina,171180,0,0
+2020-05-07,TO,Colmeia,171670,0,0
+2020-08-14,SP,Piquerobi,353830,0,0
+2020-08-26,SP,Santo Anastacio,354770,3,8
+2020-08-30,SP,Pedrinhas Paulista,353715,0,1
+2020-05-11,SP,Santa Fe Do Sul,354660,0,0
+2020-05-02,SP,Sao Jose Do Rio Pardo,354970,0,0
+2020-09-20,TO,Piraque,171720,0,1
+2020-05-05,TO,Talisma,172097,0,0
+2020-08-28,SP,Suzano,355250,56,195
+2020-05-08,SP,Valparaiso,355630,0,0
+2020-05-02,TO,Porto Alegre Do Tocantins,171800,0,0
+2020-08-14,TO,Santa Rosa Do Tocantins,171890,-1,0
+2020-11-21,TO,Cristalandia,170610,0,2
+2020-08-27,SP,Teodoro Sampaio,355430,2,3
+2020-04-25,SP,Santo Antonio Da Alegria,354790,0,1
+2020-09-22,TO,Novo Jardim,171525,0,0
+2020-09-21,TO,Talisma,172097,0,1
+2020-10-15,SP,Salto,354520,9,64
+2020-11-23,TO,Ponte Alta Do Bom Jesus,171780,0,2
+2020-07-17,TO,Tabocao,170825,1,0
+2020-05-17,TO,Rio Dos Bois,171870,0,0
+2020-05-28,SP,Taiacu,355310,0,0
+2020-11-13,TO,Arraias,170240,0,0
+2020-09-25,TO,Santa Rosa Do Tocantins,171890,1,1
+2020-11-10,SP,Vista Alegre Do Alto,355690,0,3
+2020-10-14,TO,Lavandeira,171215,0,0
+2020-05-18,TO,Sao Felix Do Tocantins,172015,0,0
+2020-04-07,SP,Teodoro Sampaio,355430,0,0
+2020-10-26,SP,Zacarias,355715,0,1
+2020-05-03,TO,Mateiros,171270,0,0
+2020-12-04,TO,Sitio Novo Do Tocantins,172080,0,5
+2020-03-29,SP,Trabiju,355475,0,0
+2020-10-17,TO,Carmolandia,170388,0,1
+2020-05-04,TO,Sucupira,172085,0,0
+2020-11-17,TO,Wanderlandia,172208,0,5
+2020-12-08,TO,Rio Da Conceicao,171865,0,0
+2020-04-19,TO,Santa Maria Do Tocantins,171888,0,0
+2020-10-13,TO,Alvorada,170070,0,9
+2020-06-20,SP,Uniao Paulista,355570,0,0
+2020-08-23,SP,Severinia,355190,1,3
+2020-08-21,TO,Colmeia,171670,0,4
+2020-10-12,SP,Bofete,350690,0,4
+2020-11-04,SP,Terra Roxa,355440,2,5
+2020-10-08,TO,Sampaio,171880,3,3
+2020-11-06,TO,Oliveira De Fatima,171550,0,1
+2020-08-06,SP,Vista Alegre Do Alto,355690,3,2
+2020-08-16,TO,Praia Norte,171830,0,2
+2020-11-02,TO,Sampaio,171880,0,3
+2020-08-01,TO,Formoso Do Araguaia,170820,11,7
+2020-09-20,SP,Tuiuti,355495,0,0
+2020-09-06,TO,Sao Sebastiao Do Tocantins,172030,0,0
+2020-06-23,TO,Cristalandia,170610,0,0
+2020-09-12,SP,Torre De Pedra,355465,0,2
+2020-09-07,TO,Pugmil,171845,0,0
+2020-11-01,TO,Bandeirantes Do Tocantins,170305,0,1
+2020-03-28,SP,Vitoria Brasil,355695,0,0
+2020-04-14,SP,Santa Isabel,354680,0,1
+2020-10-12,SP,Sao Caetano Do Sul,354880,4,214
+2020-12-01,TO,Alianca Do Tocantins,170035,0,3
+2020-07-08,TO,Sao Miguel Do Tocantins,172020,1,6
+2020-10-22,SP,Vera Cruz,355660,0,5
+2020-10-30,TO,Tocantinopolis,172120,3,21
+2020-05-10,TO,Palmas,172100,6,2
+2020-08-02,TO,Santa Terezinha Do Tocantins,172000,0,2
+2020-08-29,TO,Sao Bento Do Tocantins,172010,16,2
+2020-04-30,TO,Axixa Do Tocantins,170290,1,0
+2020-10-04,SP,Serra Azul,355140,0,4
+2020-04-24,SP,Pereira Barreto,353740,0,0
+2020-11-20,SP,Rio Grande Da Serra,354410,2,28
+2020-04-03,TO,Santa Fe Do Araguaia,171886,0,0
+2020-06-26,TO,Sao Felix Do Tocantins,172015,0,0
+2020-08-18,SP,Tarabai,355390,2,3
+2020-04-14,TO,Fatima,170755,0,0
+2020-09-06,TO,Gurupi,170950,42,41
+2020-05-05,SP,Tejupa,355420,0,0
+2020-04-04,TO,Tabocao,170825,0,0
+2020-06-14,TO,Nova Rosalandia,171500,0,0
+2020-07-24,TO,Santa Rosa Do Tocantins,171890,1,0
+2020-11-19,TO,Cariri Do Tocantins,170386,0,4
+2020-08-09,SP,Taquarituba,355380,0,2
+2020-04-22,SP,Ipero,352100,0,0
+2020-11-10,TO,Bandeirantes Do Tocantins,170305,15,1
+2020-07-21,TO,Tocantinopolis,172120,4,8
+2020-05-20,TO,Pindorama Do Tocantins,171700,0,0
+2020-05-20,TO,Mateiros,171270,0,0
+2020-09-21,SP,Presidente Epitacio,354130,0,13
+2020-09-09,SP,Sebastianopolis Do Sul,355130,0,0
+2020-07-28,SP,Santa Branca,354600,0,3
+2020-05-02,TO,Tocantinia,172110,0,0
+2020-05-11,SP,Adamantina,350010,0,0
+2020-12-01,SP,Sao Jose Do Rio Preto,354980,313,797
+2020-08-22,TO,Bom Jesus Do Tocantins,170330,0,0
+2020-05-22,TO,Sampaio,171880,-1,0
+2020-07-04,SP,Monteiro Lobato,353170,0,0
+2020-12-03,TO,Tabocao,170825,0,3
+2020-05-03,SP,Lourdes,352725,0,0

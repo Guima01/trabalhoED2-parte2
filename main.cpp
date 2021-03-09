@@ -396,41 +396,51 @@ void mainMenu(string path)
 int main(int argc, char const *argv[])
 {
 
-    string path = argv[1];
-    mainMenu(path);
+  //  string path = argv[1];
+  //  mainMenu(path);
     // path = path + "brazil_cities_coordinates.csv";
     // ifstream arquivo;
     // arquivo.open(path, ios::in);
     //leLinha(arquivo);
 
-    // Testes -> Registros diários e tabela hash
+    // Testes -> TABELA HASHZADA
 
-    // vector<Registro> registros;
-    // string caminho = argv[1];
-    // caminho += "brazil_covid19_cities_processado.csv";
-    // ifstream arquivoProcessado;
-    // arquivoProcessado.open(caminho, ios::in);
+        string path = argv[1];
+        vector<Registro> registros;
+        vector<Registro> registros2;
+        string caminho = path;
+        caminho += "brazil_covid19_cities_processado.csv";
+        ifstream arquivoProcessado;
+        arquivoProcessado.open(caminho, ios::in);
+        int tam = leLinhaArquivoProcessado(registros, arquivoProcessado);
+        //random_shuffle(registros.begin(), registros.end());
+        HashTable *hashzada = new HashTable(1431490);
+        int hashIndex;
+        for (int i = 0; i < tam; i++)
+        {
+            hashzada->insert(&registros[i]);
+        }
+        registros2=registros;
+        random_shuffle(registros2.begin(), registros2.end());
+        int tamanhoN;
+        cout<<"Quantos registros aleatorios voce quer?"<<endl;
+        cin>>tamanhoN;
+        
+        ofstream saida("nRegistrosAleatoriosTabelaHash.txt");
+        saida << "date,state,name,code,cases,deaths" << endl;
+        for (int i = 0; i < tamanhoN; i++)
+        {
+            hashIndex = hashzada->searchFromCodeAndDate(registros2[i].getCode(), registros2[i].getDate());
+            saida << hashzada->getRegistroFromTable(hashIndex)->getDate()<< ",";
+            saida << hashzada->getRegistroFromTable(hashIndex)->getState()<< ",";
+            saida << hashzada->getRegistroFromTable(hashIndex)->getName()<< ",";
+            saida << hashzada->getRegistroFromTable(hashIndex)->getCode()<< ",";
+            saida << hashzada->getRegistroFromTable(hashIndex)->getCases()<< ",";
+            saida << hashzada->getRegistroFromTable(hashIndex)->getDeaths()<< endl;
+        }
 
-    // int tam = leLinhaArquivoProcessado(registros, arquivoProcessado);
-    // HashTable *hashzada = new HashTable(tam);
-    // ArvoreB *arvb = new ArvoreB(3,hashzada);
-
-    // int hashIndex;
-
-    // for(int i = 0 ; i<tam ; i++)
-    // {
-
-    //         hashzada->insert(&registros[i]);
-    //         hashIndex = hashzada->searchFromCodeAndDate(registros[i].getCode(),registros[i].getDate());
-    //         arvb->insert(hashIndex);
-    //
-    // }
-
-    // cout << endl << endl;
-    // arvb->getRaiz()->print(hashzada,0);
 
     return 0;
 }
 //  g++ -o parte2 -O3 *.cpp
 //  parte2.exe ./Arquivos/
-//https://www.hackerearth.com/practice/data-structures/hash-tables/basics-of-hash-tables/tutorial/
