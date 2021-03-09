@@ -7,12 +7,12 @@ using namespace std;
 class HashEntry
 {
 private:
-    int key;
+    int hashIndex;
     Registro* registro;
 public:
-    HashEntry(int key ,Registro* registro);
+    HashEntry(int hashIndex ,Registro* registro);
     ~HashEntry();
-    int getKey();
+    int getHashIndex();
     Registro* getRegistro();
 };
 

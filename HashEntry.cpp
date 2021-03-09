@@ -5,15 +5,15 @@
 
 using namespace std;
 
-HashEntry::HashEntry(int key , Registro* registro){
-    this->key = key;
+HashEntry::HashEntry(int hashIndex , Registro* registro){
+    this->hashIndex = hashIndex;
     this->registro = registro;
 }
 
 HashEntry::~HashEntry(){}
 
-int HashEntry::getKey(){
-    return this->key;
+int HashEntry::getHashIndex(){
+    return this->hashIndex;
 }
 
 Registro* HashEntry::getRegistro(){

@@ -100,7 +100,7 @@ void leLinha(QuadTree &quad, ifstream &arq, int linhas)
 
 int leLinhaArquivoProcessado(vector<Registro> &registros, ifstream &arq)
 {
-    HashTable *hashzada = new HashTable(1431490);
+    // HashTable *hashzada = new HashTable(1431490);
     string str;
     int cases, deaths, cont = 0;
     for (int i = 0; getline(arq, str); i++)
@@ -167,6 +167,20 @@ int leLinhaArquivoProcessadoPraN(vector<Registro> &registros, ifstream &arq, int
     return cont - 1;
 }
 
+void salvarArquivo(vector<Registro> &registros, ofstream &saida)
+{
+    saida << "date,state,name,code,cases,deaths" << endl;
+    for (int i = 0; i < registros.size(); i++)
+    {
+        saida << registros[i].getDate() << ",";
+        saida << registros[i].getState() << ",";
+        saida << registros[i].getName() << ",";
+        saida << registros[i].getCode() << ",";
+        saida << registros[i].getCases() << ",";
+        saida << registros[i].getDeaths() << endl;
+    }
+}
+
 void moduloTesteAlgoritmos(string path, int id, int numeroRegistros)
 {
     int identificaOrdenacao;
@@ -207,6 +221,30 @@ void moduloTesteAlgoritmos(string path, int id, int numeroRegistros)
 
     else if (identificaOrdenacao == 2)
     {
+        vector<Registro> registros;
+        string caminho = path;
+        caminho += "brazil_covid19_cities_processado.csv";
+        ifstream arquivoProcessado;
+        arquivoProcessado.open(caminho, ios::in);
+        int tam = leLinhaArquivoProcessado(registros, arquivoProcessado);
+        HashTable *hashzada = new HashTable(1431490);
+        int hashIndex;
+        for (int i = 0; i < tam; i++)
+        {
+            hashzada->insert(&registros[i]);
+        }
+        ofstream saida("printandoHash.txt");
+        saida << "date,state,name,code,cases,deaths" << endl;
+        for (int i = 0; i < registros.size(); i++)
+        {
+            hashIndex = hashzada->searchFromCodeAndDate(registros[i].getCode(), registros[i].getDate());
+            saida << hashzada->getRegistroFromTable(hashIndex)->getDate()<< ",";
+            saida << hashzada->getRegistroFromTable(hashIndex)->getState()<< ",";
+            saida << hashzada->getRegistroFromTable(hashIndex)->getName()<< ",";
+            saida << hashzada->getRegistroFromTable(hashIndex)->getCode()<< ",";
+            saida << hashzada->getRegistroFromTable(hashIndex)->getCases()<< ",";
+            saida << hashzada->getRegistroFromTable(hashIndex)->getDeaths()<< endl;
+        }
     }
     else if (identificaOrdenacao == 3)
     {
@@ -232,7 +270,7 @@ void moduloTesteAlgoritmos(string path, int id, int numeroRegistros)
             hashIndex = hashzada->searchFromCodeAndDate(registros[i].getCode(), registros[i].getDate());
             AVL->insere(hashIndex);
         }
-        
+
         if (id == 1)
         {
             AVL->imprime();
@@ -269,15 +307,15 @@ void moduloTesteAlgoritmos(string path, int id, int numeroRegistros)
             hashIndex = hashzada->searchFromCodeAndDate(registros[i].getCode(), registros[i].getDate());
             arvb->insert(hashIndex);
         }
-        
+
         if (id == 1)
         {
-            arvb->getRaiz()->print(hashzada,0);
+            arvb->getRaiz()->print(hashzada, 0);
         }
         else if (id == 2)
         {
             ofstream saida("saidaBTree.txt");
-            arvb->getRaiz()->salvaArquivo(hashzada,0,saida);
+            arvb->getRaiz()->salvaArquivo(hashzada, 0, saida);
         }
         return;
     }
@@ -391,6 +429,6 @@ int main(int argc, char const *argv[])
 
     return 0;
 }
-//g++ -o parte2 -O3 *.cpp
-//./parte2.exe ./Arquivos/
+//  g++ -o parte2 -O3 *.cpp
+//  parte2.exe ./Arquivos/
 //https://www.hackerearth.com/practice/data-structures/hash-tables/basics-of-hash-tables/tutorial/

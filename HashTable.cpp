@@ -12,17 +12,17 @@ using namespace std;
 HashTable::HashTable(int size)
 {
     this->tableSize = size + 429451; //1860941-TAMANHOREG
-    this->currentSize=0;
+    this->currentSize = 0;
     table = new HashEntry *[tableSize];
     for (int i = 0; i < tableSize; i++)
-        table[i] = nullptr;
+        table[i] = NULL;
 }
 
 HashTable::~HashTable()
 {
     for (int i = 0; i < tableSize; i++)
     {
-        if (table[i] != nullptr)
+        if (table[i] != NULL)
             delete table[i];
         delete[] table;
     }
@@ -54,37 +54,40 @@ int HashTable::mixKeysRegister(Registro *registro) //preHash
                 valor = 97 * valor + (int)date[i];
         }
     }
-    return valor % tableSize; //tirei o valor%tableSize;
+    return valor%tableSize; //tirei o valor%tableSize;
 }
-
 
 void HashTable::insert(Registro *registro)
 {
     int i = 0;
     int key = mixKeysRegister(registro);
-    int hashIndex = hashCode(key, i);
-    while (table[hashIndex] != nullptr)
+    int hashIndex = key;
+    while (table[hashIndex] != NULL) // enquanto tiver conflito
     {
         i++;
         hashIndex = hashCode(key, i);
     }
-    table[hashIndex] = new HashEntry(key, registro);
+    table[hashIndex] = new HashEntry(hashIndex, registro);
     currentSize++;
 }
 
 //     void HashTable::remove(int key);
 
-int HashTable::searchFromCodeAndDate(string code , string date)
+int HashTable::searchFromCodeAndDate(string code, string date)
 {
-    int key = mixKeys(code,date);
+    int key = mixKeys(code, date);
     int i = 0;
-    int hashIndex = hashCode(key, i);
-    while (table[hashIndex] != nullptr && table[hashIndex]->getKey() != key)
+    int hashIndex = key;
+    while (table[hashIndex] != NULL){
+    if(table[hashIndex]->getRegistro()->getCode() == code && table[hashIndex]->getRegistro()->getDate() == date) //verificar se nao eh o msm code e date
     {
+        return hashIndex;
+        
+    }
         i++;
         hashIndex = hashCode(key, i);
     }
-    if (table[hashIndex] == nullptr)
+    if (table[hashIndex] == NULL)
     {
         cout << "Não consta registro com essa chave." << endl;
         return -1;
@@ -97,12 +100,12 @@ int HashTable::searchFromKey(int key)
 {
     int i = 0;
     int hashIndex = hashCode(key, i);
-    while (table[hashIndex] != nullptr && table[hashIndex]->getKey() != key)
+    while (table[hashIndex] != NULL && table[hashIndex]->getHashIndex() != key)
     {
         i++;
         hashIndex = hashCode(key, i);
     }
-    if (table[hashIndex] == nullptr)
+    if (table[hashIndex] == NULL)
     {
         cout << "Não consta registro com essa chave." << endl;
         return -1;
@@ -135,5 +138,5 @@ int HashTable::mixKeys(string code, string date) //preHash
                 valor = 97 * valor + (int)date[i];
         }
     }
-    return valor % tableSize;
+    return valor%tableSize;
 }
