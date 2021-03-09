@@ -202,6 +202,7 @@ void moduloTesteAlgoritmos(string path, int id, int numeroRegistros)
 
     if (identificaOrdenacao == 1)
     {
+        vector<RegistrosCoordenados> vet;
         QuadTree quad;
         path = path + "brazil_cities_coordinates.csv";
         ifstream arquivo;
@@ -217,6 +218,7 @@ void moduloTesteAlgoritmos(string path, int id, int numeroRegistros)
             ofstream saida("saidaQuadTree.txt");
             quad.ImprimeArquivoTexto(quad.getRaiz(), 0, saida);
         }
+        quad.retornaRegistrosNasCoordenadas(vet, quad.getRaiz(), -27.0000, -51.0000, -27.9999, -51.9999);
     }
 
     else if (identificaOrdenacao == 2)

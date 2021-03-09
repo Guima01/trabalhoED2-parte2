@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include <cstdlib>
+#include <vector>
 #include "quadTree.h"
 
 using namespace std;
@@ -190,6 +191,21 @@ void QuadTree::ImprimeArquivoTexto(NoquadTree *p, int nivel, ofstream &saida)
         ImprimeArquivoTexto(p->getNe(), nivel + 1, saida);
         ImprimeArquivoTexto(p->getSw(), nivel + 1, saida);
         ImprimeArquivoTexto(p->getSe(), nivel + 1, saida);
+    }
+}
+
+void QuadTree::retornaRegistrosNasCoordenadas(vector<RegistrosCoordenados> &vet, NoquadTree *p, double latitude1, double longitude1, double latitude2, double longitude2)
+{
+    if (p != nullptr)
+    {
+        if(p->getCoordX() < latitude1 && p->getCoordX() > latitude2 && p->getCoordY() < longitude1 && p->getCoordY() > longitude2){
+            cout<<p->getRegistroCoordenado().getCityName()<<endl;
+            vet.push_back(p->getRegistroCoordenado());
+        }
+        retornaRegistrosNasCoordenadas(vet, p->getNw(), latitude1, longitude1, latitude2, longitude2);
+        retornaRegistrosNasCoordenadas(vet, p->getNe(), latitude1, longitude1, latitude2, longitude2);
+        retornaRegistrosNasCoordenadas(vet, p->getSw(), latitude1, longitude1, latitude2, longitude2);
+        retornaRegistrosNasCoordenadas(vet, p->getSe(), latitude1, longitude1, latitude2, longitude2);
     }
 }
 
