@@ -24,12 +24,12 @@ class ArvoreB
 
     bool menorElemento(Registro *candidatoInicio, Registro *candidatoFim);
 
-    bool auxSearch(NoB* no, int key);
-    bool search(int key);
+    bool auxSearch(NoB* no, int key, int &comparacoes);
+    bool search(int key, int &comparacoes);
 
-    void insertNo(NoB* raiz, int key);
-    void splitChildren(NoB* raiz, int position);
-    void insert(int key);
+    void insertNo(NoB* raiz, int key, int &comparacoes);
+    void splitChildren(NoB* raiz, int position, int &comparacoes);
+    void insert(int key, int &comparacoes);
 
 
 

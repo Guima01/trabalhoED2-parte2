@@ -7,6 +7,7 @@
 #include <vector>
 #include <math.h>
 #include <algorithm>
+#include <chrono>
 #include "quadTree.h"
 #include "Registro.h"
 #include "HashTable.h"
@@ -240,12 +241,12 @@ void moduloTesteAlgoritmos(string path, int id, int numeroRegistros)
         for (int i = 0; i < registros.size(); i++)
         {
             hashIndex = hashzada->searchFromCodeAndDate(registros[i].getCode(), registros[i].getDate());
-            saida << hashzada->getRegistroFromTable(hashIndex)->getDate()<< ",";
-            saida << hashzada->getRegistroFromTable(hashIndex)->getState()<< ",";
-            saida << hashzada->getRegistroFromTable(hashIndex)->getName()<< ",";
-            saida << hashzada->getRegistroFromTable(hashIndex)->getCode()<< ",";
-            saida << hashzada->getRegistroFromTable(hashIndex)->getCases()<< ",";
-            saida << hashzada->getRegistroFromTable(hashIndex)->getDeaths()<< endl;
+            saida << hashzada->getRegistroFromTable(hashIndex)->getDate() << ",";
+            saida << hashzada->getRegistroFromTable(hashIndex)->getState() << ",";
+            saida << hashzada->getRegistroFromTable(hashIndex)->getName() << ",";
+            saida << hashzada->getRegistroFromTable(hashIndex)->getCode() << ",";
+            saida << hashzada->getRegistroFromTable(hashIndex)->getCases() << ",";
+            saida << hashzada->getRegistroFromTable(hashIndex)->getDeaths() << endl;
         }
     }
     else if (identificaOrdenacao == 3)
@@ -296,6 +297,7 @@ void moduloTesteAlgoritmos(string path, int id, int numeroRegistros)
         int tam = leLinhaArquivoProcessadoPraN(registros, arquivoProcessado, numeroRegistros);
         HashTable *hashzada = new HashTable(tam);
         ArvoreB *arvb = new ArvoreB(10, hashzada);
+        int comparacoes = 0;
 
         int hashIndex;
 
@@ -307,7 +309,7 @@ void moduloTesteAlgoritmos(string path, int id, int numeroRegistros)
             }
             hashzada->insert(&registros[i]);
             hashIndex = hashzada->searchFromCodeAndDate(registros[i].getCode(), registros[i].getDate());
-            arvb->insert(hashIndex);
+            arvb->insert(hashIndex, comparacoes);
         }
 
         if (id == 1)
@@ -355,11 +357,59 @@ int menu()
     cout << "MENU" << endl;
     cout << "----" << endl;
     cout << "[1] Modulo de testes" << endl;
+    cout << "[2] Analise das estruturas balanceadas"<<endl;
     cout << "[0] Sair" << endl;
 
     cin >> selecao;
 
     return selecao;
+}
+
+void analiseParaMRegistros(HashTable *hash, vector<Registro> registros, int m)
+{
+    clock_t timeStart, timeStop;
+    vector<Registro> registros2;
+    AVLtree *avlTree = new AVLtree();
+    ArvoreB *Btree20 = new ArvoreB(10, hash);
+    ArvoreB *Btree200 = new ArvoreB(100, hash);
+    int comparacoesBTree20 = 0;
+    int comparacoesBTree200 = 0;
+
+    registros2 = registros;
+    random_shuffle(registros2.begin(), registros2.end());
+
+    timeStart = clock();
+    for (int i = 0; i < m; i++)
+    {
+        int index = hash->searchFromCodeAndDate(registros2[i].getCode(), registros2[i].getDate());
+        avlTree->insere(index);
+    }
+    timeStop = clock();
+
+    cout<<"tempo de insercao AVLTree: "<<((double)(timeStop - timeStart) / CLOCKS_PER_SEC)<<endl;
+
+    timeStart = clock();
+    for (int i = 0; i < m; i++)
+    {
+        int index = hash->searchFromCodeAndDate(registros2[i].getCode(), registros2[i].getDate());
+        Btree20->insert(index,comparacoesBTree20);
+    }
+    timeStop = clock();
+
+    cout<<"tempo de insercao BTree20: "<<((double)(timeStop - timeStart) / CLOCKS_PER_SEC)<<endl;
+    cout<<"numero de comparacoes BTree20: "<< comparacoesBTree20 <<" para "<< m << " registros"<<endl;
+
+
+    timeStart = clock();
+    for (int i = 0; i < m; i++)
+    {
+        int index = hash->searchFromCodeAndDate(registros2[i].getCode(), registros2[i].getDate());
+        Btree200->insert(index, comparacoesBTree200);
+    }
+    timeStop = clock();
+
+    cout<<"tempo de insercao BTree200: "<<((double)(timeStop - timeStart) / CLOCKS_PER_SEC)<<endl;
+    cout<<"numero de comparacoes BTree200: "<< comparacoesBTree200 <<" para "<< m << " registros"<<endl;
 }
 
 void seleciona(int selecao, string path)
@@ -374,12 +424,26 @@ void seleciona(int selecao, string path)
     }
     case 2:
     {
-
+        int arr[5] = {10000, 50000, 100000, 500000, 1000000};
+        vector<Registro> registros;
+        string caminho = path;
+        caminho += "brazil_covid19_cities_processado.csv";
+        ifstream arquivoProcessado;
+        arquivoProcessado.open(caminho, ios::in);
+        int tam = leLinhaArquivoProcessado(registros, arquivoProcessado);
+        HashTable *hash = new HashTable(1431490);
+        int hashIndex;
+        for (int i = 0; i < tam; i++)
+        {
+            hash->insert(&registros[i]);
+        }
+        for (int i = 0; i < 5; i++)
+        {
+            analiseParaMRegistros(hash, registros, arr[i]);
+        }
         break;
     }
-    case 3:
-    {
-    }
+
     }
 }
 
@@ -396,49 +460,8 @@ void mainMenu(string path)
 int main(int argc, char const *argv[])
 {
 
-  //  string path = argv[1];
-  //  mainMenu(path);
-    // path = path + "brazil_cities_coordinates.csv";
-    // ifstream arquivo;
-    // arquivo.open(path, ios::in);
-    //leLinha(arquivo);
-
-    // Testes -> TABELA HASHZADA
-
-        string path = argv[1];
-        vector<Registro> registros;
-        vector<Registro> registros2;
-        string caminho = path;
-        caminho += "brazil_covid19_cities_processado.csv";
-        ifstream arquivoProcessado;
-        arquivoProcessado.open(caminho, ios::in);
-        int tam = leLinhaArquivoProcessado(registros, arquivoProcessado);
-        //random_shuffle(registros.begin(), registros.end());
-        HashTable *hashzada = new HashTable(1431490);
-        int hashIndex;
-        for (int i = 0; i < tam; i++)
-        {
-            hashzada->insert(&registros[i]);
-        }
-        registros2=registros;
-        random_shuffle(registros2.begin(), registros2.end());
-        int tamanhoN;
-        cout<<"Quantos registros aleatorios voce quer?"<<endl;
-        cin>>tamanhoN;
-        
-        ofstream saida("nRegistrosAleatoriosTabelaHash.txt");
-        saida << "date,state,name,code,cases,deaths" << endl;
-        for (int i = 0; i < tamanhoN; i++)
-        {
-            hashIndex = hashzada->searchFromCodeAndDate(registros2[i].getCode(), registros2[i].getDate());
-            saida << hashzada->getRegistroFromTable(hashIndex)->getDate()<< ",";
-            saida << hashzada->getRegistroFromTable(hashIndex)->getState()<< ",";
-            saida << hashzada->getRegistroFromTable(hashIndex)->getName()<< ",";
-            saida << hashzada->getRegistroFromTable(hashIndex)->getCode()<< ",";
-            saida << hashzada->getRegistroFromTable(hashIndex)->getCases()<< ",";
-            saida << hashzada->getRegistroFromTable(hashIndex)->getDeaths()<< endl;
-        }
-
+    string path = argv[1];
+    mainMenu(path);
 
     return 0;
 }

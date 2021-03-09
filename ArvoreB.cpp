@@ -55,10 +55,11 @@ bool ArvoreB::menorElemento(Registro *candidatoInicio, Registro *candidatoFim)
 }
 
 //Retorna verdade caso seja encontrado a chave
-bool ArvoreB::auxSearch(NoB *no, int key)
+bool ArvoreB::auxSearch(NoB *no, int key, int &comparacoes)
 {
     for (int i = 0; i < no->getN(); i++)
     {
+        comparacoes +=1;
         if (no->getKeys()[i] == key)
         {
             return true;
@@ -68,17 +69,18 @@ bool ArvoreB::auxSearch(NoB *no, int key)
             // Se a key existir na tabela hash
             if (this->getHashTable()->searchFromKey(key) != -1)
             {
+                comparacoes +=1;
                 if (menorElemento(this->getHashTable()->getRegistroFromTable(key), this->getHashTable()->getRegistroFromTable(no->getKeys()[i])))
                 {
                     if (!no->getFolha())
-                        return auxSearch(no->getFilhos()[i], key);
+                        return auxSearch(no->getFilhos()[i], key, comparacoes);
                 }
                 else
                 {
                     if (i == no->getN() - 1)
                     {
                         if (!no->getFolha())
-                            return auxSearch(no->getFilhos()[i + 1], key);
+                            return auxSearch(no->getFilhos()[i + 1], key, comparacoes);
                     }
                 }
             }
@@ -87,12 +89,13 @@ bool ArvoreB::auxSearch(NoB *no, int key)
     return false;
 }
 
-bool ArvoreB::search(int key)
+bool ArvoreB::search(int key, int &comparacoes)
 {
     if (this->getRaiz()->getFolha())
     {
         for (int i = 0; i < this->getRaiz()->getN(); i++)
         {
+            comparacoes += 1;
             if (this->getRaiz()->getKeys()[i] == key)
             {
                 return true;
@@ -102,11 +105,11 @@ bool ArvoreB::search(int key)
     }
     else
     {
-        return auxSearch(this->getRaiz(), key);
+        return auxSearch(this->getRaiz(), key, comparacoes);
     }
 }
 
-void ArvoreB::splitChildren(NoB *raiz, int position)
+void ArvoreB::splitChildren(NoB *raiz, int position, int &comparacoes)
 {
     NoB *filhoRaiz = raiz->getFilhos()[position];
 
@@ -129,17 +132,19 @@ void ArvoreB::splitChildren(NoB *raiz, int position)
 
     filhoRaiz->setN(getOrdem()-1);
     
-    insertNo(raiz,filhoRaiz->getKeys()[getOrdem()-1]);
+    insertNo(raiz,filhoRaiz->getKeys()[getOrdem()-1], comparacoes);
 
     raiz->setFilhos( novoNo, position+1 );
 
 }
 
-void ArvoreB::insertNo(NoB *raiz, int key)
+void ArvoreB::insertNo(NoB *raiz, int key, int &comparacoes)
 {
     int position = raiz->getN();
+    comparacoes += 1;
     while( position > 0 && menorElemento(registros->getRegistroFromTable(key), registros->getRegistroFromTable(raiz->getKeys()[position-1])) )
     {
+        comparacoes += 1;
         raiz->setKeys(raiz->getKeys()[ position - 1 ], position);
         raiz->setFilhos(raiz->getFilhos()[ position ], position+1);
         position--;
@@ -150,7 +155,7 @@ void ArvoreB::insertNo(NoB *raiz, int key)
     raiz->setN(raiz->getN() + 1);
 }
 
-void ArvoreB::insert(int key)
+void ArvoreB::insert(int key, int &comparacoes)
 {
     if (this->raiz == NULL)
     {
@@ -168,7 +173,7 @@ void ArvoreB::insert(int key)
 
             this->raiz = novaRaiz;
 
-            splitChildren(novaRaiz,0);
+            splitChildren(novaRaiz,0, comparacoes);
         }
 
         NoB *novoNo = this->raiz;
@@ -177,8 +182,10 @@ void ArvoreB::insert(int key)
         {
             int position = novoNo->getN() - 1;
 
+            comparacoes += 1;
             while (position >= 0 && menorElemento(registros->getRegistroFromTable(key), registros->getRegistroFromTable(novoNo->getKeys()[position])))
             {
+                comparacoes += 1;
                 position--;
             }
 
@@ -186,8 +193,9 @@ void ArvoreB::insert(int key)
 
             if (novoNo->getFilhos()[position]->getN() == 2 * novoNo->getOrdem() - 1)
             {
-                splitChildren(novoNo,position);
+                splitChildren(novoNo,position, comparacoes);
 
+                comparacoes += 1;
                 if (menorElemento(registros->getRegistroFromTable(novoNo->getKeys()[position]), registros->getRegistroFromTable(key)))
                 {
                     position++;
@@ -197,6 +205,6 @@ void ArvoreB::insert(int key)
             novoNo = novoNo->getFilhos()[position];
         }
 
-        insertNo(novoNo,key);
+        insertNo(novoNo,key, comparacoes);
     }
 }
