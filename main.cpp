@@ -275,13 +275,13 @@ void moduloTesteAlgoritmos(string path, int id, int numeroRegistros)
 
         if (id == 1)
         {
-            AVL->imprime();
+            AVL->imprime(hashzada);
         }
         else if (id == 2)
         {
             ofstream saida("saidaAVLTree.txt");
             cout << "SAIDA POR ARQUIVO" << endl;
-            AVL->saidaArqv(saida);
+            AVL->saidaArqv(saida, hashzada);
         }
         return;
     }

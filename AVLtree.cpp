@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include "AVLtree.h"
+#include "HashTable.h"
 
 using namespace std;
 
@@ -36,18 +37,15 @@ NoAVL *AVLtree::libera(NoAVL *p)
 
 int AVLtree::altura(NoAVL *raiz)
 {
-    if (raiz == NULL)
-        return -1; // altura da árvore vazia
-    else
-    {
-        int he = altura(raiz->getEsq());
-        int hd = altura(raiz->getDir());
-        if (he < hd)
-            return hd + 1;
-        else
-            return he + 1;
-    }
+    if (raiz == NULL) 
+        return 0; 
+    return raiz->getAltura();
 }
+
+int AVLtree::retornaMaior(int a, int b) 
+{ 
+    return (a > b)? a : b; 
+} 
 
 // INSERÇÃO
 void AVLtree::insere(int val)
@@ -67,10 +65,12 @@ NoAVL *AVLtree::auxInsere(NoAVL *p, int val)
     }
     else if (val < p->getValor())
         p->setEsq(auxInsere(p->getEsq(), val));
-    else
+    else if (val > p->getValor())
         p->setDir(auxInsere(p->getDir(), val));
+    else
+        return p;
 
-    p->setAltura(altura(p) + 1);
+    p->setAltura(1 + retornaMaior(altura(p->getEsq()), altura(p->getDir())));
 
     int fb = calculaFB(p);
 
@@ -118,31 +118,32 @@ NoAVL *AVLtree::auxBusca(NoAVL *p, int val)
 }
 
 // IMPRESSÃO NO TERMINAL
-void AVLtree::imprime()
+void AVLtree::imprime(HashTable *registros)
 {
-    imprimePorNivel(raiz, 0);
+    imprimePorNivel(raiz, 0, registros);
 }
 
-void AVLtree::imprimePorNivel(NoAVL *p, int nivel)
+void AVLtree::imprimePorNivel(NoAVL *p, int nivel, HashTable *registros)
 {
     if (p != NULL)
     {
         cout << "(" << nivel << ")";
         for (int i = 1; i <= nivel; i++)
             cout << "--";
-        cout << p->getValor() << endl;
-        imprimePorNivel(p->getEsq(), nivel + 1);
-        imprimePorNivel(p->getDir(), nivel + 1);
+        cout << registros->getRegistroFromTable(p->getValor())->getCode() << " ";
+        cout << registros->getRegistroFromTable(p->getValor())->getDate() << endl;
+        imprimePorNivel(p->getEsq(), nivel + 1, registros);
+        imprimePorNivel(p->getDir(), nivel + 1, registros);
     }
 }
 
 // IMPRESSÃO DA ÁRVORE EM ARQUIVO
-void AVLtree::saidaArqv(ofstream &saida)
+void AVLtree::saidaArqv(ofstream &saida, HashTable *registros)
 {
-    auxSaidaArqv(raiz, 0, saida);
+    auxSaidaArqv(raiz, 0, saida, registros);
 }
 
-void AVLtree::auxSaidaArqv(NoAVL *p, int nivel, ofstream &saida)
+void AVLtree::auxSaidaArqv(NoAVL *p, int nivel, ofstream &saida, HashTable *registros)
 {
     if (p != NULL)
     {
@@ -152,10 +153,13 @@ void AVLtree::auxSaidaArqv(NoAVL *p, int nivel, ofstream &saida)
 
         for (int i = 1; i <= nivel; i++)
             saida << "--";
-        saida << to_string(p->getValor());
+        
+        saida << registros->getRegistroFromTable(p->getValor())->getCode();
+        saida << " ";
+        saida << registros->getRegistroFromTable(p->getValor())->getDate();
         saida << endl;
-        auxSaidaArqv(p->getEsq(), nivel + 1, saida);
-        auxSaidaArqv(p->getDir(), nivel + 1, saida);
+        auxSaidaArqv(p->getEsq(), nivel + 1, saida, registros);
+        auxSaidaArqv(p->getDir(), nivel + 1, saida, registros);
     }
 }
 
@@ -179,8 +183,8 @@ NoAVL *AVLtree::rotacaoEsquerda(NoAVL *no)
     noDir->setEsq(no);
     no->setDir(noEsq);
 
-    no->setAltura(altura(no));
-    noDir->setAltura(altura(noDir));
+    no->setAltura((retornaMaior(altura(no->getEsq()), altura(no->getDir())) + 1));
+    noDir->setAltura((retornaMaior(altura(noDir->getEsq()), altura(noDir->getDir())) + 1));
 
     return noDir;
 }
@@ -193,8 +197,8 @@ NoAVL *AVLtree::rotacaoDireita(NoAVL *no)
     noEsq->setDir(no);
     no->setEsq(noDir);
 
-    no->setAltura(altura(no));
-    noEsq->setAltura(altura(noEsq));
+    no->setAltura((retornaMaior(altura(no->getEsq()), altura(no->getDir())) + 1));
+    noEsq->setAltura((retornaMaior(altura(noEsq->getEsq()), altura(noEsq->getDir())) + 1));
 
     return noEsq;
 }

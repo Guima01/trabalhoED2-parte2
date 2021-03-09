@@ -1,5 +1,6 @@
 #include <fstream>
 #include "NoAVL.h"
+#include "HashTable.h"
 
 using namespace std;
 
@@ -15,11 +16,13 @@ public:
     NoAVL* busca(int val); // BUSCA
     void insere(int val); // INSERÇÃO
 
-    void imprime(); // IMPRESSÃO NO TERMINAL
+    void imprime(HashTable *registros); // IMPRESSÃO NO TERMINAL
 
-    void saidaArqv(ofstream &saida); // IMPRESSÃO POR ARQUIVO
+    void saidaArqv(ofstream &saida, HashTable *registros); // IMPRESSÃO POR ARQUIVO
 
     int altura (NoAVL* raiz); // CALCULA A ALTURA DE UM NÓ
+
+    int retornaMaior(int a, int b);
 
 private:
     NoAVL* raiz; // PONTEIRO PARA A RAIZ DA ÁRVORE
@@ -27,9 +30,9 @@ private:
     // FUNÇÕES AUX
     NoAVL* auxBusca(NoAVL *p, int val); // BUSCA
     NoAVL* auxInsere(NoAVL *p, int val); // INSERÇÃO
-    void auxSaidaArqv(NoAVL *p, int nivel, ofstream &saida); // IMPRESSÃO POR ARQUIVO
+    void auxSaidaArqv(NoAVL *p, int nivel, ofstream &saida, HashTable *registros); // IMPRESSÃO POR ARQUIVO
     
-    void imprimePorNivel(NoAVL* p, int nivel); // IMPRESSÃO NO TERMINAL
+    void imprimePorNivel(NoAVL* p, int nivel, HashTable *registros); // IMPRESSÃO NO TERMINAL
     
     NoAVL* libera(NoAVL *p); // AUXILIAR DO DESTRUTOR
 
