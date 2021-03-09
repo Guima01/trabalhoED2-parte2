@@ -27,7 +27,10 @@ class ArvoreB
     bool auxSearch(NoB* no, int key);
     bool search(int key);
 
+    void insertNo(NoB* raiz, int key);
+    void splitChildren(NoB* raiz, int position);
     void insert(int key);
+
 
 
 

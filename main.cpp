@@ -293,7 +293,7 @@ void moduloTesteAlgoritmos(string path, int id, int numeroRegistros)
 
         int tam = leLinhaArquivoProcessadoPraN(registros, arquivoProcessado, numeroRegistros);
         HashTable *hashzada = new HashTable(tam);
-        ArvoreB *arvb = new ArvoreB(5, hashzada);
+        ArvoreB *arvb = new ArvoreB(10, hashzada);
 
         int hashIndex;
 

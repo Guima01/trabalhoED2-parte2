@@ -35,13 +35,6 @@ class NoB
     
     void print(HashTable *registros,int nivel);
     
-    bool menorElemento(Registro *candidatoInicio, Registro *candidatoFim);
-
-    int searchPosition(int key,HashTable *tabela);
-
-    void insertFilho(int key, HashTable *tabela);
-
-    void split(int position,NoB* raiz, HashTable *tabela);
 
 
 
