@@ -54,7 +54,7 @@ bool ArvoreB::menorElemento(Registro *candidatoInicio, Registro *candidatoFim)
     return false;
 }
 
-void ArvoreB::auxSearch(NoB *no, string code, int &comparacoes, int &totalCasos)
+void ArvoreB::calculaTotalCasosCidade(NoB *no, string code, int &comparacoes, int &totalCasos)
 {
     int i;
     for (i = 0; i < no->getN(); i++)
@@ -64,7 +64,7 @@ void ArvoreB::auxSearch(NoB *no, string code, int &comparacoes, int &totalCasos)
             comparacoes += 1;
             if (code <= this->getHashTable()->getRegistroFromTable(no->getKeys()[i])->getCode())
             {
-                auxSearch(no->getFilhos()[i], code, comparacoes, totalCasos);
+                calculaTotalCasosCidade(no->getFilhos()[i], code, comparacoes, totalCasos);
             }
         }
         comparacoes += 1;
@@ -78,17 +78,12 @@ void ArvoreB::auxSearch(NoB *no, string code, int &comparacoes, int &totalCasos)
         comparacoes += 1;
         if (code >= this->getHashTable()->getRegistroFromTable(no->getKeys()[i - 1])->getCode())
         {
-            auxSearch(no->getFilhos()[i], code, comparacoes, totalCasos);
+            calculaTotalCasosCidade(no->getFilhos()[i], code, comparacoes, totalCasos);
         }
     }
 }
 
-void ArvoreB::search(string code, int &comparacoes, int &totalCasos)
-{
-    auxSearch(this->getRaiz(), code, comparacoes, totalCasos);
-}
-
-void ArvoreB::splitChildren(NoB *raiz, int position, int &comparacoes)
+void ArvoreB::cisaoFilho(NoB *raiz, int position, int &comparacoes)
 {
     NoB *filhoRaiz = raiz->getFilhos()[position];
 
@@ -111,12 +106,12 @@ void ArvoreB::splitChildren(NoB *raiz, int position, int &comparacoes)
 
     filhoRaiz->setN(getOrdem() - 1);
 
-    insertNo(raiz, filhoRaiz->getKeys()[getOrdem() - 1], comparacoes);
+    insereNo(raiz, filhoRaiz->getKeys()[getOrdem() - 1], comparacoes);
 
     raiz->setFilhos(novoNo, position + 1);
 }
 
-void ArvoreB::insertNo(NoB *raiz, int key, int &comparacoes)
+void ArvoreB::insereNo(NoB *raiz, int key, int &comparacoes)
 {
     int position = raiz->getN();
     comparacoes += 1;
@@ -133,7 +128,7 @@ void ArvoreB::insertNo(NoB *raiz, int key, int &comparacoes)
     raiz->setN(raiz->getN() + 1);
 }
 
-void ArvoreB::insert(int key, int &comparacoes)
+void ArvoreB::insere(int key, int &comparacoes)
 {
     if (this->raiz == NULL)
     {
@@ -151,7 +146,7 @@ void ArvoreB::insert(int key, int &comparacoes)
 
             this->raiz = novaRaiz;
 
-            splitChildren(novaRaiz, 0, comparacoes);
+            cisaoFilho(novaRaiz, 0, comparacoes);
         }
 
         NoB *novoNo = this->raiz;
@@ -171,7 +166,7 @@ void ArvoreB::insert(int key, int &comparacoes)
 
             if (novoNo->getFilhos()[position]->getN() == 2 * novoNo->getOrdem() - 1)
             {
-                splitChildren(novoNo, position, comparacoes);
+                cisaoFilho(novoNo, position, comparacoes);
 
                 comparacoes += 1;
                 if (menorElemento(registros->getRegistroFromTable(novoNo->getKeys()[position]), registros->getRegistroFromTable(key)))
@@ -183,6 +178,6 @@ void ArvoreB::insert(int key, int &comparacoes)
             novoNo = novoNo->getFilhos()[position];
         }
 
-        insertNo(novoNo, key, comparacoes);
+        insereNo(novoNo, key, comparacoes);
     }
 }

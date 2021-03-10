@@ -166,9 +166,9 @@ int leLinhaArquivoProcessadoPraN(vector<Registro> &registros, ifstream &arq, int
         }
         cont++;
     }
-    cout << "Leitura do arquivo brazil_covid19_cities_processado.csv finalizada." << cont - 1 << endl
+    cout << "Leitura do arquivo brazil_covid19_cities_processado.csv finalizada." << cont << endl
          << endl;
-    return cont - 1;
+    return cont;
 }
 
 void salvarArquivo(vector<Registro> &registros, ofstream &saida)
@@ -224,7 +224,6 @@ void moduloTesteAlgoritmos(string path, int id, int numeroRegistros)
         }
         quad.retornaRegistrosNasCoordenadas(vet, quad.getRaiz(), -27.0000, 0.0, -28.000, -100.000);
     }
-
     else if (identificaOrdenacao == 2)
     {
         vector<Registro> registros;
@@ -252,7 +251,7 @@ void moduloTesteAlgoritmos(string path, int id, int numeroRegistros)
             saida << hashzada->getRegistroFromTable(hashIndex)->getDeaths() << endl;
         }
     }
-    else if (identificaOrdenacao == 3)
+    else if (identificaOrdenacao == 3 || identificaOrdenacao == 4)
     {
         vector<Registro> registros;
         string caminho = path;
@@ -260,11 +259,21 @@ void moduloTesteAlgoritmos(string path, int id, int numeroRegistros)
         ifstream arquivoProcessado;
         arquivoProcessado.open(caminho, ios::in);
 
+        int comparacoes = 0;
+        int hashIndex;
         int tam = leLinhaArquivoProcessadoPraN(registros, arquivoProcessado, numeroRegistros);
         HashTable *hash = new HashTable(tam);
-        AVLtree *AVL = new AVLtree(hash);
 
-        int hashIndex;
+        AVLtree *AVL = new AVLtree(hash);
+        int ordem = 1;
+        if (identificaOrdenacao == 4)
+        {
+            cout << "Criar arvore B de ordem "; // ordem par
+            cin >> ordem;
+            ordem = ordem / 2;
+        }
+
+        ArvoreB *arvb = new ArvoreB(ordem, hash);
 
         for (int i = 0; i < tam; i++)
         {
@@ -274,59 +283,44 @@ void moduloTesteAlgoritmos(string path, int id, int numeroRegistros)
             }
             hash->insert(&registros[i]);
             hashIndex = hash->searchFromCodeAndDate(registros[i].getCode(), registros[i].getDate());
-            AVL->insere(hashIndex);
-        }
 
-        if (id == 1)
-        {
-            AVL->imprime(hash);
-        }
-        else if (id == 2)
-        {
-            ofstream saida("saidaAVLTree.txt");
-            cout << "SAIDA POR ARQUIVO" << endl;
-            AVL->saidaArqv(saida, hash);
-        }
-        return;
-    }
-    else if (identificaOrdenacao == 4)
-    {
-        vector<Registro> registros;
-        string caminho = path;
-        caminho += "brazil_covid19_cities_processado.csv";
-        ifstream arquivoProcessado;
-        arquivoProcessado.open(caminho, ios::in);
-
-        int tam = leLinhaArquivoProcessadoPraN(registros, arquivoProcessado, numeroRegistros);
-        HashTable *hashzada = new HashTable(tam);
-        ArvoreB *arvb = new ArvoreB(10, hashzada);
-        int comparacoes = 0;
-
-        int hashIndex;
-
-        for (int i = 0; i < tam; i++)
-        {
-            if (i == numeroRegistros)
+            if (identificaOrdenacao == 3)
             {
-                break;
+                AVL->insere(hashIndex);
             }
-            hashzada->insert(&registros[i]);
-            hashIndex = hashzada->searchFromCodeAndDate(registros[i].getCode(), registros[i].getDate());
-            arvb->insert(hashIndex, comparacoes);
+            else
+            {
+                arvb->insere(hashIndex, comparacoes);
+            }
         }
 
         if (id == 1)
         {
-            arvb->getRaiz()->print(hashzada, 0);
+            if (identificaOrdenacao == 3)
+            {
+                AVL->imprime(hash);
+            }
+            else
+            {
+                arvb->getRaiz()->print(hash, 0);
+            }
         }
         else if (id == 2)
         {
-            ofstream saida("saidaBTree.txt");
-            arvb->getRaiz()->salvaArquivo(hashzada, 0, saida);
+            if (identificaOrdenacao == 3)
+            {
+                ofstream saida("saidaAVLTree.txt");
+                cout << "SAIDA POR ARQUIVO" << endl;
+                AVL->saidaArqv(saida, hash);
+            }
+            else
+            {
+                ofstream saida("saidaBTree.txt");
+                arvb->getRaiz()->salvaArquivo(hash, 0, saida);
+            }
         }
         return;
     }
-
     else if (identificaOrdenacao == 0)
         return;
 }
@@ -368,16 +362,17 @@ int menu()
     return selecao;
 }
 
-void analiseParaMRegistros(HashTable *hash, vector<Registro> registros, int m)
+void analiseParaMRegistros(HashTable *hash, vector<Registro> registros, int m, ofstream &saida)
 {
     clock_t timeStart, timeStop;
     vector<Registro> registros2;
+
     AVLtree *avlTree = new AVLtree(hash);
     ArvoreB *Btree20 = new ArvoreB(10, hash);
     ArvoreB *Btree200 = new ArvoreB(100, hash);
+
     int comparacoesBTree20 = 0;
     int comparacoesBTree200 = 0;
-
 
     registros2 = registros;
     random_shuffle(registros2.begin(), registros2.end());
@@ -390,32 +385,29 @@ void analiseParaMRegistros(HashTable *hash, vector<Registro> registros, int m)
     }
     timeStop = clock();
 
-    cout << "tempo de insercao AVLTree: " << ((double)(timeStop - timeStart) / CLOCKS_PER_SEC) << endl;
-
-
-    timeStart = clock();
-    for (int i = 0; i < m; i++)
-    {
-        int index = hash->searchFromCodeAndDate(registros2[i].getCode(), registros2[i].getDate());
-        Btree20->insert(index, comparacoesBTree20);
-    }
-    timeStop = clock();
-
-    cout << "tempo de insercao BTree20: " << ((double)(timeStop - timeStart) / CLOCKS_PER_SEC) << endl;
-    cout << "numero de comparacoes BTree20: " << comparacoesBTree20 << " para " << m << " registros" << endl;
-
+    saida << "tempo de insercao AVLTree: " << ((double)(timeStop - timeStart) / CLOCKS_PER_SEC) << endl;
 
     timeStart = clock();
     for (int i = 0; i < m; i++)
     {
         int index = hash->searchFromCodeAndDate(registros2[i].getCode(), registros2[i].getDate());
-        Btree200->insert(index, comparacoesBTree200);
+        Btree20->insere(index, comparacoesBTree20);
     }
     timeStop = clock();
 
-    cout << "tempo de insercao BTree200: " << ((double)(timeStop - timeStart) / CLOCKS_PER_SEC) << endl;
-    cout << "numero de comparacoes BTree200: " << comparacoesBTree200 << " para " << m << " registros" << endl;
-    
+    saida << "Tempo de execução do algoritmo de insercao Arvore B de ordem 20 " << ((double)(timeStop - timeStart) / CLOCKS_PER_SEC) << endl;
+    saida << "Numero de comparacoes durante a execução : " << comparacoesBTree20 << " para " << m << " registros" << endl;
+
+    timeStart = clock();
+    for (int i = 0; i < m; i++)
+    {
+        int index = hash->searchFromCodeAndDate(registros2[i].getCode(), registros2[i].getDate());
+        Btree200->insere(index, comparacoesBTree200);
+    }
+    timeStop = clock();
+
+    saida << "Tempo de execução do algoritmo de insercao Arvore B de ordem 200 " << ((double)(timeStop - timeStart) / CLOCKS_PER_SEC) << endl;
+    saida << "Numero de comparacoes durante a execução : " << comparacoesBTree200 << " para " << m << " registros" << endl << endl;
 }
 
 void seleciona(int selecao, string path)
@@ -428,6 +420,7 @@ void seleciona(int selecao, string path)
         moduloTeste(path);
         break;
     }
+
     case 2:
     {
         int arr[5] = {10000, 50000, 100000, 500000, 1000000};
@@ -436,9 +429,12 @@ void seleciona(int selecao, string path)
         caminho += "brazil_covid19_cities_processado.csv";
         ifstream arquivoProcessado;
         arquivoProcessado.open(caminho, ios::in);
-        int tam = leLinhaArquivoProcessado(registros, arquivoProcessado);
-        HashTable *hash = new HashTable(1431490);
+
         int hashIndex;
+        int tam = leLinhaArquivoProcessado(registros, arquivoProcessado);
+        ofstream saida("Analise das estruturas.txt");
+        HashTable *hash = new HashTable(1431490);
+        
 
         for (int i = 0; i < tam; i++)
         {
@@ -446,10 +442,14 @@ void seleciona(int selecao, string path)
         }
         for (int i = 0; i < 5; i++)
         {
-            analiseParaMRegistros(hash, registros, arr[i]);
+
+            analiseParaMRegistros(hash, registros, arr[i],saida);
         }
         break;
     }
+
+    default:
+        break;
     }
 }
 

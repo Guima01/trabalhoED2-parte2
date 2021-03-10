@@ -24,12 +24,11 @@ class ArvoreB
 
     bool menorElemento(Registro *candidatoInicio, Registro *candidatoFim);
 
-    void auxSearch(NoB* no, string code, int &comparacoes, int &totalCasos);
-    void search(string code, int &comparacoes, int &totalCasos );
+    void calculaTotalCasosCidade(NoB* no, string code, int &comparacoes, int &totalCasos);
 
-    void insertNo(NoB* raiz, int key, int &comparacoes);
-    void splitChildren(NoB* raiz, int position, int &comparacoes);
-    void insert(int key, int &comparacoes);
+    void insereNo(NoB* raiz, int key, int &comparacoes);
+    void cisaoFilho(NoB* raiz, int position, int &comparacoes);
+    void insere(int key, int &comparacoes);
 
 
 
