@@ -36,7 +36,4 @@ class NoB
     void print(HashTable *registros,int nivel);
     
 
-
-
-    
 };

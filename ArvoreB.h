@@ -24,8 +24,8 @@ class ArvoreB
 
     bool menorElemento(Registro *candidatoInicio, Registro *candidatoFim);
 
-    bool auxSearch(NoB* no, int key, int &comparacoes);
-    bool search(int key, int &comparacoes);
+    void auxSearch(NoB* no, string code, int &comparacoes, int &totalCasos);
+    void search(string code, int &comparacoes, int &totalCasos );
 
     void insertNo(NoB* raiz, int key, int &comparacoes);
     void splitChildren(NoB* raiz, int position, int &comparacoes);

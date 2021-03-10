@@ -357,7 +357,7 @@ int menu()
     cout << "MENU" << endl;
     cout << "----" << endl;
     cout << "[1] Modulo de testes" << endl;
-    cout << "[2] Analise das estruturas balanceadas"<<endl;
+    cout << "[2] Analise das estruturas balanceadas" << endl;
     cout << "[0] Sair" << endl;
 
     cin >> selecao;
@@ -375,6 +375,7 @@ void analiseParaMRegistros(HashTable *hash, vector<Registro> registros, int m)
     int comparacoesBTree20 = 0;
     int comparacoesBTree200 = 0;
 
+
     registros2 = registros;
     random_shuffle(registros2.begin(), registros2.end());
 
@@ -386,18 +387,19 @@ void analiseParaMRegistros(HashTable *hash, vector<Registro> registros, int m)
     }
     timeStop = clock();
 
-    cout<<"tempo de insercao AVLTree: "<<((double)(timeStop - timeStart) / CLOCKS_PER_SEC)<<endl;
+    cout << "tempo de insercao AVLTree: " << ((double)(timeStop - timeStart) / CLOCKS_PER_SEC) << endl;
+
 
     timeStart = clock();
     for (int i = 0; i < m; i++)
     {
         int index = hash->searchFromCodeAndDate(registros2[i].getCode(), registros2[i].getDate());
-        Btree20->insert(index,comparacoesBTree20);
+        Btree20->insert(index, comparacoesBTree20);
     }
     timeStop = clock();
 
-    cout<<"tempo de insercao BTree20: "<<((double)(timeStop - timeStart) / CLOCKS_PER_SEC)<<endl;
-    cout<<"numero de comparacoes BTree20: "<< comparacoesBTree20 <<" para "<< m << " registros"<<endl;
+    cout << "tempo de insercao BTree20: " << ((double)(timeStop - timeStart) / CLOCKS_PER_SEC) << endl;
+    cout << "numero de comparacoes BTree20: " << comparacoesBTree20 << " para " << m << " registros" << endl;
 
 
     timeStart = clock();
@@ -408,8 +410,9 @@ void analiseParaMRegistros(HashTable *hash, vector<Registro> registros, int m)
     }
     timeStop = clock();
 
-    cout<<"tempo de insercao BTree200: "<<((double)(timeStop - timeStart) / CLOCKS_PER_SEC)<<endl;
-    cout<<"numero de comparacoes BTree200: "<< comparacoesBTree200 <<" para "<< m << " registros"<<endl;
+    cout << "tempo de insercao BTree200: " << ((double)(timeStop - timeStart) / CLOCKS_PER_SEC) << endl;
+    cout << "numero de comparacoes BTree200: " << comparacoesBTree200 << " para " << m << " registros" << endl;
+    
 }
 
 void seleciona(int selecao, string path)
@@ -433,6 +436,7 @@ void seleciona(int selecao, string path)
         int tam = leLinhaArquivoProcessado(registros, arquivoProcessado);
         HashTable *hash = new HashTable(1431490);
         int hashIndex;
+
         for (int i = 0; i < tam; i++)
         {
             hash->insert(&registros[i]);
@@ -443,7 +447,6 @@ void seleciona(int selecao, string path)
         }
         break;
     }
-
     }
 }
 
