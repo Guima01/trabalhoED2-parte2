@@ -66,6 +66,7 @@ void removeAccents(string &str)
 void leLinha(QuadTree &quad, ifstream &arq, int linhas)
 {
     string str;
+    string code;
     for (int i = 0; getline(arq, str); i++)
     {
         if (i != 0)
@@ -73,7 +74,9 @@ void leLinha(QuadTree &quad, ifstream &arq, int linhas)
             RegistrosCoordenados *registroCoordenado = new RegistrosCoordenados();
             vector<string> stringDados = split(str, ',');
             registroCoordenado->setStateCode(atoi(stringDados[0].c_str()));
-            registroCoordenado->setCityCode(atoi(stringDados[1].c_str()));
+            code = stringDados[1];
+            code = code.erase(code.size() - 1);
+            registroCoordenado->setCityCode(atoi(code.c_str()));
             removeAccents(stringDados[2]); //não sei se vai ser necessário
             registroCoordenado->setCityName(stringDados[2]);
 
@@ -219,7 +222,7 @@ void moduloTesteAlgoritmos(string path, int id, int numeroRegistros)
             ofstream saida("saidaQuadTree.txt");
             quad.ImprimeArquivoTexto(quad.getRaiz(), 0, saida);
         }
-        quad.retornaRegistrosNasCoordenadas(vet, quad.getRaiz(), -27.0000, -51.0000, -27.9999, -51.9999);
+        quad.retornaRegistrosNasCoordenadas(vet, quad.getRaiz(), -27.0000, 0.0, -28.000, -100.000);
     }
 
     else if (identificaOrdenacao == 2)

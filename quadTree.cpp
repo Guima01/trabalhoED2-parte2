@@ -164,7 +164,7 @@ void QuadTree::imprimePorNivel(NoquadTree *p, int nivel)
         for (int i = 1; i <= nivel; i++)
             cout << "--";
         cout << "(";
-        cout << p->getRegistroCoordenado().getLatitude();
+        cout << p->getRegistroCoordenado().getCityCode();
         cout << ", ";
         cout << p->getRegistroCoordenado().getLongitude();
         cout << ")" << endl;
