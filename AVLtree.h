@@ -8,7 +8,7 @@ class AVLtree
 {
 public:
     
-    AVLtree();  // CONSTRUTOR
+    AVLtree(HashTable *tabela);  // CONSTRUTOR
     ~AVLtree(); // DESTRUTOR
 
     bool vazia(); // VERIFICA SE A ÁRVORE ESTÁ VAZIA
@@ -22,10 +22,13 @@ public:
 
     int altura (NoAVL* raiz); // CALCULA A ALTURA DE UM NÓ
 
+    bool menorElemento(Registro *candidatoInicio, Registro *candidatoFim);
+
     int retornaMaior(int a, int b);
 
 private:
     NoAVL* raiz; // PONTEIRO PARA A RAIZ DA ÁRVORE
+    HashTable *registros;
 
     // FUNÇÕES AUX
     NoAVL* auxBusca(NoAVL *p, int val); // BUSCA

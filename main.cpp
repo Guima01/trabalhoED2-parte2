@@ -261,8 +261,8 @@ void moduloTesteAlgoritmos(string path, int id, int numeroRegistros)
         arquivoProcessado.open(caminho, ios::in);
 
         int tam = leLinhaArquivoProcessadoPraN(registros, arquivoProcessado, numeroRegistros);
-        HashTable *hashzada = new HashTable(tam);
-        AVLtree *AVL = new AVLtree();
+        HashTable *hash = new HashTable(tam);
+        AVLtree *AVL = new AVLtree(hash);
 
         int hashIndex;
 
@@ -272,20 +272,20 @@ void moduloTesteAlgoritmos(string path, int id, int numeroRegistros)
             {
                 break;
             }
-            hashzada->insert(&registros[i]);
-            hashIndex = hashzada->searchFromCodeAndDate(registros[i].getCode(), registros[i].getDate());
+            hash->insert(&registros[i]);
+            hashIndex = hash->searchFromCodeAndDate(registros[i].getCode(), registros[i].getDate());
             AVL->insere(hashIndex);
         }
 
         if (id == 1)
         {
-            AVL->imprime(hashzada);
+            AVL->imprime(hash);
         }
         else if (id == 2)
         {
             ofstream saida("saidaAVLTree.txt");
             cout << "SAIDA POR ARQUIVO" << endl;
-            AVL->saidaArqv(saida, hashzada);
+            AVL->saidaArqv(saida, hash);
         }
         return;
     }
@@ -372,7 +372,7 @@ void analiseParaMRegistros(HashTable *hash, vector<Registro> registros, int m)
 {
     clock_t timeStart, timeStop;
     vector<Registro> registros2;
-    AVLtree *avlTree = new AVLtree();
+    AVLtree *avlTree = new AVLtree(hash);
     ArvoreB *Btree20 = new ArvoreB(10, hash);
     ArvoreB *Btree200 = new ArvoreB(100, hash);
     int comparacoesBTree20 = 0;

@@ -7,20 +7,22 @@
 using namespace std;
 
 // CONSTRUTOR / DESTRUTOR
-AVLtree::AVLtree()
+AVLtree::AVLtree(HashTable *registros)
 {
-    raiz = NULL;
+    this->raiz = NULL;
+    this->registros = registros;
+
 }
 
 AVLtree::~AVLtree()
 {
-    raiz = libera(raiz);
+    this->raiz = libera(raiz);
 }
 
 // DEMAIS FUNÇÕES
 bool AVLtree::vazia()
 {
-    return raiz == NULL;
+    return this->raiz == NULL;
 }
 
 NoAVL *AVLtree::libera(NoAVL *p)
@@ -47,6 +49,28 @@ int AVLtree::retornaMaior(int a, int b)
     return (a > b)? a : b; 
 } 
 
+bool AVLtree::menorElemento(Registro *candidatoInicio, Registro *candidatoFim)
+{
+    bool verificaCode = (candidatoInicio->getCode() == candidatoFim->getCode());
+    if (candidatoInicio->getCode() < candidatoFim->getCode() || verificaCode)
+    {
+        if (verificaCode)
+        {
+            if (candidatoInicio->getDate() < candidatoFim->getDate())
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
 // INSERÇÃO
 void AVLtree::insere(int val)
 {
@@ -63,9 +87,9 @@ NoAVL *AVLtree::auxInsere(NoAVL *p, int val)
         p->setDir(NULL);
         p->setAltura(1);
     }
-    else if (val < p->getValor())
+    else if (menorElemento(registros->getRegistroFromTable(val), registros->getRegistroFromTable(p->getValor())))
         p->setEsq(auxInsere(p->getEsq(), val));
-    else if (val > p->getValor())
+    else if (!menorElemento(registros->getRegistroFromTable(val), registros->getRegistroFromTable(p->getValor())))
         p->setDir(auxInsere(p->getDir(), val));
     else
         return p;
