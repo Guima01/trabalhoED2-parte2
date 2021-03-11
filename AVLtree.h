@@ -14,7 +14,8 @@ public:
     bool vazia(); // VERIFICA SE A ÁRVORE ESTÁ VAZIA
 
     NoAVL* busca(int val); // BUSCA
-    void insere(int val); // INSERÇÃO
+
+    void insere(int val, int &comparacoes); // INSERÇÃO
 
     void imprime(HashTable *registros); // IMPRESSÃO NO TERMINAL
 
@@ -32,7 +33,7 @@ private:
 
     // FUNÇÕES AUX
     NoAVL* auxBusca(NoAVL *p, int val); // BUSCA
-    NoAVL* auxInsere(NoAVL *p, int val); // INSERÇÃO
+    NoAVL* auxInsere(NoAVL *p, int val, int &comparacoes); // INSERÇÃO
     void auxSaidaArqv(NoAVL *p, int nivel, ofstream &saida, HashTable *registros); // IMPRESSÃO POR ARQUIVO
     
     void imprimePorNivel(NoAVL* p, int nivel, HashTable *registros); // IMPRESSÃO NO TERMINAL

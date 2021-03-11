@@ -286,7 +286,7 @@ void moduloTesteAlgoritmos(string path, int id, int numeroRegistros)
 
             if (identificaOrdenacao == 3)
             {
-                AVL->insere(hashIndex);
+                AVL->insere(hashIndex,comparacoes);
             }
             else
             {
@@ -373,6 +373,7 @@ void analiseParaMRegistros(HashTable *hash, vector<Registro> registros, int m, o
 
     int comparacoesBTree20 = 0;
     int comparacoesBTree200 = 0;
+    int comparacoesAvl = 0;
 
     registros2 = registros;
     random_shuffle(registros2.begin(), registros2.end());
@@ -381,11 +382,12 @@ void analiseParaMRegistros(HashTable *hash, vector<Registro> registros, int m, o
     for (int i = 0; i < m; i++)
     {
         int index = hash->searchFromCodeAndDate(registros2[i].getCode(), registros2[i].getDate());
-        avlTree->insere(index);
+        avlTree->insere(index, comparacoesAvl);
     }
     timeStop = clock();
 
-    saida << "tempo de insercao AVLTree: " << ((double)(timeStop - timeStart) / CLOCKS_PER_SEC) << endl;
+    saida << "Tempo de execução do algoritmo de insercao Arvore AVL " << ((double)(timeStop - timeStart) / CLOCKS_PER_SEC) << endl;
+    saida << "Numero de comparacoes durante a execução : " << comparacoesAvl << " para " << m << " registros" << endl;
 
     timeStart = clock();
     for (int i = 0; i < m; i++)

@@ -11,7 +11,6 @@ AVLtree::AVLtree(HashTable *registros)
 {
     this->raiz = NULL;
     this->registros = registros;
-
 }
 
 AVLtree::~AVLtree()
@@ -39,15 +38,15 @@ NoAVL *AVLtree::libera(NoAVL *p)
 
 int AVLtree::altura(NoAVL *raiz)
 {
-    if (raiz == NULL) 
-        return 0; 
+    if (raiz == NULL)
+        return 0;
     return raiz->getAltura();
 }
 
-int AVLtree::retornaMaior(int a, int b) 
-{ 
-    return (a > b)? a : b; 
-} 
+int AVLtree::retornaMaior(int a, int b)
+{
+    return (a > b) ? a : b;
+}
 
 bool AVLtree::menorElemento(Registro *candidatoInicio, Registro *candidatoFim)
 {
@@ -72,12 +71,12 @@ bool AVLtree::menorElemento(Registro *candidatoInicio, Registro *candidatoFim)
 }
 
 // INSERÇÃO
-void AVLtree::insere(int val)
+void AVLtree::insere(int val, int &comparacoes)
 {
-    raiz = auxInsere(raiz, val);
+    raiz = auxInsere(raiz, val, comparacoes);
 }
 
-NoAVL *AVLtree::auxInsere(NoAVL *p, int val)
+NoAVL *AVLtree::auxInsere(NoAVL *p, int val, int &comparacoes)
 {
     if (p == NULL)
     {
@@ -88,9 +87,15 @@ NoAVL *AVLtree::auxInsere(NoAVL *p, int val)
         p->setAltura(1);
     }
     else if (menorElemento(registros->getRegistroFromTable(val), registros->getRegistroFromTable(p->getValor())))
-        p->setEsq(auxInsere(p->getEsq(), val));
+    {
+        comparacoes += 1;
+        p->setEsq(auxInsere(p->getEsq(), val,comparacoes));
+    }
     else if (!menorElemento(registros->getRegistroFromTable(val), registros->getRegistroFromTable(p->getValor())))
-        p->setDir(auxInsere(p->getDir(), val));
+    {
+        comparacoes += 1;
+        p->setDir(auxInsere(p->getDir(), val,comparacoes));
+    }
     else
         return p;
 
@@ -177,7 +182,7 @@ void AVLtree::auxSaidaArqv(NoAVL *p, int nivel, ofstream &saida, HashTable *regi
 
         for (int i = 1; i <= nivel; i++)
             saida << "--";
-        
+
         saida << registros->getRegistroFromTable(p->getValor())->getCode();
         saida << " ";
         saida << registros->getRegistroFromTable(p->getValor())->getDate();
