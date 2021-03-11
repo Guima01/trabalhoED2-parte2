@@ -286,7 +286,7 @@ void moduloTesteAlgoritmos(string path, int id, int numeroRegistros)
 
             if (identificaOrdenacao == 3)
             {
-                AVL->insere(hashIndex,comparacoes);
+                AVL->insere(hashIndex, comparacoes);
             }
             else
             {
@@ -366,50 +366,79 @@ void analiseParaMRegistros(HashTable *hash, vector<Registro> registros, int m, o
 {
     clock_t timeStart, timeStop;
     vector<Registro> registros2;
-
-    AVLtree *avlTree = new AVLtree(hash);
-    ArvoreB *Btree20 = new ArvoreB(10, hash);
-    ArvoreB *Btree200 = new ArvoreB(100, hash);
-
-    int comparacoesBTree20 = 0;
-    int comparacoesBTree200 = 0;
-    int comparacoesAvl = 0;
-
     registros2 = registros;
-    random_shuffle(registros2.begin(), registros2.end());
+    int comparacaoBTree20Media = 0;
+    int comparacaoBTree200Media = 0;
+    int comparacaoAvlMedia = 0;
+    double tempoMediaAvl = 0;
+    double tempoMediaBtree20 = 0;
+    double tempoMediaBtree200 = 0;
 
-    timeStart = clock();
-    for (int i = 0; i < m; i++)
+    for (int i = 0; i < 5; i++)
     {
-        int index = hash->searchFromCodeAndDate(registros2[i].getCode(), registros2[i].getDate());
-        avlTree->insere(index, comparacoesAvl);
+        AVLtree *avlTree = new AVLtree(hash);
+        ArvoreB *Btree20 = new ArvoreB(10, hash);
+        ArvoreB *Btree200 = new ArvoreB(100, hash);
+
+        int comparacaoBTree20 = 0;
+        int comparacaoBTree200 = 0;
+        int comparacaoAvl = 0;
+
+        random_shuffle(registros2.begin(), registros2.end());
+
+        timeStart = clock();
+        for (int i = 0; i < m; i++)
+        {
+            int index = hash->searchFromCodeAndDate(registros2[i].getCode(), registros2[i].getDate());
+            avlTree->insere(index, comparacaoAvl);
+        }
+        timeStop = clock();
+
+        saida << "Tempo de execução do algoritmo de insercao Arvore AVL " << ((double)(timeStop - timeStart) / CLOCKS_PER_SEC) << " para " << m << " registros" << endl;
+        saida << "Numero de comparacoes durante a execução : " << comparacaoAvl << " para " << m << " registros" << endl;
+
+        tempoMediaAvl += ((double)(timeStop - timeStart) / CLOCKS_PER_SEC);
+        comparacaoAvlMedia += comparacaoAvl;
+
+        timeStart = clock();
+        for (int i = 0; i < m; i++)
+        {
+            int index = hash->searchFromCodeAndDate(registros2[i].getCode(), registros2[i].getDate());
+            Btree20->insere(index, comparacaoBTree20);
+        }
+        timeStop = clock();
+
+        saida << "Tempo de execução do algoritmo de insercao Arvore B de ordem 20 " << ((double)(timeStop - timeStart) / CLOCKS_PER_SEC) << " para " << m << " registros" << endl;
+        saida << "Numero de comparacoes durante a execução : " << comparacaoBTree20 << " para " << m << " registros" << endl;
+
+        tempoMediaBtree20 += ((double)(timeStop - timeStart) / CLOCKS_PER_SEC);
+        comparacaoBTree20Media += comparacaoBTree20;
+
+        timeStart = clock();
+        for (int i = 0; i < m; i++)
+        {
+            int index = hash->searchFromCodeAndDate(registros2[i].getCode(), registros2[i].getDate());
+            Btree200->insere(index, comparacaoBTree200);
+        }
+        timeStop = clock();
+
+        saida << "Tempo de execução do algoritmo de insercao Arvore B de ordem 200 " << ((double)(timeStop - timeStart) / CLOCKS_PER_SEC) << " para " << m << " registros" << endl;
+        saida << "Numero de comparacoes durante a execução : " << comparacaoBTree200 << " para " << m << " registros" << endl
+              << endl;
+
+        tempoMediaBtree200 += ((double)(timeStop - timeStart) / CLOCKS_PER_SEC);
+        comparacaoBTree200Media += comparacaoBTree200;
     }
-    timeStop = clock();
 
-    saida << "Tempo de execução do algoritmo de insercao Arvore AVL " << ((double)(timeStop - timeStart) / CLOCKS_PER_SEC) << endl;
-    saida << "Numero de comparacoes durante a execução : " << comparacoesAvl << " para " << m << " registros" << endl;
+    saida << "Tempo de execução médio do algoritmo de insercao Arvore AVL : " << tempoMediaAvl / 5 << " para " << m << " registros" << endl;
+    saida << "Numero de comparacoes durante a execução : " << comparacaoAvlMedia / 5 << " para " << m << " registros" << endl;
 
-    timeStart = clock();
-    for (int i = 0; i < m; i++)
-    {
-        int index = hash->searchFromCodeAndDate(registros2[i].getCode(), registros2[i].getDate());
-        Btree20->insere(index, comparacoesBTree20);
-    }
-    timeStop = clock();
+    saida << "Tempo de execução médio do algoritmo de insercao Arvore B de ordem 20 : " << tempoMediaBtree20 / 5 << " para " << m << " registros" << endl;
+    saida << "Numero de comparacoes durante a execução : " << comparacaoBTree20Media / 5 << " para " << m << " registros" << endl;
 
-    saida << "Tempo de execução do algoritmo de insercao Arvore B de ordem 20 " << ((double)(timeStop - timeStart) / CLOCKS_PER_SEC) << endl;
-    saida << "Numero de comparacoes durante a execução : " << comparacoesBTree20 << " para " << m << " registros" << endl;
-
-    timeStart = clock();
-    for (int i = 0; i < m; i++)
-    {
-        int index = hash->searchFromCodeAndDate(registros2[i].getCode(), registros2[i].getDate());
-        Btree200->insere(index, comparacoesBTree200);
-    }
-    timeStop = clock();
-
-    saida << "Tempo de execução do algoritmo de insercao Arvore B de ordem 200 " << ((double)(timeStop - timeStart) / CLOCKS_PER_SEC) << endl;
-    saida << "Numero de comparacoes durante a execução : " << comparacoesBTree200 << " para " << m << " registros" << endl << endl;
+    saida << "Tempo de execução médio do algoritmo de insercao Arvore B de ordem 200 : " << tempoMediaBtree200 / 5 << " para " << m << " registros" << endl;
+    saida << "Numero de comparacoes durante a execução : " << comparacaoBTree200Media / 5 << " para " << m << " registros" << endl
+          << endl;
 }
 
 void seleciona(int selecao, string path)
@@ -436,7 +465,6 @@ void seleciona(int selecao, string path)
         int tam = leLinhaArquivoProcessado(registros, arquivoProcessado);
         ofstream saida("Analise das estruturas.txt");
         HashTable *hash = new HashTable(1431490);
-        
 
         for (int i = 0; i < tam; i++)
         {
@@ -445,7 +473,7 @@ void seleciona(int selecao, string path)
         for (int i = 0; i < 5; i++)
         {
 
-            analiseParaMRegistros(hash, registros, arr[i],saida);
+            analiseParaMRegistros(hash, registros, arr[i], saida);
         }
         break;
     }

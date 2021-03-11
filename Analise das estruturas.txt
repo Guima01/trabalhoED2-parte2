@@ -1,35 +1,210 @@
-Tempo de execução do algoritmo de insercao Arvore AVL 0.059
+Tempo de execução do algoritmo de insercao Arvore AVL 0.063 para 10000 registros
 Numero de comparacoes durante a execução : 121130 para 10000 registros
-Tempo de execução do algoritmo de insercao Arvore B de ordem 20 0.062
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 0.054 para 10000 registros
 Numero de comparacoes durante a execução : 236648 para 10000 registros
-Tempo de execução do algoritmo de insercao Arvore B de ordem 200 0.127
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 0.11 para 10000 registros
 Numero de comparacoes durante a execução : 907957 para 10000 registros
 
-Tempo de execução do algoritmo de insercao Arvore AVL 0.243
-Numero de comparacoes durante a execução : 733902 para 50000 registros
-Tempo de execução do algoritmo de insercao Arvore B de ordem 20 0.268
-Numero de comparacoes durante a execução : 1429260 para 50000 registros
-Tempo de execução do algoritmo de insercao Arvore B de ordem 200 0.705
-Numero de comparacoes durante a execução : 7236187 para 50000 registros
+Tempo de execução do algoritmo de insercao Arvore AVL 0.052 para 10000 registros
+Numero de comparacoes durante a execução : 121012 para 10000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 0.051 para 10000 registros
+Numero de comparacoes durante a execução : 235170 para 10000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 0.085 para 10000 registros
+Numero de comparacoes durante a execução : 906790 para 10000 registros
 
-Tempo de execução do algoritmo de insercao Arvore AVL 0.624
-Numero de comparacoes durante a execução : 1586316 para 100000 registros
-Tempo de execução do algoritmo de insercao Arvore B de ordem 20 0.46
-Numero de comparacoes durante a execução : 3039816 para 100000 registros
-Tempo de execução do algoritmo de insercao Arvore B de ordem 200 1.021
-Numero de comparacoes durante a execução : 14970834 para 100000 registros
+Tempo de execução do algoritmo de insercao Arvore AVL 0.054 para 10000 registros
+Numero de comparacoes durante a execução : 121014 para 10000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 0.053 para 10000 registros
+Numero de comparacoes durante a execução : 235332 para 10000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 0.093 para 10000 registros
+Numero de comparacoes durante a execução : 903412 para 10000 registros
 
-Tempo de execução do algoritmo de insercao Arvore AVL 2.036
-Numero de comparacoes durante a execução : 9227382 para 500000 registros
-Tempo de execução do algoritmo de insercao Arvore B de ordem 20 1.836
-Numero de comparacoes durante a execução : 16536110 para 500000 registros
-Tempo de execução do algoritmo de insercao Arvore B de ordem 200 5.128
-Numero de comparacoes durante a execução : 75098161 para 500000 registros
+Tempo de execução do algoritmo de insercao Arvore AVL 0.053 para 10000 registros
+Numero de comparacoes durante a execução : 120679 para 10000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 0.054 para 10000 registros
+Numero de comparacoes durante a execução : 233423 para 10000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 0.089 para 10000 registros
+Numero de comparacoes durante a execução : 898591 para 10000 registros
 
-Tempo de execução do algoritmo de insercao Arvore AVL 4.297
-Numero de comparacoes durante a execução : 19736678 para 1000000 registros
-Tempo de execução do algoritmo de insercao Arvore B de ordem 20 4.178
-Numero de comparacoes durante a execução : 35198812 para 1000000 registros
-Tempo de execução do algoritmo de insercao Arvore B de ordem 200 10.05
-Numero de comparacoes durante a execução : 151310303 para 1000000 registros
+Tempo de execução do algoritmo de insercao Arvore AVL 0.052 para 10000 registros
+Numero de comparacoes durante a execução : 121188 para 10000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 0.051 para 10000 registros
+Numero de comparacoes durante a execução : 229604 para 10000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 0.086 para 10000 registros
+Numero de comparacoes durante a execução : 900693 para 10000 registros
+
+Tempo de execução médio do algoritmo de insercao Arvore AVL 0.0548 para 10000 registros
+Numero de comparacoes durante a execução : 121004 para 10000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 0.0526 para 10000 registros
+Numero de comparacoes durante a execução : 234035 para 10000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 0.0926 para 10000 registros
+Numero de comparacoes durante a execução : 903488 para 10000 registros
+
+Tempo de execução do algoritmo de insercao Arvore AVL 0.21 para 50000 registros
+Numero de comparacoes durante a execução : 732566 para 50000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 0.206 para 50000 registros
+Numero de comparacoes durante a execução : 1443895 para 50000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 0.477 para 50000 registros
+Numero de comparacoes durante a execução : 7179352 para 50000 registros
+
+Tempo de execução do algoritmo de insercao Arvore AVL 0.278 para 50000 registros
+Numero de comparacoes durante a execução : 726529 para 50000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 0.283 para 50000 registros
+Numero de comparacoes durante a execução : 1429902 para 50000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 0.632 para 50000 registros
+Numero de comparacoes durante a execução : 6695995 para 50000 registros
+
+Tempo de execução do algoritmo de insercao Arvore AVL 0.308 para 50000 registros
+Numero de comparacoes durante a execução : 725396 para 50000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 0.307 para 50000 registros
+Numero de comparacoes durante a execução : 1446550 para 50000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 0.681 para 50000 registros
+Numero de comparacoes durante a execução : 6719378 para 50000 registros
+
+Tempo de execução do algoritmo de insercao Arvore AVL 0.403 para 50000 registros
+Numero de comparacoes durante a execução : 722690 para 50000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 0.334 para 50000 registros
+Numero de comparacoes durante a execução : 1417534 para 50000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 0.711 para 50000 registros
+Numero de comparacoes durante a execução : 6704575 para 50000 registros
+
+Tempo de execução do algoritmo de insercao Arvore AVL 0.303 para 50000 registros
+Numero de comparacoes durante a execução : 726954 para 50000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 0.309 para 50000 registros
+Numero de comparacoes durante a execução : 1410392 para 50000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 0.739 para 50000 registros
+Numero de comparacoes durante a execução : 6683581 para 50000 registros
+
+Tempo de execução médio do algoritmo de insercao Arvore AVL 0.3004 para 50000 registros
+Numero de comparacoes durante a execução : 726827 para 50000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 0.2878 para 50000 registros
+Numero de comparacoes durante a execução : 1429654 para 50000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 0.648 para 50000 registros
+Numero de comparacoes durante a execução : 6796576 para 50000 registros
+
+Tempo de execução do algoritmo de insercao Arvore AVL 0.362 para 100000 registros
+Numero de comparacoes durante a execução : 1581721 para 100000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 0.342 para 100000 registros
+Numero de comparacoes durante a execução : 3049857 para 100000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 0.887 para 100000 registros
+Numero de comparacoes durante a execução : 14886682 para 100000 registros
+
+Tempo de execução do algoritmo de insercao Arvore AVL 0.494 para 100000 registros
+Numero de comparacoes durante a execução : 1574003 para 100000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 0.509 para 100000 registros
+Numero de comparacoes durante a execução : 3059628 para 100000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 1.197 para 100000 registros
+Numero de comparacoes durante a execução : 14640143 para 100000 registros
+
+Tempo de execução do algoritmo de insercao Arvore AVL 0.582 para 100000 registros
+Numero de comparacoes durante a execução : 1567386 para 100000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 0.577 para 100000 registros
+Numero de comparacoes durante a execução : 3147861 para 100000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 1.343 para 100000 registros
+Numero de comparacoes durante a execução : 14213264 para 100000 registros
+
+Tempo de execução do algoritmo de insercao Arvore AVL 0.621 para 100000 registros
+Numero de comparacoes durante a execução : 1556782 para 100000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 0.625 para 100000 registros
+Numero de comparacoes durante a execução : 3075875 para 100000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 1.455 para 100000 registros
+Numero de comparacoes durante a execução : 14447309 para 100000 registros
+
+Tempo de execução do algoritmo de insercao Arvore AVL 0.642 para 100000 registros
+Numero de comparacoes durante a execução : 1555778 para 100000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 0.648 para 100000 registros
+Numero de comparacoes durante a execução : 3093330 para 100000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 1.516 para 100000 registros
+Numero de comparacoes durante a execução : 14615077 para 100000 registros
+
+Tempo de execução médio do algoritmo de insercao Arvore AVL 0.5402 para 100000 registros
+Numero de comparacoes durante a execução : 1567134 para 100000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 0.5402 para 100000 registros
+Numero de comparacoes durante a execução : 3085310 para 100000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 1.2796 para 100000 registros
+Numero de comparacoes durante a execução : 14560495 para 100000 registros
+
+Tempo de execução do algoritmo de insercao Arvore AVL 1.82 para 500000 registros
+Numero de comparacoes durante a execução : 9279876 para 500000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 1.635 para 500000 registros
+Numero de comparacoes durante a execução : 16472027 para 500000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 4.409 para 500000 registros
+Numero de comparacoes durante a execução : 74712552 para 500000 registros
+
+Tempo de execução do algoritmo de insercao Arvore AVL 2.204 para 500000 registros
+Numero de comparacoes durante a execução : 9218316 para 500000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 2.008 para 500000 registros
+Numero de comparacoes durante a execução : 16499019 para 500000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 5.985 para 500000 registros
+Numero de comparacoes durante a execução : 73768515 para 500000 registros
+
+Tempo de execução do algoritmo de insercao Arvore AVL 2.536 para 500000 registros
+Numero de comparacoes durante a execução : 9170759 para 500000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 2.438 para 500000 registros
+Numero de comparacoes durante a execução : 16859818 para 500000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 6.028 para 500000 registros
+Numero de comparacoes durante a execução : 70020824 para 500000 registros
+
+Tempo de execução do algoritmo de insercao Arvore AVL 2.571 para 500000 registros
+Numero de comparacoes durante a execução : 9149694 para 500000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 2.458 para 500000 registros
+Numero de comparacoes durante a execução : 17047078 para 500000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 6.674 para 500000 registros
+Numero de comparacoes durante a execução : 78091312 para 500000 registros
+
+Tempo de execução do algoritmo de insercao Arvore AVL 2.757 para 500000 registros
+Numero de comparacoes durante a execução : 9104542 para 500000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 2.668 para 500000 registros
+Numero de comparacoes durante a execução : 17533553 para 500000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 7.496 para 500000 registros
+Numero de comparacoes durante a execução : 75097904 para 500000 registros
+
+Tempo de execução médio do algoritmo de insercao Arvore AVL 2.3776 para 500000 registros
+Numero de comparacoes durante a execução : 9184637 para 500000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 2.2414 para 500000 registros
+Numero de comparacoes durante a execução : 16882299 para 500000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 6.1184 para 500000 registros
+Numero de comparacoes durante a execução : 74338221 para 500000 registros
+
+Tempo de execução do algoritmo de insercao Arvore AVL 4.472 para 1000000 registros
+Numero de comparacoes durante a execução : 19751835 para 1000000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 3.649 para 1000000 registros
+Numero de comparacoes durante a execução : 34693202 para 1000000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 9.608 para 1000000 registros
+Numero de comparacoes durante a execução : 149446754 para 1000000 registros
+
+Tempo de execução do algoritmo de insercao Arvore AVL 5.244 para 1000000 registros
+Numero de comparacoes durante a execução : 19470529 para 1000000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 4.961 para 1000000 registros
+Numero de comparacoes durante a execução : 35141105 para 1000000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 11.848 para 1000000 registros
+Numero de comparacoes durante a execução : 149231706 para 1000000 registros
+
+Tempo de execução do algoritmo de insercao Arvore AVL 5.488 para 1000000 registros
+Numero de comparacoes durante a execução : 19410787 para 1000000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 5.296 para 1000000 registros
+Numero de comparacoes durante a execução : 36129589 para 1000000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 13.811 para 1000000 registros
+Numero de comparacoes durante a execução : 157423461 para 1000000 registros
+
+Tempo de execução do algoritmo de insercao Arvore AVL 5.152 para 1000000 registros
+Numero de comparacoes durante a execução : 19341851 para 1000000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 4.91 para 1000000 registros
+Numero de comparacoes durante a execução : 35857652 para 1000000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 13.631 para 1000000 registros
+Numero de comparacoes durante a execução : 157597814 para 1000000 registros
+
+Tempo de execução do algoritmo de insercao Arvore AVL 5.743 para 1000000 registros
+Numero de comparacoes durante a execução : 19345436 para 1000000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 5.692 para 1000000 registros
+Numero de comparacoes durante a execução : 36287118 para 1000000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 14.031 para 1000000 registros
+Numero de comparacoes durante a execução : 155888635 para 1000000 registros
+
+Tempo de execução médio do algoritmo de insercao Arvore AVL 5.2198 para 1000000 registros
+Numero de comparacoes durante a execução : 19464087 para 1000000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 4.9016 para 1000000 registros
+Numero de comparacoes durante a execução : 35621733 para 1000000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 12.5858 para 1000000 registros
+Numero de comparacoes durante a execução : 153917674 para 1000000 registros
 
