@@ -72,13 +72,29 @@ void ArvoreB::calculaTotalCasosCidade(NoB *no, string code, int &comparacoes, in
         {
             totalCasos += this->getHashTable()->getRegistroFromTable(no->getKeys()[i])->getCases();
         }
+        else if (this->getHashTable()->getRegistroFromTable(no->getKeys()[i])->getCode() > code)
+        {
+            comparacoes += 1;
+            break;
+        }
+        comparacoes += 1;
     }
     if (!no->getFolha())
     {
         comparacoes += 1;
-        if (code >= this->getHashTable()->getRegistroFromTable(no->getKeys()[i - 1])->getCode())
+        if (i == no->getN())
         {
-            calculaTotalCasosCidade(no->getFilhos()[i], code, comparacoes, totalCasos);
+            if (code >= this->getHashTable()->getRegistroFromTable(no->getKeys()[i - 1])->getCode())
+            {
+                calculaTotalCasosCidade(no->getFilhos()[i], code, comparacoes, totalCasos);
+            }
+        }
+        else
+        {
+            if (code >= this->getHashTable()->getRegistroFromTable(no->getKeys()[i ])->getCode())
+            {
+                calculaTotalCasosCidade(no->getFilhos()[i+1], code, comparacoes, totalCasos);
+            }
         }
     }
 }

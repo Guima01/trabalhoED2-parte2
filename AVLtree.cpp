@@ -89,12 +89,12 @@ NoAVL *AVLtree::auxInsere(NoAVL *p, int val, int &comparacoes)
     else if (menorElemento(registros->getRegistroFromTable(val), registros->getRegistroFromTable(p->getValor())))
     {
         comparacoes += 1;
-        p->setEsq(auxInsere(p->getEsq(), val,comparacoes));
+        p->setEsq(auxInsere(p->getEsq(), val, comparacoes));
     }
     else if (!menorElemento(registros->getRegistroFromTable(val), registros->getRegistroFromTable(p->getValor())))
     {
         comparacoes += 1;
-        p->setDir(auxInsere(p->getDir(), val,comparacoes));
+        p->setDir(auxInsere(p->getDir(), val, comparacoes));
     }
     else
         return p;
@@ -129,21 +129,34 @@ NoAVL *AVLtree::auxInsere(NoAVL *p, int val, int &comparacoes)
 }
 
 // BUSCA
-NoAVL *AVLtree::busca(int val)
+void AVLtree::busca(string code, int &totalCasos, int &comparacoes)
 {
-    return auxBusca(raiz, val);
+    auxBusca(raiz, code, totalCasos,comparacoes);
 }
 
-NoAVL *AVLtree::auxBusca(NoAVL *p, int val)
+void AVLtree::auxBusca(NoAVL *p, string code, int &totalCasos, int &comparacoes)
 {
-    if (p == NULL)
-        return new NoAVL();
-    else if (p->getValor() == val)
-        return p;
-    else if (val < p->getValor())
-        return auxBusca(p->getEsq(), val);
-    else
-        return auxBusca(p->getDir(), val);
+    if (p != NULL)
+    {
+        comparacoes += 1;
+        if (code == this->registros->getRegistroFromTable(p->getValor())->getCode()){
+            totalCasos += this->registros->getRegistroFromTable(p->getValor())->getCases();
+            auxBusca(p->getEsq(), code, totalCasos, comparacoes);
+            auxBusca(p->getDir(), code, totalCasos, comparacoes);
+        }
+
+        else if (code < this->registros->getRegistroFromTable(p->getValor())->getCode())
+        {
+            comparacoes += 1;
+            auxBusca(p->getEsq(), code, totalCasos, comparacoes);
+        }
+
+        else
+        {
+            comparacoes += 1;
+            auxBusca(p->getDir(), code, totalCasos, comparacoes);
+        }
+    }
 }
 
 // IMPRESSÃO NO TERMINAL

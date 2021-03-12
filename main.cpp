@@ -437,12 +437,39 @@ void analiseParaMRegistros(HashTable *hash, vector<RegistrosCoordenados> registr
         timeStop = clock();
 
         saida << "Tempo de execução do algoritmo de insercao Arvore AVL :" << ((double)(timeStop - timeStart) / CLOCKS_PER_SEC) << " para " << m << " registros" << endl;
-        saida << "Numero de comparacoes durante a execução : " << comparacaoAvl << " para " << m << " registros" << endl
-              << endl
-              << endl;
+        saida << "Numero de comparacoes durante a execução : " << comparacaoAvl << " para " << m << " registros" << endl;
 
         tempoMediaAvl += ((double)(timeStop - timeStart) / CLOCKS_PER_SEC);
         comparacaoAvlMedia += comparacaoAvl;
+
+        timeStart = clock();
+        avlTree->busca(codigo, totalCasosAVLtree, comparacaoBuscaAVLtree);
+        timeStop = clock();
+
+        saida << "Tempo de execução do algoritmo de busca S1 Arvore AVL : " << ((double)(timeStop - timeStart) / CLOCKS_PER_SEC) << " para " << m << " registros" << endl;
+        saida << "Total de casos da cidade selecionada: " << totalCasosAVLtree << " para " << m << " registros" << endl;
+        saida << "Numero de comparacoes durante a execução : " << comparacaoBuscaAVLtree << " para " << m << " registros" << endl;
+
+        tempoMedioBuscaAvl += ((double)(timeStop - timeStart) / CLOCKS_PER_SEC);
+        comparacaoMediaBuscaAvl += comparacaoBuscaAVLtree;
+        totalCasosMedioAvl += totalCasosAVLtree;
+
+        timeStart = clock();
+        for (int i = 0; i < registrosCoordenados.size(); i++)
+        {
+            avlTree->busca(registrosCoordenados[i].getCityCode(), totalCasosAVLtreeS2, comparacaoBuscaAVLtreeS2);
+        }
+        timeStop = clock();
+
+        saida << "Tempo de execução do algoritmo de busca S2 Arvore AVL : " << ((double)(timeStop - timeStart) / CLOCKS_PER_SEC) << " para " << m << " registros" << endl;
+        saida << "Total de casos das cidades no intervalo selecionado: " << totalCasosAVLtreeS2 << " para " << m << " registros" << endl;
+        saida << "Numero de comparacoes durante a execução : " << comparacaoBuscaAVLtreeS2 << " para " << m << " registros" << endl
+              << endl
+              << endl;
+
+        tempoMedioBuscaAvlS2 += ((double)(timeStop - timeStart) / CLOCKS_PER_SEC);
+        comparacaoMediaBuscaAvlS2 += comparacaoBuscaAVLtreeS2;
+        totalCasosMedioAvlS2 += totalCasosAVLtreeS2;
 
         //BTree20
         timeStart = clock();
@@ -513,8 +540,7 @@ void analiseParaMRegistros(HashTable *hash, vector<RegistrosCoordenados> registr
 
         saida << "Tempo de execução do algoritmo de busca Arvore B de ordem 200 :" << ((double)(timeStop - timeStart) / CLOCKS_PER_SEC) << " para " << m << " registros" << endl;
         saida << "Total de casos da cidade selecionada: " << totalCasosBtree200 << " para " << m << " registros" << endl;
-        saida << "Numero de comparacoes durante a execução : " << comparacaoBuscaBtree200 << " para " << m << " registros" << endl
-              << endl;
+        saida << "Numero de comparacoes durante a execução : " << comparacaoBuscaBtree200 << " para " << m << " registros" << endl;
 
         tempoMedioBuscaBtree200 += ((double)(timeStop - timeStart) / CLOCKS_PER_SEC);
         totalCasosMedioBtree200 += totalCasosBtree200;
@@ -544,7 +570,13 @@ void analiseParaMRegistros(HashTable *hash, vector<RegistrosCoordenados> registr
           << endl;
 
     saida << "Tempo de execução médio do algoritmo de insercao Arvore AVL : " << tempoMediaAvl / 5 << " para " << m << " registros" << endl;
-    saida << "Numero de comparacoes durante a execução : " << comparacaoAvlMedia / 5 << " para " << m << " registros" << endl
+    saida << "Numero de comparacoes durante a execução : " << comparacaoAvlMedia / 5 << " para " << m << " registros" << endl;    saida << "Tempo de execução médio do algoritmo de Busca S1 Arvore B de ordem 20 : " << tempoMedioBuscaBtree20 / 5 << " para " << m << " registros" << endl;
+    saida << "Tempo de execução médio do algoritmo de Busca S1 Arvore AVL : " << tempoMedioBuscaAvl / 5 << " para " << m << " registros" << endl;
+    saida << "Numero de comparacoes durante a execução : " << comparacaoMediaBuscaAvl / 5 << " para " << m << " registros" << endl;
+    saida << "Media do total de casos durante a execução : " << totalCasosMedioAvl / 5 << " para " << m << " registros" << endl;
+    saida << "Tempo de execução médio do algoritmo de Busca S2 Arvore AVL : " << tempoMedioBuscaAvlS2 / 5 << " para " << m << " registros" << endl;
+    saida << "Media do total de casos das cidades no intervalo selecionado: " << totalCasosMedioAvlS2 / 5 << " para " << m << " registros" << endl;
+    saida << "Numero de comparacoes durante a execução : " << comparacaoMediaBuscaAvlS2 / 5 << " para " << m << " registros" << endl
           << endl
           << endl;
 
@@ -662,5 +694,3 @@ int main(int argc, char const *argv[])
 
     return 0;
 }
-//  g++ -o parte2 -O3 *.cpp
-//  parte2.exe ./Arquivos/
