@@ -198,8 +198,7 @@ void QuadTree::retornaRegistrosNasCoordenadas(vector<RegistrosCoordenados> &vet,
 {
     if (p != nullptr)
     {
-        if(p->getCoordX() < latitude1 && p->getCoordX() > latitude2 && p->getCoordY() < longitude1 && p->getCoordY() > longitude2){
-            cout<<p->getRegistroCoordenado().getCityName()<<endl;
+        if(p->getCoordX() <= latitude1 && p->getCoordX() >= latitude2 && p->getCoordY() <= longitude1 && p->getCoordY() >= longitude2){
             vet.push_back(p->getRegistroCoordenado());
         }
         retornaRegistrosNasCoordenadas(vet, p->getNw(), latitude1, longitude1, latitude2, longitude2);
@@ -209,28 +208,3 @@ void QuadTree::retornaRegistrosNasCoordenadas(vector<RegistrosCoordenados> &vet,
     }
 }
 
-/*NoquadTree QuadTree::compara(NoquadTree *r, NoquadTree *p)
-{
-    if (p->getCoordX() < r->getCoordX())
-    {
-        if (p->getCoordY() < r->getCoordY())
-        {
-            return r->getSw();
-        }
-        else
-        {
-            return r->getNw();
-        }
-    }
-    else
-    {
-        if (p->getCoordY() < r->getCoordY())
-        {
-            return r->getSe();
-        }
-        else
-        {
-            return r->getNe();
-        }
-    }
-}*/

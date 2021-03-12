@@ -22,7 +22,7 @@ int RegistrosCoordenados::getStateCode()
 {
     return this->stateCode;
 }
-int RegistrosCoordenados::getCityCode()
+string RegistrosCoordenados::getCityCode()
 {
     return this->cityCode;
 }
@@ -47,7 +47,7 @@ void RegistrosCoordenados::setStateCode(int stateCode)
 {
     this->stateCode = stateCode;
 }
-void RegistrosCoordenados::setCityCode(int cityCode)
+void RegistrosCoordenados::setCityCode(string cityCode)
 {
     this->cityCode = cityCode;
 }

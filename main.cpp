@@ -76,8 +76,8 @@ void leLinha(QuadTree &quad, ifstream &arq, int linhas)
             registroCoordenado->setStateCode(atoi(stringDados[0].c_str()));
             code = stringDados[1];
             code = code.erase(code.size() - 1);
-            registroCoordenado->setCityCode(atoi(code.c_str()));
-            removeAccents(stringDados[2]); //não sei se vai ser necessário
+            registroCoordenado->setCityCode(code);
+            removeAccents(stringDados[2]);
             registroCoordenado->setCityName(stringDados[2]);
 
             registroCoordenado->setLatitude(stod(stringDados[3].c_str()));
@@ -222,7 +222,6 @@ void moduloTesteAlgoritmos(string path, int id, int numeroRegistros)
             ofstream saida("saidaQuadTree.txt");
             quad.ImprimeArquivoTexto(quad.getRaiz(), 0, saida);
         }
-        quad.retornaRegistrosNasCoordenadas(vet, quad.getRaiz(), -27.0000, 0.0, -28.000, -100.000);
     }
     else if (identificaOrdenacao == 2)
     {
@@ -362,17 +361,43 @@ int menu()
     return selecao;
 }
 
-void analiseParaMRegistros(HashTable *hash, vector<Registro> registros, int m, ofstream &saida)
+void analiseParaMRegistros(HashTable *hash, vector<RegistrosCoordenados> registrosCoordenados, vector<Registro> registros, int m, ofstream &saida, string codigo)
 {
     clock_t timeStart, timeStop;
     vector<Registro> registros2;
     registros2 = registros;
+
     int comparacaoBTree20Media = 0;
     int comparacaoBTree200Media = 0;
     int comparacaoAvlMedia = 0;
+
     double tempoMediaAvl = 0;
     double tempoMediaBtree20 = 0;
     double tempoMediaBtree200 = 0;
+
+    double tempoMedioBuscaAvl = 0;
+    double tempoMedioBuscaBtree20 = 0;
+    double tempoMedioBuscaBtree200 = 0;
+
+    double totalCasosMedioAvl = 0;
+    double totalCasosMedioBtree20 = 0;
+    double totalCasosMedioBtree200 = 0;
+
+    double comparacaoMediaBuscaBTree20 = 0;
+    double comparacaoMediaBuscaBTree200 = 0;
+    double comparacaoMediaBuscaAvl = 0;
+
+    double tempoMedioBuscaAvlS2 = 0;
+    double tempoMedioBuscaBtree20S2 = 0;
+    double tempoMedioBuscaBtree200S2 = 0;
+
+    double totalCasosMedioAvlS2 = 0;
+    double totalCasosMedioBtree20S2 = 0;
+    double totalCasosMedioBtree200S2 = 0;
+
+    double comparacaoMediaBuscaBTree20S2 = 0;
+    double comparacaoMediaBuscaBTree200S2 = 0;
+    double comparacaoMediaBuscaAvlS2 = 0;
 
     for (int i = 0; i < 5; i++)
     {
@@ -384,8 +409,25 @@ void analiseParaMRegistros(HashTable *hash, vector<Registro> registros, int m, o
         int comparacaoBTree200 = 0;
         int comparacaoAvl = 0;
 
+        int comparacaoBuscaBtree20 = 0;
+        int comparacaoBuscaBtree200 = 0;
+        int comparacaoBuscaAVLtree = 0;
+
+        int totalCasosBtree20 = 0;
+        int totalCasosBtree200 = 0;
+        int totalCasosAVLtree = 0;
+
+        int comparacaoBuscaBtree20S2 = 0;
+        int comparacaoBuscaBtree200S2 = 0;
+        int comparacaoBuscaAVLtreeS2 = 0;
+
+        int totalCasosBtree20S2 = 0;
+        int totalCasosBtree200S2 = 0;
+        int totalCasosAVLtreeS2 = 0;
+
         random_shuffle(registros2.begin(), registros2.end());
 
+        //AVL
         timeStart = clock();
         for (int i = 0; i < m; i++)
         {
@@ -394,26 +436,62 @@ void analiseParaMRegistros(HashTable *hash, vector<Registro> registros, int m, o
         }
         timeStop = clock();
 
-        saida << "Tempo de execução do algoritmo de insercao Arvore AVL " << ((double)(timeStop - timeStart) / CLOCKS_PER_SEC) << " para " << m << " registros" << endl;
-        saida << "Numero de comparacoes durante a execução : " << comparacaoAvl << " para " << m << " registros" << endl;
+        saida << "Tempo de execução do algoritmo de insercao Arvore AVL :" << ((double)(timeStop - timeStart) / CLOCKS_PER_SEC) << " para " << m << " registros" << endl;
+        saida << "Numero de comparacoes durante a execução : " << comparacaoAvl << " para " << m << " registros" << endl
+              << endl
+              << endl;
 
         tempoMediaAvl += ((double)(timeStop - timeStart) / CLOCKS_PER_SEC);
         comparacaoAvlMedia += comparacaoAvl;
 
+        //BTree20
         timeStart = clock();
         for (int i = 0; i < m; i++)
         {
             int index = hash->searchFromCodeAndDate(registros2[i].getCode(), registros2[i].getDate());
             Btree20->insere(index, comparacaoBTree20);
         }
+
         timeStop = clock();
 
-        saida << "Tempo de execução do algoritmo de insercao Arvore B de ordem 20 " << ((double)(timeStop - timeStart) / CLOCKS_PER_SEC) << " para " << m << " registros" << endl;
+        saida << "Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :" << ((double)(timeStop - timeStart) / CLOCKS_PER_SEC) << " para " << m << " registros" << endl;
         saida << "Numero de comparacoes durante a execução : " << comparacaoBTree20 << " para " << m << " registros" << endl;
 
         tempoMediaBtree20 += ((double)(timeStop - timeStart) / CLOCKS_PER_SEC);
         comparacaoBTree20Media += comparacaoBTree20;
 
+        //S1
+        timeStart = clock();
+        Btree20->calculaTotalCasosCidade(Btree20->getRaiz(), codigo, comparacaoBuscaBtree20, totalCasosBtree20);
+        timeStop = clock();
+
+        saida << "Tempo de execução do algoritmo de busca S1 Arvore B de ordem 20 :" << ((double)(timeStop - timeStart) / CLOCKS_PER_SEC) << " para " << m << " registros" << endl;
+        saida << "Total de casos da cidade selecionada: " << totalCasosBtree20 << " para " << m << " registros" << endl;
+        saida << "Numero de comparacoes durante a execução : " << comparacaoBuscaBtree20 << " para " << m << " registros" << endl;
+
+        tempoMedioBuscaBtree20 += ((double)(timeStop - timeStart) / CLOCKS_PER_SEC);
+        totalCasosMedioBtree20 += totalCasosBtree20;
+        comparacaoMediaBuscaBTree20 += comparacaoBuscaBtree20;
+
+        //S2
+        timeStart = clock();
+        for (int i = 0; i < registrosCoordenados.size(); i++)
+        {
+            Btree20->calculaTotalCasosCidade(Btree20->getRaiz(), registrosCoordenados[i].getCityCode(), comparacaoBuscaBtree20S2, totalCasosBtree20S2);
+        }
+        timeStop = clock();
+
+        saida << "Tempo de execução do algoritmo de busca S2 Arvore B de ordem 20 :" << ((double)(timeStop - timeStart) / CLOCKS_PER_SEC) << " para " << m << " registros" << endl;
+        saida << "Total de casos das cidades no intervalo selecionado: " << totalCasosBtree20S2 << " para " << m << " registros" << endl;
+        saida << "Numero de comparacoes durante a execução : " << comparacaoBuscaBtree20S2 << " para " << m << " registros" << endl
+              << endl
+              << endl;
+
+        tempoMedioBuscaBtree20S2 += ((double)(timeStop - timeStart) / CLOCKS_PER_SEC);
+        totalCasosMedioBtree20S2 += totalCasosBtree20S2;
+        comparacaoMediaBuscaBTree20S2 += comparacaoBuscaBtree20S2;
+
+        //BTree200
         timeStart = clock();
         for (int i = 0; i < m; i++)
         {
@@ -422,22 +500,76 @@ void analiseParaMRegistros(HashTable *hash, vector<Registro> registros, int m, o
         }
         timeStop = clock();
 
-        saida << "Tempo de execução do algoritmo de insercao Arvore B de ordem 200 " << ((double)(timeStop - timeStart) / CLOCKS_PER_SEC) << " para " << m << " registros" << endl;
-        saida << "Numero de comparacoes durante a execução : " << comparacaoBTree200 << " para " << m << " registros" << endl
-              << endl;
+        saida << "Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :" << ((double)(timeStop - timeStart) / CLOCKS_PER_SEC) << " para " << m << " registros" << endl;
+        saida << "Numero de comparacoes durante a execução : " << comparacaoBTree200 << " para " << m << " registros" << endl;
 
         tempoMediaBtree200 += ((double)(timeStop - timeStart) / CLOCKS_PER_SEC);
         comparacaoBTree200Media += comparacaoBTree200;
+
+        //S1
+        timeStart = clock();
+        Btree200->calculaTotalCasosCidade(Btree200->getRaiz(), codigo, comparacaoBuscaBtree200, totalCasosBtree200);
+        timeStop = clock();
+
+        saida << "Tempo de execução do algoritmo de busca Arvore B de ordem 200 :" << ((double)(timeStop - timeStart) / CLOCKS_PER_SEC) << " para " << m << " registros" << endl;
+        saida << "Total de casos da cidade selecionada: " << totalCasosBtree200 << " para " << m << " registros" << endl;
+        saida << "Numero de comparacoes durante a execução : " << comparacaoBuscaBtree200 << " para " << m << " registros" << endl
+              << endl;
+
+        tempoMedioBuscaBtree200 += ((double)(timeStop - timeStart) / CLOCKS_PER_SEC);
+        totalCasosMedioBtree200 += totalCasosBtree200;
+        comparacaoMediaBuscaBTree200 += comparacaoBuscaBtree200;
+
+        //S2
+        timeStart = clock();
+        for (int i = 0; i < registrosCoordenados.size(); i++)
+        {
+            Btree200->calculaTotalCasosCidade(Btree200->getRaiz(), registrosCoordenados[i].getCityCode(), comparacaoBuscaBtree200S2, totalCasosBtree200S2);
+        }
+        timeStop = clock();
+
+        saida << "Tempo de execução do algoritmo de busca S2 Arvore B de ordem 200 :" << ((double)(timeStop - timeStart) / CLOCKS_PER_SEC) << " para " << m << " registros" << endl;
+        saida << "Total de casos das cidades no intervalo selecionado: " << totalCasosBtree200S2 << " para " << m << " registros" << endl;
+        saida << "Numero de comparacoes durante a execução : " << comparacaoBuscaBtree200S2 << " para " << m << " registros" << endl
+              << endl
+              << endl;
+
+        tempoMedioBuscaBtree200S2 += ((double)(timeStop - timeStart) / CLOCKS_PER_SEC);
+        totalCasosMedioBtree200S2 += totalCasosBtree200S2;
+        comparacaoMediaBuscaBTree200S2 += comparacaoBuscaBtree200S2;
     }
 
+    saida << "MEDIAS" << endl
+          << endl
+          << endl;
+
     saida << "Tempo de execução médio do algoritmo de insercao Arvore AVL : " << tempoMediaAvl / 5 << " para " << m << " registros" << endl;
-    saida << "Numero de comparacoes durante a execução : " << comparacaoAvlMedia / 5 << " para " << m << " registros" << endl;
+    saida << "Numero de comparacoes durante a execução : " << comparacaoAvlMedia / 5 << " para " << m << " registros" << endl
+          << endl
+          << endl;
 
     saida << "Tempo de execução médio do algoritmo de insercao Arvore B de ordem 20 : " << tempoMediaBtree20 / 5 << " para " << m << " registros" << endl;
     saida << "Numero de comparacoes durante a execução : " << comparacaoBTree20Media / 5 << " para " << m << " registros" << endl;
+    saida << "Tempo de execução médio do algoritmo de Busca S1 Arvore B de ordem 20 : " << tempoMedioBuscaBtree20 / 5 << " para " << m << " registros" << endl;
+    saida << "Numero de comparacoes durante a execução : " << comparacaoMediaBuscaBTree20 / 5 << " para " << m << " registros" << endl;
+    saida << "Media do total de casos durante a execução : " << totalCasosMedioBtree20 / 5 << " para " << m << " registros" << endl;
+    saida << "Tempo de execução médio do algoritmo de Busca S2 Arvore B de ordem 20 : " << tempoMedioBuscaBtree20S2 / 5 << " para " << m << " registros" << endl;
+    saida << "Media do total de casos das cidades no intervalo selecionado: " << totalCasosMedioBtree20S2 / 5 << " para " << m << " registros" << endl;
+    saida << "Numero de comparacoes durante a execução : " << comparacaoMediaBuscaBTree20S2 / 5 << " para " << m << " registros" << endl
+          << endl
+          << endl;
 
     saida << "Tempo de execução médio do algoritmo de insercao Arvore B de ordem 200 : " << tempoMediaBtree200 / 5 << " para " << m << " registros" << endl;
-    saida << "Numero de comparacoes durante a execução : " << comparacaoBTree200Media / 5 << " para " << m << " registros" << endl
+    saida << "Numero de comparacoes durante a execução : " << comparacaoBTree200Media / 5 << " para " << m << " registros" << endl;
+    saida << "Tempo de execução médio do algoritmo de Busca S1 Arvore B de ordem 200 : " << tempoMedioBuscaBtree200 / 5 << " para " << m << " registros" << endl;
+    saida << "Numero de comparacoes durante a execução : " << comparacaoMediaBuscaBTree200 / 5 << " para " << m << " registros" << endl;
+    saida << "Media do total de casos durante a execução : " << totalCasosMedioBtree200 / 5 << " para " << m << " registros" << endl;
+    saida << "Tempo de execução médio do algoritmo de Busca S2 Arvore B de ordem 200 : " << tempoMedioBuscaBtree200S2 / 5 << " para " << m << " registros" << endl;
+    saida << "Media do total de casos das cidades no intervalo selecionado: " << totalCasosMedioBtree200S2 / 5 << " para " << m << " registros" << endl;
+    saida << "Numero de comparacoes durante a execução : " << comparacaoMediaBuscaBTree200S2 / 5 << " para " << m << " registros" << endl
+          << endl
+          << endl
+          << endl
           << endl;
 }
 
@@ -463,6 +595,7 @@ void seleciona(int selecao, string path)
 
         int hashIndex;
         int tam = leLinhaArquivoProcessado(registros, arquivoProcessado);
+
         ofstream saida("Analise das estruturas.txt");
         HashTable *hash = new HashTable(1431490);
 
@@ -470,10 +603,38 @@ void seleciona(int selecao, string path)
         {
             hash->insert(&registros[i]);
         }
+
+        QuadTree quad;
+        string caminho2 = path + "brazil_cities_coordinates.csv";
+        ifstream arquivo;
+        arquivo.open(caminho2, ios::in);
+        leLinha(quad, arquivo, 5571);
+        arquivo.close();
+
+        string codigo;
+        double latitude1;
+        double longitude1;
+        double latitude2;
+        double longitude2;
+
+        cout << "Digite o codigo da cidade para S1:" << endl;
+        cin >> codigo;
+        cout << "Digite a latitude 1 para S2:" << endl;
+        cin >> latitude1;
+        cout << "Digite a longitude 1 para S2:" << endl;
+        cin >> longitude1;
+        cout << "Digite a latitude 2 para S2:" << endl;
+        cin >> latitude2;
+        cout << "Digite a longitude 2 para S2:" << endl;
+        cin >> longitude2;
+
+        vector<RegistrosCoordenados> registrosCoordenados;
+
+        quad.retornaRegistrosNasCoordenadas(registrosCoordenados, quad.getRaiz(), latitude1, longitude1, latitude2, longitude2);
+
         for (int i = 0; i < 5; i++)
         {
-
-            analiseParaMRegistros(hash, registros, arr[i], saida);
+            analiseParaMRegistros(hash, registrosCoordenados, registros, arr[i], saida, codigo);
         }
         break;
     }

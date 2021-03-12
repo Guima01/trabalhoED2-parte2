@@ -7,7 +7,7 @@ class RegistrosCoordenados
 
 private:
     int stateCode;
-    int cityCode;
+    string cityCode;
     string cityName;
     double latitude;
     double longitude;
@@ -17,13 +17,13 @@ public:
     RegistrosCoordenados();
     ~RegistrosCoordenados();
     int getStateCode();
-    int getCityCode();
+    string getCityCode();
     string getCityName();
     double getLatitude();
     double getLongitude();
     bool getCapital();
     void setStateCode(int stateCode);
-    void setCityCode(int cityCode);
+    void setCityCode(string cityCode);
     void setCityName(string cityName);
     void setLatitude(double latitude);
     void setLongitude(double longitude);
