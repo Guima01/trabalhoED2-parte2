@@ -1,929 +1,924 @@
-Tempo de execução do algoritmo de insercao Arvore AVL :0.046 para 10000 registros
+Tempo de execução do algoritmo de insercao Arvore AVL :0.043 para 10000 registros
 Numero de comparacoes durante a execução : 121130 para 10000 registros
 Tempo de execução do algoritmo de busca S1 Arvore AVL : 0 para 10000 registros
 Total de casos da cidade selecionada: 0 para 10000 registros
-Numero de comparacoes durante a execução : 28 para 10000 registros
+Numero de comparacoes durante a execução : 26 para 10000 registros
 Tempo de execução do algoritmo de busca S2 Arvore AVL : 0 para 10000 registros
 Total de casos das cidades no intervalo selecionado: 0 para 10000 registros
-Numero de comparacoes durante a execução : 28 para 10000 registros
+Numero de comparacoes durante a execução : 522 para 10000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :0.043 para 10000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :0.05 para 10000 registros
 Numero de comparacoes durante a execução : 236648 para 10000 registros
 Tempo de execução do algoritmo de busca S1 Arvore B de ordem 20 :0 para 10000 registros
 Total de casos da cidade selecionada: 0 para 10000 registros
-Numero de comparacoes durante a execução : 110 para 10000 registros
+Numero de comparacoes durante a execução : 99 para 10000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 20 :0 para 10000 registros
 Total de casos das cidades no intervalo selecionado: 0 para 10000 registros
-Numero de comparacoes durante a execução : 110 para 10000 registros
+Numero de comparacoes durante a execução : 2074 para 10000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :0.076 para 10000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :0.102 para 10000 registros
 Numero de comparacoes durante a execução : 907957 para 10000 registros
 Tempo de execução do algoritmo de busca Arvore B de ordem 200 :0 para 10000 registros
 Total de casos da cidade selecionada: 0 para 10000 registros
-Numero de comparacoes durante a execução : 461 para 10000 registros
-Tempo de execução do algoritmo de busca S2 Arvore B de ordem 200 :0 para 10000 registros
+Numero de comparacoes durante a execução : 429 para 10000 registros
+Tempo de execução do algoritmo de busca S2 Arvore B de ordem 200 :0.001 para 10000 registros
 Total de casos das cidades no intervalo selecionado: 0 para 10000 registros
-Numero de comparacoes durante a execução : 461 para 10000 registros
+Numero de comparacoes durante a execução : 8544 para 10000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore AVL :0.049 para 10000 registros
+Tempo de execução do algoritmo de insercao Arvore AVL :0.053 para 10000 registros
 Numero de comparacoes durante a execução : 121012 para 10000 registros
 Tempo de execução do algoritmo de busca S1 Arvore AVL : 0 para 10000 registros
 Total de casos da cidade selecionada: 0 para 10000 registros
-Numero de comparacoes durante a execução : 30 para 10000 registros
+Numero de comparacoes durante a execução : 26 para 10000 registros
 Tempo de execução do algoritmo de busca S2 Arvore AVL : 0 para 10000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 10000 registros
-Numero de comparacoes durante a execução : 30 para 10000 registros
+Total de casos das cidades no intervalo selecionado: 2 para 10000 registros
+Numero de comparacoes durante a execução : 535 para 10000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :0.049 para 10000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :0.051 para 10000 registros
 Numero de comparacoes durante a execução : 235170 para 10000 registros
 Tempo de execução do algoritmo de busca S1 Arvore B de ordem 20 :0 para 10000 registros
 Total de casos da cidade selecionada: 0 para 10000 registros
-Numero de comparacoes durante a execução : 40 para 10000 registros
+Numero de comparacoes durante a execução : 113 para 10000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 20 :0 para 10000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 10000 registros
-Numero de comparacoes durante a execução : 40 para 10000 registros
+Total de casos das cidades no intervalo selecionado: 2 para 10000 registros
+Numero de comparacoes durante a execução : 1819 para 10000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :0.083 para 10000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :0.087 para 10000 registros
 Numero de comparacoes durante a execução : 906790 para 10000 registros
 Tempo de execução do algoritmo de busca Arvore B de ordem 200 :0 para 10000 registros
 Total de casos da cidade selecionada: 0 para 10000 registros
-Numero de comparacoes durante a execução : 161 para 10000 registros
+Numero de comparacoes durante a execução : 443 para 10000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 200 :0 para 10000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 10000 registros
-Numero de comparacoes durante a execução : 161 para 10000 registros
+Total de casos das cidades no intervalo selecionado: 2 para 10000 registros
+Numero de comparacoes durante a execução : 8230 para 10000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore AVL :0.049 para 10000 registros
+Tempo de execução do algoritmo de insercao Arvore AVL :0.063 para 10000 registros
 Numero de comparacoes durante a execução : 121014 para 10000 registros
 Tempo de execução do algoritmo de busca S1 Arvore AVL : 0 para 10000 registros
 Total de casos da cidade selecionada: 0 para 10000 registros
-Numero de comparacoes durante a execução : 28 para 10000 registros
+Numero de comparacoes durante a execução : 27 para 10000 registros
 Tempo de execução do algoritmo de busca S2 Arvore AVL : 0 para 10000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 10000 registros
-Numero de comparacoes durante a execução : 28 para 10000 registros
+Total de casos das cidades no intervalo selecionado: 33 para 10000 registros
+Numero de comparacoes durante a execução : 554 para 10000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :0.049 para 10000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :0.059 para 10000 registros
 Numero de comparacoes durante a execução : 235332 para 10000 registros
-Tempo de execução do algoritmo de busca S1 Arvore B de ordem 20 :0.001 para 10000 registros
+Tempo de execução do algoritmo de busca S1 Arvore B de ordem 20 :0 para 10000 registros
 Total de casos da cidade selecionada: 0 para 10000 registros
-Numero de comparacoes durante a execução : 56 para 10000 registros
+Numero de comparacoes durante a execução : 99 para 10000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 20 :0 para 10000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 10000 registros
-Numero de comparacoes durante a execução : 56 para 10000 registros
+Total de casos das cidades no intervalo selecionado: 33 para 10000 registros
+Numero de comparacoes durante a execução : 1806 para 10000 registros
 
 
 Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :0.087 para 10000 registros
 Numero de comparacoes durante a execução : 903412 para 10000 registros
 Tempo de execução do algoritmo de busca Arvore B de ordem 200 :0 para 10000 registros
 Total de casos da cidade selecionada: 0 para 10000 registros
-Numero de comparacoes durante a execução : 250 para 10000 registros
+Numero de comparacoes durante a execução : 529 para 10000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 200 :0 para 10000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 10000 registros
-Numero de comparacoes durante a execução : 250 para 10000 registros
+Total de casos das cidades no intervalo selecionado: 33 para 10000 registros
+Numero de comparacoes durante a execução : 7842 para 10000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore AVL :0.052 para 10000 registros
+Tempo de execução do algoritmo de insercao Arvore AVL :0.059 para 10000 registros
 Numero de comparacoes durante a execução : 120679 para 10000 registros
 Tempo de execução do algoritmo de busca S1 Arvore AVL : 0 para 10000 registros
 Total de casos da cidade selecionada: 0 para 10000 registros
-Numero de comparacoes durante a execução : 24 para 10000 registros
+Numero de comparacoes durante a execução : 27 para 10000 registros
 Tempo de execução do algoritmo de busca S2 Arvore AVL : 0 para 10000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 10000 registros
-Numero de comparacoes durante a execução : 24 para 10000 registros
+Total de casos das cidades no intervalo selecionado: 110 para 10000 registros
+Numero de comparacoes durante a execução : 591 para 10000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :0.057 para 10000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :0.054 para 10000 registros
 Numero de comparacoes durante a execução : 233423 para 10000 registros
 Tempo de execução do algoritmo de busca S1 Arvore B de ordem 20 :0 para 10000 registros
 Total de casos da cidade selecionada: 0 para 10000 registros
-Numero de comparacoes durante a execução : 66 para 10000 registros
+Numero de comparacoes durante a execução : 105 para 10000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 20 :0 para 10000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 10000 registros
-Numero de comparacoes durante a execução : 66 para 10000 registros
+Total de casos das cidades no intervalo selecionado: 110 para 10000 registros
+Numero de comparacoes durante a execução : 1709 para 10000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :0.098 para 10000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :0.097 para 10000 registros
 Numero de comparacoes durante a execução : 898591 para 10000 registros
 Tempo de execução do algoritmo de busca Arvore B de ordem 200 :0 para 10000 registros
 Total de casos da cidade selecionada: 0 para 10000 registros
-Numero de comparacoes durante a execução : 268 para 10000 registros
-Tempo de execução do algoritmo de busca S2 Arvore B de ordem 200 :0 para 10000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 10000 registros
-Numero de comparacoes durante a execução : 268 para 10000 registros
+Numero de comparacoes durante a execução : 219 para 10000 registros
+Tempo de execução do algoritmo de busca S2 Arvore B de ordem 200 :0.001 para 10000 registros
+Total de casos das cidades no intervalo selecionado: 110 para 10000 registros
+Numero de comparacoes durante a execução : 6208 para 10000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore AVL :0.047 para 10000 registros
+Tempo de execução do algoritmo de insercao Arvore AVL :0.058 para 10000 registros
 Numero de comparacoes durante a execução : 121188 para 10000 registros
 Tempo de execução do algoritmo de busca S1 Arvore AVL : 0 para 10000 registros
-Total de casos da cidade selecionada: 0 para 10000 registros
-Numero de comparacoes durante a execução : 28 para 10000 registros
+Total de casos da cidade selecionada: 7 para 10000 registros
+Numero de comparacoes durante a execução : 32 para 10000 registros
 Tempo de execução do algoritmo de busca S2 Arvore AVL : 0 para 10000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 10000 registros
-Numero de comparacoes durante a execução : 28 para 10000 registros
+Total de casos das cidades no intervalo selecionado: 157 para 10000 registros
+Numero de comparacoes durante a execução : 660 para 10000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :0.046 para 10000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :0.056 para 10000 registros
 Numero de comparacoes durante a execução : 229604 para 10000 registros
 Tempo de execução do algoritmo de busca S1 Arvore B de ordem 20 :0 para 10000 registros
-Total de casos da cidade selecionada: 0 para 10000 registros
-Numero de comparacoes durante a execução : 47 para 10000 registros
+Total de casos da cidade selecionada: 7 para 10000 registros
+Numero de comparacoes durante a execução : 58 para 10000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 20 :0 para 10000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 10000 registros
-Numero de comparacoes durante a execução : 47 para 10000 registros
+Total de casos das cidades no intervalo selecionado: 157 para 10000 registros
+Numero de comparacoes durante a execução : 1557 para 10000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :0.086 para 10000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :0.099 para 10000 registros
 Numero de comparacoes durante a execução : 900693 para 10000 registros
 Tempo de execução do algoritmo de busca Arvore B de ordem 200 :0 para 10000 registros
-Total de casos da cidade selecionada: 0 para 10000 registros
-Numero de comparacoes durante a execução : 18 para 10000 registros
+Total de casos da cidade selecionada: 7 para 10000 registros
+Numero de comparacoes durante a execução : 421 para 10000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 200 :0 para 10000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 10000 registros
-Numero de comparacoes durante a execução : 18 para 10000 registros
+Total de casos das cidades no intervalo selecionado: 157 para 10000 registros
+Numero de comparacoes durante a execução : 6407 para 10000 registros
 
 
 MEDIAS
 
 
-Tempo de execução médio do algoritmo de insercao Arvore AVL : 0.0486 para 10000 registros
-Numero de comparacoes durante a execução : 121004 para 10000 registros
-Tempo de execução médio do algoritmo de Busca S1 Arvore B de ordem 20 : 0.0002 para 10000 registros
+Tempo de execução médio do algoritmo de insercao Arvore AVL : 0.0552 para 10000 registros
+Numero de comparacoes médio durante a execução : 121004 para 10000 registros
 Tempo de execução médio do algoritmo de Busca S1 Arvore AVL : 0 para 10000 registros
-Numero de comparacoes durante a execução : 27.6 para 10000 registros
-Media do total de casos durante a execução : 0 para 10000 registros
+Numero de comparacoes médio durante a execução : 27.6 para 10000 registros
+Media do total de casos durante a execução : 1.4 para 10000 registros
 Tempo de execução médio do algoritmo de Busca S2 Arvore AVL : 0 para 10000 registros
-Media do total de casos das cidades no intervalo selecionado: 0 para 10000 registros
-Numero de comparacoes durante a execução : 27.6 para 10000 registros
+Media do total de casos das cidades no intervalo selecionado: 60.4 para 10000 registros
+Numero de comparacoes médio durante a execução : 572.4 para 10000 registros
 
 
-Tempo de execução médio do algoritmo de insercao Arvore B de ordem 20 : 0.0488 para 10000 registros
-Numero de comparacoes durante a execução : 234035 para 10000 registros
-Tempo de execução médio do algoritmo de Busca S1 Arvore B de ordem 20 : 0.0002 para 10000 registros
-Numero de comparacoes durante a execução : 63.8 para 10000 registros
-Media do total de casos durante a execução : 0 para 10000 registros
+Tempo de execução médio do algoritmo de insercao Arvore B de ordem 20 : 0.054 para 10000 registros
+Numero de comparacoes médio durante a execução : 234035 para 10000 registros
+Tempo de execução médio do algoritmo de Busca S1 Arvore B de ordem 20 : 0 para 10000 registros
+Numero de comparacoes médio durante a execução : 94.8 para 10000 registros
+Media do total de casos durante a execução : 1.4 para 10000 registros
 Tempo de execução médio do algoritmo de Busca S2 Arvore B de ordem 20 : 0 para 10000 registros
-Media do total de casos das cidades no intervalo selecionado: 0 para 10000 registros
-Numero de comparacoes durante a execução : 63.8 para 10000 registros
+Media do total de casos das cidades no intervalo selecionado: 60.4 para 10000 registros
+Numero de comparacoes médio durante a execução : 1793 para 10000 registros
 
 
-Tempo de execução médio do algoritmo de insercao Arvore B de ordem 200 : 0.086 para 10000 registros
-Numero de comparacoes durante a execução : 903488 para 10000 registros
+Tempo de execução médio do algoritmo de insercao Arvore B de ordem 200 : 0.0944 para 10000 registros
+Numero de comparacoes médio durante a execução : 903488 para 10000 registros
 Tempo de execução médio do algoritmo de Busca S1 Arvore B de ordem 200 : 0 para 10000 registros
-Numero de comparacoes durante a execução : 231.6 para 10000 registros
-Media do total de casos durante a execução : 0 para 10000 registros
-Tempo de execução médio do algoritmo de Busca S2 Arvore B de ordem 200 : 0 para 10000 registros
-Media do total de casos das cidades no intervalo selecionado: 0 para 10000 registros
-Numero de comparacoes durante a execução : 231.6 para 10000 registros
+Numero de comparacoes médio durante a execução : 408.2 para 10000 registros
+Media do total de casos durante a execução : 1.4 para 10000 registros
+Tempo de execução médio do algoritmo de Busca S2 Arvore B de ordem 200 : 0.0004 para 10000 registros
+Media do total de casos das cidades no intervalo selecionado: 60.4 para 10000 registros
+Numero de comparacoes médio durante a execução : 7446.2 para 10000 registros
 
 
 
 
-Tempo de execução do algoritmo de insercao Arvore AVL :0.191 para 50000 registros
+Tempo de execução do algoritmo de insercao Arvore AVL :0.22 para 50000 registros
 Numero de comparacoes durante a execução : 732566 para 50000 registros
 Tempo de execução do algoritmo de busca S1 Arvore AVL : 0 para 50000 registros
 Total de casos da cidade selecionada: 0 para 50000 registros
-Numero de comparacoes durante a execução : 34 para 50000 registros
+Numero de comparacoes durante a execução : 32 para 50000 registros
 Tempo de execução do algoritmo de busca S2 Arvore AVL : 0 para 50000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 50000 registros
-Numero de comparacoes durante a execução : 34 para 50000 registros
+Total de casos das cidades no intervalo selecionado: 3 para 50000 registros
+Numero de comparacoes durante a execução : 619 para 50000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :0.203 para 50000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :0.209 para 50000 registros
 Numero de comparacoes durante a execução : 1443895 para 50000 registros
 Tempo de execução do algoritmo de busca S1 Arvore B de ordem 20 :0 para 50000 registros
 Total de casos da cidade selecionada: 0 para 50000 registros
-Numero de comparacoes durante a execução : 62 para 50000 registros
+Numero de comparacoes durante a execução : 103 para 50000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 20 :0 para 50000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 50000 registros
-Numero de comparacoes durante a execução : 62 para 50000 registros
+Total de casos das cidades no intervalo selecionado: 3 para 50000 registros
+Numero de comparacoes durante a execução : 2074 para 50000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :0.634 para 50000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :0.497 para 50000 registros
 Numero de comparacoes durante a execução : 7179352 para 50000 registros
 Tempo de execução do algoritmo de busca Arvore B de ordem 200 :0 para 50000 registros
 Total de casos da cidade selecionada: 0 para 50000 registros
-Numero de comparacoes durante a execução : 337 para 50000 registros
-Tempo de execução do algoritmo de busca S2 Arvore B de ordem 200 :0 para 50000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 50000 registros
-Numero de comparacoes durante a execução : 337 para 50000 registros
+Numero de comparacoes durante a execução : 823 para 50000 registros
+Tempo de execução do algoritmo de busca S2 Arvore B de ordem 200 :0.001 para 50000 registros
+Total de casos das cidades no intervalo selecionado: 3 para 50000 registros
+Numero de comparacoes durante a execução : 16294 para 50000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore AVL :0.327 para 50000 registros
+Tempo de execução do algoritmo de insercao Arvore AVL :0.306 para 50000 registros
 Numero de comparacoes durante a execução : 726529 para 50000 registros
 Tempo de execução do algoritmo de busca S1 Arvore AVL : 0 para 50000 registros
 Total de casos da cidade selecionada: 0 para 50000 registros
-Numero de comparacoes durante a execução : 32 para 50000 registros
+Numero de comparacoes durante a execução : 34 para 50000 registros
 Tempo de execução do algoritmo de busca S2 Arvore AVL : 0 para 50000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 50000 registros
-Numero de comparacoes durante a execução : 32 para 50000 registros
+Total de casos das cidades no intervalo selecionado: 95 para 50000 registros
+Numero de comparacoes durante a execução : 687 para 50000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :0.296 para 50000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :0.297 para 50000 registros
 Numero de comparacoes durante a execução : 1429902 para 50000 registros
 Tempo de execução do algoritmo de busca S1 Arvore B de ordem 20 :0 para 50000 registros
 Total de casos da cidade selecionada: 0 para 50000 registros
-Numero de comparacoes durante a execução : 128 para 50000 registros
+Numero de comparacoes durante a execução : 97 para 50000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 20 :0 para 50000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 50000 registros
-Numero de comparacoes durante a execução : 128 para 50000 registros
+Total de casos das cidades no intervalo selecionado: 95 para 50000 registros
+Numero de comparacoes durante a execução : 2124 para 50000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :0.677 para 50000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :0.657 para 50000 registros
 Numero de comparacoes durante a execução : 6695995 para 50000 registros
-Tempo de execução do algoritmo de busca Arvore B de ordem 200 :0 para 50000 registros
+Tempo de execução do algoritmo de busca Arvore B de ordem 200 :0.001 para 50000 registros
 Total de casos da cidade selecionada: 0 para 50000 registros
-Numero de comparacoes durante a execução : 219 para 50000 registros
+Numero de comparacoes durante a execução : 733 para 50000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 200 :0 para 50000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 50000 registros
-Numero de comparacoes durante a execução : 219 para 50000 registros
+Total de casos das cidades no intervalo selecionado: 95 para 50000 registros
+Numero de comparacoes durante a execução : 12202 para 50000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore AVL :0.344 para 50000 registros
+Tempo de execução do algoritmo de insercao Arvore AVL :0.316 para 50000 registros
 Numero de comparacoes durante a execução : 725396 para 50000 registros
 Tempo de execução do algoritmo de busca S1 Arvore AVL : 0 para 50000 registros
 Total de casos da cidade selecionada: 0 para 50000 registros
-Numero de comparacoes durante a execução : 32 para 50000 registros
+Numero de comparacoes durante a execução : 35 para 50000 registros
 Tempo de execução do algoritmo de busca S2 Arvore AVL : 0 para 50000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 50000 registros
-Numero de comparacoes durante a execução : 32 para 50000 registros
+Total de casos das cidades no intervalo selecionado: 91 para 50000 registros
+Numero de comparacoes durante a execução : 670 para 50000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :0.33 para 50000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :0.354 para 50000 registros
 Numero de comparacoes durante a execução : 1446550 para 50000 registros
 Tempo de execução do algoritmo de busca S1 Arvore B de ordem 20 :0 para 50000 registros
 Total de casos da cidade selecionada: 0 para 50000 registros
-Numero de comparacoes durante a execução : 77 para 50000 registros
+Numero de comparacoes durante a execução : 143 para 50000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 20 :0 para 50000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 50000 registros
-Numero de comparacoes durante a execução : 77 para 50000 registros
+Total de casos das cidades no intervalo selecionado: 91 para 50000 registros
+Numero de comparacoes durante a execução : 2671 para 50000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :0.798 para 50000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :0.783 para 50000 registros
 Numero de comparacoes durante a execução : 6719378 para 50000 registros
 Tempo de execução do algoritmo de busca Arvore B de ordem 200 :0 para 50000 registros
 Total de casos da cidade selecionada: 0 para 50000 registros
-Numero de comparacoes durante a execução : 530 para 50000 registros
-Tempo de execução do algoritmo de busca S2 Arvore B de ordem 200 :0 para 50000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 50000 registros
-Numero de comparacoes durante a execução : 530 para 50000 registros
+Numero de comparacoes durante a execução : 756 para 50000 registros
+Tempo de execução do algoritmo de busca S2 Arvore B de ordem 200 :0.001 para 50000 registros
+Total de casos das cidades no intervalo selecionado: 91 para 50000 registros
+Numero de comparacoes durante a execução : 14038 para 50000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore AVL :0.318 para 50000 registros
+Tempo de execução do algoritmo de insercao Arvore AVL :0.315 para 50000 registros
 Numero de comparacoes durante a execução : 722690 para 50000 registros
 Tempo de execução do algoritmo de busca S1 Arvore AVL : 0 para 50000 registros
-Total de casos da cidade selecionada: 0 para 50000 registros
-Numero de comparacoes durante a execução : 30 para 50000 registros
+Total de casos da cidade selecionada: 18 para 50000 registros
+Numero de comparacoes durante a execução : 46 para 50000 registros
 Tempo de execução do algoritmo de busca S2 Arvore AVL : 0 para 50000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 50000 registros
-Numero de comparacoes durante a execução : 30 para 50000 registros
+Total de casos das cidades no intervalo selecionado: 390 para 50000 registros
+Numero de comparacoes durante a execução : 839 para 50000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :0.355 para 50000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :0.313 para 50000 registros
 Numero de comparacoes durante a execução : 1417534 para 50000 registros
 Tempo de execução do algoritmo de busca S1 Arvore B de ordem 20 :0 para 50000 registros
-Total de casos da cidade selecionada: 0 para 50000 registros
-Numero de comparacoes durante a execução : 54 para 50000 registros
+Total de casos da cidade selecionada: 18 para 50000 registros
+Numero de comparacoes durante a execução : 117 para 50000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 20 :0 para 50000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 50000 registros
-Numero de comparacoes durante a execução : 54 para 50000 registros
+Total de casos das cidades no intervalo selecionado: 390 para 50000 registros
+Numero de comparacoes durante a execução : 2833 para 50000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :0.873 para 50000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :0.725 para 50000 registros
 Numero de comparacoes durante a execução : 6704575 para 50000 registros
 Tempo de execução do algoritmo de busca Arvore B de ordem 200 :0 para 50000 registros
-Total de casos da cidade selecionada: 0 para 50000 registros
-Numero de comparacoes durante a execução : 350 para 50000 registros
+Total de casos da cidade selecionada: 18 para 50000 registros
+Numero de comparacoes durante a execução : 714 para 50000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 200 :0 para 50000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 50000 registros
-Numero de comparacoes durante a execução : 350 para 50000 registros
+Total de casos das cidades no intervalo selecionado: 390 para 50000 registros
+Numero de comparacoes durante a execução : 13302 para 50000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore AVL :0.353 para 50000 registros
+Tempo de execução do algoritmo de insercao Arvore AVL :0.299 para 50000 registros
 Numero de comparacoes durante a execução : 726954 para 50000 registros
 Tempo de execução do algoritmo de busca S1 Arvore AVL : 0 para 50000 registros
-Total de casos da cidade selecionada: 0 para 50000 registros
-Numero de comparacoes durante a execução : 32 para 50000 registros
-Tempo de execução do algoritmo de busca S2 Arvore AVL : 0 para 50000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 50000 registros
-Numero de comparacoes durante a execução : 32 para 50000 registros
+Total de casos da cidade selecionada: 6 para 50000 registros
+Numero de comparacoes durante a execução : 59 para 50000 registros
+Tempo de execução do algoritmo de busca S2 Arvore AVL : 0.001 para 50000 registros
+Total de casos das cidades no intervalo selecionado: 946 para 50000 registros
+Numero de comparacoes durante a execução : 992 para 50000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :0.356 para 50000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :0.329 para 50000 registros
 Numero de comparacoes durante a execução : 1410392 para 50000 registros
 Tempo de execução do algoritmo de busca S1 Arvore B de ordem 20 :0 para 50000 registros
-Total de casos da cidade selecionada: 0 para 50000 registros
-Numero de comparacoes durante a execução : 63 para 50000 registros
+Total de casos da cidade selecionada: 6 para 50000 registros
+Numero de comparacoes durante a execução : 143 para 50000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 20 :0 para 50000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 50000 registros
-Numero de comparacoes durante a execução : 63 para 50000 registros
+Total de casos das cidades no intervalo selecionado: 946 para 50000 registros
+Numero de comparacoes durante a execução : 2658 para 50000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :0.933 para 50000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :0.81 para 50000 registros
 Numero de comparacoes durante a execução : 6683581 para 50000 registros
 Tempo de execução do algoritmo de busca Arvore B de ordem 200 :0 para 50000 registros
-Total de casos da cidade selecionada: 0 para 50000 registros
-Numero de comparacoes durante a execução : 289 para 50000 registros
+Total de casos da cidade selecionada: 6 para 50000 registros
+Numero de comparacoes durante a execução : 312 para 50000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 200 :0 para 50000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 50000 registros
-Numero de comparacoes durante a execução : 289 para 50000 registros
+Total de casos das cidades no intervalo selecionado: 946 para 50000 registros
+Numero de comparacoes durante a execução : 7345 para 50000 registros
 
 
 MEDIAS
 
 
-Tempo de execução médio do algoritmo de insercao Arvore AVL : 0.3066 para 50000 registros
-Numero de comparacoes durante a execução : 726827 para 50000 registros
-Tempo de execução médio do algoritmo de Busca S1 Arvore B de ordem 20 : 0 para 50000 registros
+Tempo de execução médio do algoritmo de insercao Arvore AVL : 0.2912 para 50000 registros
+Numero de comparacoes médio durante a execução : 726827 para 50000 registros
 Tempo de execução médio do algoritmo de Busca S1 Arvore AVL : 0 para 50000 registros
-Numero de comparacoes durante a execução : 32 para 50000 registros
-Media do total de casos durante a execução : 0 para 50000 registros
-Tempo de execução médio do algoritmo de Busca S2 Arvore AVL : 0 para 50000 registros
-Media do total de casos das cidades no intervalo selecionado: 0 para 50000 registros
-Numero de comparacoes durante a execução : 32 para 50000 registros
+Numero de comparacoes médio durante a execução : 41.2 para 50000 registros
+Media do total de casos durante a execução : 4.8 para 50000 registros
+Tempo de execução médio do algoritmo de Busca S2 Arvore AVL : 0.0002 para 50000 registros
+Media do total de casos das cidades no intervalo selecionado: 305 para 50000 registros
+Numero de comparacoes médio durante a execução : 761.4 para 50000 registros
 
 
-Tempo de execução médio do algoritmo de insercao Arvore B de ordem 20 : 0.308 para 50000 registros
-Numero de comparacoes durante a execução : 1429654 para 50000 registros
+Tempo de execução médio do algoritmo de insercao Arvore B de ordem 20 : 0.3004 para 50000 registros
+Numero de comparacoes médio durante a execução : 1429654 para 50000 registros
 Tempo de execução médio do algoritmo de Busca S1 Arvore B de ordem 20 : 0 para 50000 registros
-Numero de comparacoes durante a execução : 76.8 para 50000 registros
-Media do total de casos durante a execução : 0 para 50000 registros
+Numero de comparacoes médio durante a execução : 120.6 para 50000 registros
+Media do total de casos durante a execução : 4.8 para 50000 registros
 Tempo de execução médio do algoritmo de Busca S2 Arvore B de ordem 20 : 0 para 50000 registros
-Media do total de casos das cidades no intervalo selecionado: 0 para 50000 registros
-Numero de comparacoes durante a execução : 76.8 para 50000 registros
+Media do total de casos das cidades no intervalo selecionado: 305 para 50000 registros
+Numero de comparacoes médio durante a execução : 2472 para 50000 registros
 
 
-Tempo de execução médio do algoritmo de insercao Arvore B de ordem 200 : 0.783 para 50000 registros
-Numero de comparacoes durante a execução : 6796576 para 50000 registros
-Tempo de execução médio do algoritmo de Busca S1 Arvore B de ordem 200 : 0 para 50000 registros
-Numero de comparacoes durante a execução : 345 para 50000 registros
-Media do total de casos durante a execução : 0 para 50000 registros
-Tempo de execução médio do algoritmo de Busca S2 Arvore B de ordem 200 : 0 para 50000 registros
-Media do total de casos das cidades no intervalo selecionado: 0 para 50000 registros
-Numero de comparacoes durante a execução : 345 para 50000 registros
+Tempo de execução médio do algoritmo de insercao Arvore B de ordem 200 : 0.6944 para 50000 registros
+Numero de comparacoes médio durante a execução : 6796576 para 50000 registros
+Tempo de execução médio do algoritmo de Busca S1 Arvore B de ordem 200 : 0.0002 para 50000 registros
+Numero de comparacoes médio durante a execução : 667.6 para 50000 registros
+Media do total de casos durante a execução : 4.8 para 50000 registros
+Tempo de execução médio do algoritmo de Busca S2 Arvore B de ordem 200 : 0.0004 para 50000 registros
+Media do total de casos das cidades no intervalo selecionado: 305 para 50000 registros
+Numero de comparacoes médio durante a execução : 12636.2 para 50000 registros
 
 
 
 
-Tempo de execução do algoritmo de insercao Arvore AVL :0.369 para 100000 registros
+Tempo de execução do algoritmo de insercao Arvore AVL :0.465 para 100000 registros
 Numero de comparacoes durante a execução : 1581721 para 100000 registros
 Tempo de execução do algoritmo de busca S1 Arvore AVL : 0 para 100000 registros
 Total de casos da cidade selecionada: 0 para 100000 registros
-Numero de comparacoes durante a execução : 40 para 100000 registros
+Numero de comparacoes durante a execução : 34 para 100000 registros
 Tempo de execução do algoritmo de busca S2 Arvore AVL : 0 para 100000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 100000 registros
-Numero de comparacoes durante a execução : 40 para 100000 registros
+Total de casos das cidades no intervalo selecionado: 17 para 100000 registros
+Numero de comparacoes durante a execução : 661 para 100000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :0.339 para 100000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :0.472 para 100000 registros
 Numero de comparacoes durante a execução : 3049857 para 100000 registros
 Tempo de execução do algoritmo de busca S1 Arvore B de ordem 20 :0 para 100000 registros
 Total de casos da cidade selecionada: 0 para 100000 registros
-Numero de comparacoes durante a execução : 110 para 100000 registros
+Numero de comparacoes durante a execução : 134 para 100000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 20 :0 para 100000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 100000 registros
-Numero de comparacoes durante a execução : 110 para 100000 registros
+Total de casos das cidades no intervalo selecionado: 17 para 100000 registros
+Numero de comparacoes durante a execução : 2854 para 100000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :0.89 para 100000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :1.145 para 100000 registros
 Numero de comparacoes durante a execução : 14886682 para 100000 registros
 Tempo de execução do algoritmo de busca Arvore B de ordem 200 :0 para 100000 registros
 Total de casos da cidade selecionada: 0 para 100000 registros
-Numero de comparacoes durante a execução : 351 para 100000 registros
+Numero de comparacoes durante a execução : 675 para 100000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 200 :0 para 100000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 100000 registros
-Numero de comparacoes durante a execução : 351 para 100000 registros
+Total de casos das cidades no intervalo selecionado: 17 para 100000 registros
+Numero de comparacoes durante a execução : 13326 para 100000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore AVL :0.532 para 100000 registros
+Tempo de execução do algoritmo de insercao Arvore AVL :0.444 para 100000 registros
 Numero de comparacoes durante a execução : 1574003 para 100000 registros
 Tempo de execução do algoritmo de busca S1 Arvore AVL : 0 para 100000 registros
 Total de casos da cidade selecionada: 0 para 100000 registros
-Numero de comparacoes durante a execução : 34 para 100000 registros
+Numero de comparacoes durante a execução : 37 para 100000 registros
 Tempo de execução do algoritmo de busca S2 Arvore AVL : 0 para 100000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 100000 registros
-Numero de comparacoes durante a execução : 34 para 100000 registros
+Total de casos das cidades no intervalo selecionado: 16 para 100000 registros
+Numero de comparacoes durante a execução : 703 para 100000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :0.559 para 100000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :0.45 para 100000 registros
 Numero de comparacoes durante a execução : 3059628 para 100000 registros
 Tempo de execução do algoritmo de busca S1 Arvore B de ordem 20 :0 para 100000 registros
 Total de casos da cidade selecionada: 0 para 100000 registros
-Numero de comparacoes durante a execução : 124 para 100000 registros
+Numero de comparacoes durante a execução : 139 para 100000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 20 :0 para 100000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 100000 registros
-Numero de comparacoes durante a execução : 124 para 100000 registros
+Total de casos das cidades no intervalo selecionado: 16 para 100000 registros
+Numero de comparacoes durante a execução : 2487 para 100000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :1.329 para 100000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :1.168 para 100000 registros
 Numero de comparacoes durante a execução : 14640143 para 100000 registros
 Tempo de execução do algoritmo de busca Arvore B de ordem 200 :0 para 100000 registros
 Total de casos da cidade selecionada: 0 para 100000 registros
-Numero de comparacoes durante a execução : 529 para 100000 registros
+Numero de comparacoes durante a execução : 777 para 100000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 200 :0 para 100000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 100000 registros
-Numero de comparacoes durante a execução : 529 para 100000 registros
+Total de casos das cidades no intervalo selecionado: 16 para 100000 registros
+Numero de comparacoes durante a execução : 13887 para 100000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore AVL :0.766 para 100000 registros
+Tempo de execução do algoritmo de insercao Arvore AVL :0.533 para 100000 registros
 Numero de comparacoes durante a execução : 1567386 para 100000 registros
 Tempo de execução do algoritmo de busca S1 Arvore AVL : 0 para 100000 registros
-Total de casos da cidade selecionada: 0 para 100000 registros
-Numero de comparacoes durante a execução : 38 para 100000 registros
+Total de casos da cidade selecionada: 5 para 100000 registros
+Numero de comparacoes durante a execução : 42 para 100000 registros
 Tempo de execução do algoritmo de busca S2 Arvore AVL : 0 para 100000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 100000 registros
-Numero de comparacoes durante a execução : 38 para 100000 registros
+Total de casos das cidades no intervalo selecionado: 191 para 100000 registros
+Numero de comparacoes durante a execução : 734 para 100000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :0.581 para 100000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :0.525 para 100000 registros
 Numero de comparacoes durante a execução : 3147861 para 100000 registros
 Tempo de execução do algoritmo de busca S1 Arvore B de ordem 20 :0 para 100000 registros
-Total de casos da cidade selecionada: 0 para 100000 registros
-Numero de comparacoes durante a execução : 105 para 100000 registros
+Total de casos da cidade selecionada: 5 para 100000 registros
+Numero de comparacoes durante a execução : 151 para 100000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 20 :0 para 100000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 100000 registros
-Numero de comparacoes durante a execução : 105 para 100000 registros
+Total de casos das cidades no intervalo selecionado: 191 para 100000 registros
+Numero de comparacoes durante a execução : 2664 para 100000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :1.396 para 100000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :1.203 para 100000 registros
 Numero de comparacoes durante a execução : 14213264 para 100000 registros
 Tempo de execução do algoritmo de busca Arvore B de ordem 200 :0 para 100000 registros
-Total de casos da cidade selecionada: 0 para 100000 registros
-Numero de comparacoes durante a execução : 201 para 100000 registros
-Tempo de execução do algoritmo de busca S2 Arvore B de ordem 200 :0 para 100000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 100000 registros
-Numero de comparacoes durante a execução : 201 para 100000 registros
+Total de casos da cidade selecionada: 5 para 100000 registros
+Numero de comparacoes durante a execução : 652 para 100000 registros
+Tempo de execução do algoritmo de busca S2 Arvore B de ordem 200 :0.001 para 100000 registros
+Total de casos das cidades no intervalo selecionado: 191 para 100000 registros
+Numero de comparacoes durante a execução : 11172 para 100000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore AVL :0.636 para 100000 registros
+Tempo de execução do algoritmo de insercao Arvore AVL :0.556 para 100000 registros
 Numero de comparacoes durante a execução : 1556782 para 100000 registros
 Tempo de execução do algoritmo de busca S1 Arvore AVL : 0 para 100000 registros
-Total de casos da cidade selecionada: 0 para 100000 registros
-Numero de comparacoes durante a execução : 40 para 100000 registros
+Total de casos da cidade selecionada: 21 para 100000 registros
+Numero de comparacoes durante a execução : 48 para 100000 registros
 Tempo de execução do algoritmo de busca S2 Arvore AVL : 0 para 100000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 100000 registros
-Numero de comparacoes durante a execução : 40 para 100000 registros
+Total de casos das cidades no intervalo selecionado: 694 para 100000 registros
+Numero de comparacoes durante a execução : 919 para 100000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :0.662 para 100000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :0.578 para 100000 registros
 Numero de comparacoes durante a execução : 3075875 para 100000 registros
 Tempo de execução do algoritmo de busca S1 Arvore B de ordem 20 :0 para 100000 registros
-Total de casos da cidade selecionada: 0 para 100000 registros
-Numero de comparacoes durante a execução : 105 para 100000 registros
+Total de casos da cidade selecionada: 21 para 100000 registros
+Numero de comparacoes durante a execução : 141 para 100000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 20 :0 para 100000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 100000 registros
-Numero de comparacoes durante a execução : 105 para 100000 registros
+Total de casos das cidades no intervalo selecionado: 694 para 100000 registros
+Numero de comparacoes durante a execução : 2975 para 100000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :1.48 para 100000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :1.359 para 100000 registros
 Numero de comparacoes durante a execução : 14447309 para 100000 registros
 Tempo de execução do algoritmo de busca Arvore B de ordem 200 :0 para 100000 registros
-Total de casos da cidade selecionada: 0 para 100000 registros
-Numero de comparacoes durante a execução : 246 para 100000 registros
-Tempo de execução do algoritmo de busca S2 Arvore B de ordem 200 :0 para 100000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 100000 registros
-Numero de comparacoes durante a execução : 246 para 100000 registros
+Total de casos da cidade selecionada: 21 para 100000 registros
+Numero de comparacoes durante a execução : 567 para 100000 registros
+Tempo de execução do algoritmo de busca S2 Arvore B de ordem 200 :0.001 para 100000 registros
+Total de casos das cidades no intervalo selecionado: 694 para 100000 registros
+Numero de comparacoes durante a execução : 13402 para 100000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore AVL :0.751 para 100000 registros
+Tempo de execução do algoritmo de insercao Arvore AVL :0.566 para 100000 registros
 Numero de comparacoes durante a execução : 1555778 para 100000 registros
 Tempo de execução do algoritmo de busca S1 Arvore AVL : 0 para 100000 registros
-Total de casos da cidade selecionada: 0 para 100000 registros
-Numero de comparacoes durante a execução : 36 para 100000 registros
+Total de casos da cidade selecionada: 40 para 100000 registros
+Numero de comparacoes durante a execução : 78 para 100000 registros
 Tempo de execução do algoritmo de busca S2 Arvore AVL : 0 para 100000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 100000 registros
-Numero de comparacoes durante a execução : 36 para 100000 registros
+Total de casos das cidades no intervalo selecionado: 1321 para 100000 registros
+Numero de comparacoes durante a execução : 1177 para 100000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :0.764 para 100000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :0.572 para 100000 registros
 Numero de comparacoes durante a execução : 3093330 para 100000 registros
 Tempo de execução do algoritmo de busca S1 Arvore B de ordem 20 :0 para 100000 registros
-Total de casos da cidade selecionada: 0 para 100000 registros
-Numero de comparacoes durante a execução : 66 para 100000 registros
+Total de casos da cidade selecionada: 40 para 100000 registros
+Numero de comparacoes durante a execução : 208 para 100000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 20 :0 para 100000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 100000 registros
-Numero de comparacoes durante a execução : 66 para 100000 registros
+Total de casos das cidades no intervalo selecionado: 1321 para 100000 registros
+Numero de comparacoes durante a execução : 3015 para 100000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :1.639 para 100000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :1.358 para 100000 registros
 Numero de comparacoes durante a execução : 14615077 para 100000 registros
-Tempo de execução do algoritmo de busca Arvore B de ordem 200 :0 para 100000 registros
-Total de casos da cidade selecionada: 0 para 100000 registros
+Tempo de execução do algoritmo de busca Arvore B de ordem 200 :0.001 para 100000 registros
+Total de casos da cidade selecionada: 40 para 100000 registros
 Numero de comparacoes durante a execução : 595 para 100000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 200 :0 para 100000 registros
-Total de casos das cidades no intervalo selecionado: 0 para 100000 registros
-Numero de comparacoes durante a execução : 595 para 100000 registros
+Total de casos das cidades no intervalo selecionado: 1321 para 100000 registros
+Numero de comparacoes durante a execução : 7771 para 100000 registros
 
 
 MEDIAS
 
 
-Tempo de execução médio do algoritmo de insercao Arvore AVL : 0.6108 para 100000 registros
-Numero de comparacoes durante a execução : 1567134 para 100000 registros
-Tempo de execução médio do algoritmo de Busca S1 Arvore B de ordem 20 : 0 para 100000 registros
+Tempo de execução médio do algoritmo de insercao Arvore AVL : 0.5128 para 100000 registros
+Numero de comparacoes médio durante a execução : 1567134 para 100000 registros
 Tempo de execução médio do algoritmo de Busca S1 Arvore AVL : 0 para 100000 registros
-Numero de comparacoes durante a execução : 37.6 para 100000 registros
-Media do total de casos durante a execução : 0 para 100000 registros
+Numero de comparacoes médio durante a execução : 47.8 para 100000 registros
+Media do total de casos durante a execução : 13.2 para 100000 registros
 Tempo de execução médio do algoritmo de Busca S2 Arvore AVL : 0 para 100000 registros
-Media do total de casos das cidades no intervalo selecionado: 0 para 100000 registros
-Numero de comparacoes durante a execução : 37.6 para 100000 registros
+Media do total de casos das cidades no intervalo selecionado: 447.8 para 100000 registros
+Numero de comparacoes médio durante a execução : 838.8 para 100000 registros
 
 
-Tempo de execução médio do algoritmo de insercao Arvore B de ordem 20 : 0.581 para 100000 registros
-Numero de comparacoes durante a execução : 3085310 para 100000 registros
+Tempo de execução médio do algoritmo de insercao Arvore B de ordem 20 : 0.5194 para 100000 registros
+Numero de comparacoes médio durante a execução : 3085310 para 100000 registros
 Tempo de execução médio do algoritmo de Busca S1 Arvore B de ordem 20 : 0 para 100000 registros
-Numero de comparacoes durante a execução : 102 para 100000 registros
-Media do total de casos durante a execução : 0 para 100000 registros
+Numero de comparacoes médio durante a execução : 154.6 para 100000 registros
+Media do total de casos durante a execução : 13.2 para 100000 registros
 Tempo de execução médio do algoritmo de Busca S2 Arvore B de ordem 20 : 0 para 100000 registros
-Media do total de casos das cidades no intervalo selecionado: 0 para 100000 registros
-Numero de comparacoes durante a execução : 102 para 100000 registros
+Media do total de casos das cidades no intervalo selecionado: 447.8 para 100000 registros
+Numero de comparacoes médio durante a execução : 2799 para 100000 registros
 
 
-Tempo de execução médio do algoritmo de insercao Arvore B de ordem 200 : 1.3468 para 100000 registros
-Numero de comparacoes durante a execução : 14560495 para 100000 registros
-Tempo de execução médio do algoritmo de Busca S1 Arvore B de ordem 200 : 0 para 100000 registros
-Numero de comparacoes durante a execução : 384.4 para 100000 registros
-Media do total de casos durante a execução : 0 para 100000 registros
-Tempo de execução médio do algoritmo de Busca S2 Arvore B de ordem 200 : 0 para 100000 registros
-Media do total de casos das cidades no intervalo selecionado: 0 para 100000 registros
-Numero de comparacoes durante a execução : 384.4 para 100000 registros
+Tempo de execução médio do algoritmo de insercao Arvore B de ordem 200 : 1.2466 para 100000 registros
+Numero de comparacoes médio durante a execução : 14560495 para 100000 registros
+Tempo de execução médio do algoritmo de Busca S1 Arvore B de ordem 200 : 0.0002 para 100000 registros
+Numero de comparacoes médio durante a execução : 653.2 para 100000 registros
+Media do total de casos durante a execução : 13.2 para 100000 registros
+Tempo de execução médio do algoritmo de Busca S2 Arvore B de ordem 200 : 0.0004 para 100000 registros
+Media do total de casos das cidades no intervalo selecionado: 447.8 para 100000 registros
+Numero de comparacoes médio durante a execução : 11911.6 para 100000 registros
 
 
 
 
-Tempo de execução do algoritmo de insercao Arvore AVL :1.965 para 500000 registros
+Tempo de execução do algoritmo de insercao Arvore AVL :1.689 para 500000 registros
 Numero de comparacoes durante a execução : 9279876 para 500000 registros
 Tempo de execução do algoritmo de busca S1 Arvore AVL : 0 para 500000 registros
-Total de casos da cidade selecionada: 109 para 500000 registros
-Numero de comparacoes durante a execução : 290 para 500000 registros
+Total de casos da cidade selecionada: 0 para 500000 registros
+Numero de comparacoes durante a execução : 34 para 500000 registros
 Tempo de execução do algoritmo de busca S2 Arvore AVL : 0 para 500000 registros
-Total de casos das cidades no intervalo selecionado: 109 para 500000 registros
-Numero de comparacoes durante a execução : 290 para 500000 registros
+Total de casos das cidades no intervalo selecionado: 0 para 500000 registros
+Numero de comparacoes durante a execução : 712 para 500000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :1.79 para 500000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :1.477 para 500000 registros
 Numero de comparacoes durante a execução : 16472027 para 500000 registros
 Tempo de execução do algoritmo de busca S1 Arvore B de ordem 20 :0 para 500000 registros
-Total de casos da cidade selecionada: 109 para 500000 registros
-Numero de comparacoes durante a execução : 606 para 500000 registros
-Tempo de execução do algoritmo de busca S2 Arvore B de ordem 20 :0 para 500000 registros
-Total de casos das cidades no intervalo selecionado: 109 para 500000 registros
-Numero de comparacoes durante a execução : 606 para 500000 registros
+Total de casos da cidade selecionada: 0 para 500000 registros
+Numero de comparacoes durante a execução : 110 para 500000 registros
+Tempo de execução do algoritmo de busca S2 Arvore B de ordem 20 :0.001 para 500000 registros
+Total de casos das cidades no intervalo selecionado: 0 para 500000 registros
+Numero de comparacoes durante a execução : 2242 para 500000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :4.443 para 500000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :4.073 para 500000 registros
 Numero de comparacoes durante a execução : 74712552 para 500000 registros
 Tempo de execução do algoritmo de busca Arvore B de ordem 200 :0 para 500000 registros
-Total de casos da cidade selecionada: 109 para 500000 registros
-Numero de comparacoes durante a execução : 969 para 500000 registros
+Total de casos da cidade selecionada: 0 para 500000 registros
+Numero de comparacoes durante a execução : 183 para 500000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 200 :0 para 500000 registros
-Total de casos das cidades no intervalo selecionado: 109 para 500000 registros
-Numero de comparacoes durante a execução : 969 para 500000 registros
+Total de casos das cidades no intervalo selecionado: 0 para 500000 registros
+Numero de comparacoes durante a execução : 4907 para 500000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore AVL :2.189 para 500000 registros
+Tempo de execução do algoritmo de insercao Arvore AVL :1.91 para 500000 registros
 Numero de comparacoes durante a execução : 9218316 para 500000 registros
 Tempo de execução do algoritmo de busca S1 Arvore AVL : 0 para 500000 registros
-Total de casos da cidade selecionada: 104 para 500000 registros
-Numero de comparacoes durante a execução : 280 para 500000 registros
+Total de casos da cidade selecionada: 0 para 500000 registros
+Numero de comparacoes durante a execução : 40 para 500000 registros
 Tempo de execução do algoritmo de busca S2 Arvore AVL : 0 para 500000 registros
-Total de casos das cidades no intervalo selecionado: 104 para 500000 registros
-Numero de comparacoes durante a execução : 280 para 500000 registros
+Total de casos das cidades no intervalo selecionado: 2 para 500000 registros
+Numero de comparacoes durante a execução : 809 para 500000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :1.908 para 500000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :1.774 para 500000 registros
 Numero de comparacoes durante a execução : 16499019 para 500000 registros
 Tempo de execução do algoritmo de busca S1 Arvore B de ordem 20 :0 para 500000 registros
-Total de casos da cidade selecionada: 104 para 500000 registros
-Numero de comparacoes durante a execução : 604 para 500000 registros
+Total de casos da cidade selecionada: 0 para 500000 registros
+Numero de comparacoes durante a execução : 103 para 500000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 20 :0 para 500000 registros
-Total de casos das cidades no intervalo selecionado: 104 para 500000 registros
-Numero de comparacoes durante a execução : 604 para 500000 registros
+Total de casos das cidades no intervalo selecionado: 2 para 500000 registros
+Numero de comparacoes durante a execução : 2315 para 500000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :5.252 para 500000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :4.692 para 500000 registros
 Numero de comparacoes durante a execução : 73768515 para 500000 registros
 Tempo de execução do algoritmo de busca Arvore B de ordem 200 :0 para 500000 registros
-Total de casos da cidade selecionada: 104 para 500000 registros
-Numero de comparacoes durante a execução : 1003 para 500000 registros
-Tempo de execução do algoritmo de busca S2 Arvore B de ordem 200 :0 para 500000 registros
-Total de casos das cidades no intervalo selecionado: 104 para 500000 registros
-Numero de comparacoes durante a execução : 1003 para 500000 registros
+Total de casos da cidade selecionada: 0 para 500000 registros
+Numero de comparacoes durante a execução : 463 para 500000 registros
+Tempo de execução do algoritmo de busca S2 Arvore B de ordem 200 :0.001 para 500000 registros
+Total de casos das cidades no intervalo selecionado: 2 para 500000 registros
+Numero de comparacoes durante a execução : 9677 para 500000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore AVL :2.571 para 500000 registros
+Tempo de execução do algoritmo de insercao Arvore AVL :2.073 para 500000 registros
 Numero de comparacoes durante a execução : 9170759 para 500000 registros
 Tempo de execução do algoritmo de busca S1 Arvore AVL : 0 para 500000 registros
-Total de casos da cidade selecionada: 98 para 500000 registros
-Numero de comparacoes durante a execução : 253 para 500000 registros
+Total de casos da cidade selecionada: 0 para 500000 registros
+Numero de comparacoes durante a execução : 48 para 500000 registros
 Tempo de execução do algoritmo de busca S2 Arvore AVL : 0 para 500000 registros
-Total de casos das cidades no intervalo selecionado: 98 para 500000 registros
-Numero de comparacoes durante a execução : 253 para 500000 registros
+Total de casos das cidades no intervalo selecionado: 123 para 500000 registros
+Numero de comparacoes durante a execução : 817 para 500000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :2.377 para 500000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :1.975 para 500000 registros
 Numero de comparacoes durante a execução : 16859818 para 500000 registros
 Tempo de execução do algoritmo de busca S1 Arvore B de ordem 20 :0 para 500000 registros
-Total de casos da cidade selecionada: 98 para 500000 registros
-Numero de comparacoes durante a execução : 537 para 500000 registros
+Total de casos da cidade selecionada: 0 para 500000 registros
+Numero de comparacoes durante a execução : 163 para 500000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 20 :0 para 500000 registros
-Total de casos das cidades no intervalo selecionado: 98 para 500000 registros
-Numero de comparacoes durante a execução : 537 para 500000 registros
+Total de casos das cidades no intervalo selecionado: 123 para 500000 registros
+Numero de comparacoes durante a execução : 2852 para 500000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :5.477 para 500000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :4.964 para 500000 registros
 Numero de comparacoes durante a execução : 70020824 para 500000 registros
 Tempo de execução do algoritmo de busca Arvore B de ordem 200 :0 para 500000 registros
-Total de casos da cidade selecionada: 98 para 500000 registros
-Numero de comparacoes durante a execução : 841 para 500000 registros
-Tempo de execução do algoritmo de busca S2 Arvore B de ordem 200 :0 para 500000 registros
-Total de casos das cidades no intervalo selecionado: 98 para 500000 registros
-Numero de comparacoes durante a execução : 841 para 500000 registros
+Total de casos da cidade selecionada: 0 para 500000 registros
+Numero de comparacoes durante a execução : 524 para 500000 registros
+Tempo de execução do algoritmo de busca S2 Arvore B de ordem 200 :0.001 para 500000 registros
+Total de casos das cidades no intervalo selecionado: 123 para 500000 registros
+Numero de comparacoes durante a execução : 6698 para 500000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore AVL :2.673 para 500000 registros
+Tempo de execução do algoritmo de insercao Arvore AVL :2.249 para 500000 registros
 Numero de comparacoes durante a execução : 9149694 para 500000 registros
 Tempo de execução do algoritmo de busca S1 Arvore AVL : 0 para 500000 registros
-Total de casos da cidade selecionada: 78 para 500000 registros
-Numero de comparacoes durante a execução : 224 para 500000 registros
-Tempo de execução do algoritmo de busca S2 Arvore AVL : 0 para 500000 registros
-Total de casos das cidades no intervalo selecionado: 78 para 500000 registros
-Numero de comparacoes durante a execução : 224 para 500000 registros
+Total de casos da cidade selecionada: 26 para 500000 registros
+Numero de comparacoes durante a execução : 53 para 500000 registros
+Tempo de execução do algoritmo de busca S2 Arvore AVL : 0.001 para 500000 registros
+Total de casos das cidades no intervalo selecionado: 411 para 500000 registros
+Numero de comparacoes durante a execução : 1049 para 500000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :2.743 para 500000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :2.125 para 500000 registros
 Numero de comparacoes durante a execução : 17047078 para 500000 registros
 Tempo de execução do algoritmo de busca S1 Arvore B de ordem 20 :0 para 500000 registros
-Total de casos da cidade selecionada: 78 para 500000 registros
-Numero de comparacoes durante a execução : 494 para 500000 registros
+Total de casos da cidade selecionada: 26 para 500000 registros
+Numero de comparacoes durante a execução : 173 para 500000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 20 :0 para 500000 registros
-Total de casos das cidades no intervalo selecionado: 78 para 500000 registros
-Numero de comparacoes durante a execução : 494 para 500000 registros
+Total de casos das cidades no intervalo selecionado: 411 para 500000 registros
+Numero de comparacoes durante a execução : 2600 para 500000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :5.968 para 500000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :5.801 para 500000 registros
 Numero de comparacoes durante a execução : 78091312 para 500000 registros
 Tempo de execução do algoritmo de busca Arvore B de ordem 200 :0 para 500000 registros
-Total de casos da cidade selecionada: 78 para 500000 registros
-Numero de comparacoes durante a execução : 555 para 500000 registros
+Total de casos da cidade selecionada: 26 para 500000 registros
+Numero de comparacoes durante a execução : 220 para 500000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 200 :0 para 500000 registros
-Total de casos das cidades no intervalo selecionado: 78 para 500000 registros
-Numero de comparacoes durante a execução : 555 para 500000 registros
+Total de casos das cidades no intervalo selecionado: 411 para 500000 registros
+Numero de comparacoes durante a execução : 8353 para 500000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore AVL :2.476 para 500000 registros
+Tempo de execução do algoritmo de insercao Arvore AVL :2.335 para 500000 registros
 Numero de comparacoes durante a execução : 9104542 para 500000 registros
 Tempo de execução do algoritmo de busca S1 Arvore AVL : 0 para 500000 registros
-Total de casos da cidade selecionada: 58 para 500000 registros
-Numero de comparacoes durante a execução : 169 para 500000 registros
+Total de casos da cidade selecionada: 30 para 500000 registros
+Numero de comparacoes durante a execução : 64 para 500000 registros
 Tempo de execução do algoritmo de busca S2 Arvore AVL : 0 para 500000 registros
-Total de casos das cidades no intervalo selecionado: 58 para 500000 registros
-Numero de comparacoes durante a execução : 169 para 500000 registros
+Total de casos das cidades no intervalo selecionado: 1139 para 500000 registros
+Numero de comparacoes durante a execução : 1371 para 500000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :2.842 para 500000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :2.266 para 500000 registros
 Numero de comparacoes durante a execução : 17533553 para 500000 registros
 Tempo de execução do algoritmo de busca S1 Arvore B de ordem 20 :0 para 500000 registros
-Total de casos da cidade selecionada: 58 para 500000 registros
-Numero de comparacoes durante a execução : 390 para 500000 registros
+Total de casos da cidade selecionada: 30 para 500000 registros
+Numero de comparacoes durante a execução : 161 para 500000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 20 :0 para 500000 registros
-Total de casos das cidades no intervalo selecionado: 58 para 500000 registros
-Numero de comparacoes durante a execução : 390 para 500000 registros
+Total de casos das cidades no intervalo selecionado: 1139 para 500000 registros
+Numero de comparacoes durante a execução : 3547 para 500000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :6.423 para 500000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :5.903 para 500000 registros
 Numero de comparacoes durante a execução : 75097904 para 500000 registros
 Tempo de execução do algoritmo de busca Arvore B de ordem 200 :0 para 500000 registros
-Total de casos da cidade selecionada: 58 para 500000 registros
-Numero de comparacoes durante a execução : 650 para 500000 registros
-Tempo de execução do algoritmo de busca S2 Arvore B de ordem 200 :0 para 500000 registros
-Total de casos das cidades no intervalo selecionado: 58 para 500000 registros
-Numero de comparacoes durante a execução : 650 para 500000 registros
+Total de casos da cidade selecionada: 30 para 500000 registros
+Numero de comparacoes durante a execução : 364 para 500000 registros
+Tempo de execução do algoritmo de busca S2 Arvore B de ordem 200 :0.001 para 500000 registros
+Total de casos das cidades no intervalo selecionado: 1139 para 500000 registros
+Numero de comparacoes durante a execução : 9588 para 500000 registros
 
 
 MEDIAS
 
 
-Tempo de execução médio do algoritmo de insercao Arvore AVL : 2.3748 para 500000 registros
-Numero de comparacoes durante a execução : 9184637 para 500000 registros
-Tempo de execução médio do algoritmo de Busca S1 Arvore B de ordem 20 : 0 para 500000 registros
+Tempo de execução médio do algoritmo de insercao Arvore AVL : 2.0512 para 500000 registros
+Numero de comparacoes médio durante a execução : 9184637 para 500000 registros
 Tempo de execução médio do algoritmo de Busca S1 Arvore AVL : 0 para 500000 registros
-Numero de comparacoes durante a execução : 243.2 para 500000 registros
-Media do total de casos durante a execução : 89.4 para 500000 registros
-Tempo de execução médio do algoritmo de Busca S2 Arvore AVL : 0 para 500000 registros
-Media do total de casos das cidades no intervalo selecionado: 89.4 para 500000 registros
-Numero de comparacoes durante a execução : 243.2 para 500000 registros
+Numero de comparacoes médio durante a execução : 47.8 para 500000 registros
+Media do total de casos durante a execução : 11.2 para 500000 registros
+Tempo de execução médio do algoritmo de Busca S2 Arvore AVL : 0.0002 para 500000 registros
+Media do total de casos das cidades no intervalo selecionado: 335 para 500000 registros
+Numero de comparacoes médio durante a execução : 951.6 para 500000 registros
 
 
-Tempo de execução médio do algoritmo de insercao Arvore B de ordem 20 : 2.332 para 500000 registros
-Numero de comparacoes durante a execução : 16882299 para 500000 registros
+Tempo de execução médio do algoritmo de insercao Arvore B de ordem 20 : 1.9234 para 500000 registros
+Numero de comparacoes médio durante a execução : 16882299 para 500000 registros
 Tempo de execução médio do algoritmo de Busca S1 Arvore B de ordem 20 : 0 para 500000 registros
-Numero de comparacoes durante a execução : 526.2 para 500000 registros
-Media do total de casos durante a execução : 89.4 para 500000 registros
-Tempo de execução médio do algoritmo de Busca S2 Arvore B de ordem 20 : 0 para 500000 registros
-Media do total de casos das cidades no intervalo selecionado: 89.4 para 500000 registros
-Numero de comparacoes durante a execução : 526.2 para 500000 registros
+Numero de comparacoes médio durante a execução : 142 para 500000 registros
+Media do total de casos durante a execução : 11.2 para 500000 registros
+Tempo de execução médio do algoritmo de Busca S2 Arvore B de ordem 20 : 0.0002 para 500000 registros
+Media do total de casos das cidades no intervalo selecionado: 335 para 500000 registros
+Numero de comparacoes médio durante a execução : 2711.2 para 500000 registros
 
 
-Tempo de execução médio do algoritmo de insercao Arvore B de ordem 200 : 5.5126 para 500000 registros
-Numero de comparacoes durante a execução : 74338221 para 500000 registros
+Tempo de execução médio do algoritmo de insercao Arvore B de ordem 200 : 5.0866 para 500000 registros
+Numero de comparacoes médio durante a execução : 74338221 para 500000 registros
 Tempo de execução médio do algoritmo de Busca S1 Arvore B de ordem 200 : 0 para 500000 registros
-Numero de comparacoes durante a execução : 803.6 para 500000 registros
-Media do total de casos durante a execução : 89.4 para 500000 registros
-Tempo de execução médio do algoritmo de Busca S2 Arvore B de ordem 200 : 0 para 500000 registros
-Media do total de casos das cidades no intervalo selecionado: 89.4 para 500000 registros
-Numero de comparacoes durante a execução : 803.6 para 500000 registros
+Numero de comparacoes médio durante a execução : 350.8 para 500000 registros
+Media do total de casos durante a execução : 11.2 para 500000 registros
+Tempo de execução médio do algoritmo de Busca S2 Arvore B de ordem 200 : 0.0006 para 500000 registros
+Media do total de casos das cidades no intervalo selecionado: 335 para 500000 registros
+Numero de comparacoes médio durante a execução : 7844.6 para 500000 registros
 
 
 
 
-Tempo de execução do algoritmo de insercao Arvore AVL :4.815 para 1000000 registros
+Tempo de execução do algoritmo de insercao Arvore AVL :3.616 para 1000000 registros
 Numero de comparacoes durante a execução : 19751835 para 1000000 registros
 Tempo de execução do algoritmo de busca S1 Arvore AVL : 0 para 1000000 registros
-Total de casos da cidade selecionada: 109 para 1000000 registros
-Numero de comparacoes durante a execução : 289 para 1000000 registros
+Total de casos da cidade selecionada: 0 para 1000000 registros
+Numero de comparacoes durante a execução : 40 para 1000000 registros
 Tempo de execução do algoritmo de busca S2 Arvore AVL : 0 para 1000000 registros
-Total de casos das cidades no intervalo selecionado: 109 para 1000000 registros
-Numero de comparacoes durante a execução : 289 para 1000000 registros
+Total de casos das cidades no intervalo selecionado: 0 para 1000000 registros
+Numero de comparacoes durante a execução : 811 para 1000000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :3.952 para 1000000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :3.237 para 1000000 registros
 Numero de comparacoes durante a execução : 34693202 para 1000000 registros
 Tempo de execução do algoritmo de busca S1 Arvore B de ordem 20 :0 para 1000000 registros
-Total de casos da cidade selecionada: 109 para 1000000 registros
-Numero de comparacoes durante a execução : 643 para 1000000 registros
+Total de casos da cidade selecionada: 0 para 1000000 registros
+Numero de comparacoes durante a execução : 116 para 1000000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 20 :0 para 1000000 registros
-Total de casos das cidades no intervalo selecionado: 109 para 1000000 registros
-Numero de comparacoes durante a execução : 643 para 1000000 registros
+Total de casos das cidades no intervalo selecionado: 0 para 1000000 registros
+Numero de comparacoes durante a execução : 2404 para 1000000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :8.767 para 1000000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :8.592 para 1000000 registros
 Numero de comparacoes durante a execução : 149446754 para 1000000 registros
 Tempo de execução do algoritmo de busca Arvore B de ordem 200 :0 para 1000000 registros
-Total de casos da cidade selecionada: 109 para 1000000 registros
-Numero de comparacoes durante a execução : 879 para 1000000 registros
+Total de casos da cidade selecionada: 0 para 1000000 registros
+Numero de comparacoes durante a execução : 738 para 1000000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 200 :0 para 1000000 registros
-Total de casos das cidades no intervalo selecionado: 109 para 1000000 registros
-Numero de comparacoes durante a execução : 879 para 1000000 registros
+Total de casos das cidades no intervalo selecionado: 0 para 1000000 registros
+Numero de comparacoes durante a execução : 13717 para 1000000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore AVL :5.081 para 1000000 registros
+Tempo de execução do algoritmo de insercao Arvore AVL :4.077 para 1000000 registros
 Numero de comparacoes durante a execução : 19470529 para 1000000 registros
 Tempo de execução do algoritmo de busca S1 Arvore AVL : 0 para 1000000 registros
-Total de casos da cidade selecionada: 109 para 1000000 registros
-Numero de comparacoes durante a execução : 299 para 1000000 registros
+Total de casos da cidade selecionada: 0 para 1000000 registros
+Numero de comparacoes durante a execução : 41 para 1000000 registros
 Tempo de execução do algoritmo de busca S2 Arvore AVL : 0 para 1000000 registros
-Total de casos das cidades no intervalo selecionado: 109 para 1000000 registros
-Numero de comparacoes durante a execução : 299 para 1000000 registros
+Total de casos das cidades no intervalo selecionado: 51 para 1000000 registros
+Numero de comparacoes durante a execução : 825 para 1000000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :4.326 para 1000000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :3.757 para 1000000 registros
 Numero de comparacoes durante a execução : 35141105 para 1000000 registros
 Tempo de execução do algoritmo de busca S1 Arvore B de ordem 20 :0 para 1000000 registros
-Total de casos da cidade selecionada: 109 para 1000000 registros
-Numero de comparacoes durante a execução : 659 para 1000000 registros
+Total de casos da cidade selecionada: 0 para 1000000 registros
+Numero de comparacoes durante a execução : 126 para 1000000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 20 :0 para 1000000 registros
-Total de casos das cidades no intervalo selecionado: 109 para 1000000 registros
-Numero de comparacoes durante a execução : 659 para 1000000 registros
+Total de casos das cidades no intervalo selecionado: 51 para 1000000 registros
+Numero de comparacoes durante a execução : 2578 para 1000000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :10.14 para 1000000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :9.68 para 1000000 registros
 Numero de comparacoes durante a execução : 149231706 para 1000000 registros
-Tempo de execução do algoritmo de busca Arvore B de ordem 200 :0.001 para 1000000 registros
-Total de casos da cidade selecionada: 109 para 1000000 registros
-Numero de comparacoes durante a execução : 739 para 1000000 registros
+Tempo de execução do algoritmo de busca Arvore B de ordem 200 :0 para 1000000 registros
+Total de casos da cidade selecionada: 0 para 1000000 registros
+Numero de comparacoes durante a execução : 708 para 1000000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 200 :0 para 1000000 registros
-Total de casos das cidades no intervalo selecionado: 109 para 1000000 registros
-Numero de comparacoes durante a execução : 739 para 1000000 registros
+Total de casos das cidades no intervalo selecionado: 51 para 1000000 registros
+Numero de comparacoes durante a execução : 12725 para 1000000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore AVL :4.829 para 1000000 registros
+Tempo de execução do algoritmo de insercao Arvore AVL :4.325 para 1000000 registros
 Numero de comparacoes durante a execução : 19410787 para 1000000 registros
 Tempo de execução do algoritmo de busca S1 Arvore AVL : 0 para 1000000 registros
-Total de casos da cidade selecionada: 109 para 1000000 registros
-Numero de comparacoes durante a execução : 291 para 1000000 registros
+Total de casos da cidade selecionada: 16 para 1000000 registros
+Numero de comparacoes durante a execução : 44 para 1000000 registros
 Tempo de execução do algoritmo de busca S2 Arvore AVL : 0 para 1000000 registros
-Total de casos das cidades no intervalo selecionado: 109 para 1000000 registros
-Numero de comparacoes durante a execução : 291 para 1000000 registros
+Total de casos das cidades no intervalo selecionado: 189 para 1000000 registros
+Numero de comparacoes durante a execução : 922 para 1000000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :4.941 para 1000000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :4.211 para 1000000 registros
 Numero de comparacoes durante a execução : 36129589 para 1000000 registros
 Tempo de execução do algoritmo de busca S1 Arvore B de ordem 20 :0 para 1000000 registros
-Total de casos da cidade selecionada: 109 para 1000000 registros
-Numero de comparacoes durante a execução : 635 para 1000000 registros
+Total de casos da cidade selecionada: 16 para 1000000 registros
+Numero de comparacoes durante a execução : 176 para 1000000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 20 :0 para 1000000 registros
-Total de casos das cidades no intervalo selecionado: 109 para 1000000 registros
-Numero de comparacoes durante a execução : 635 para 1000000 registros
+Total de casos das cidades no intervalo selecionado: 189 para 1000000 registros
+Numero de comparacoes durante a execução : 3072 para 1000000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :11.506 para 1000000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :10.945 para 1000000 registros
 Numero de comparacoes durante a execução : 157423461 para 1000000 registros
 Tempo de execução do algoritmo de busca Arvore B de ordem 200 :0 para 1000000 registros
-Total de casos da cidade selecionada: 109 para 1000000 registros
-Numero de comparacoes durante a execução : 843 para 1000000 registros
+Total de casos da cidade selecionada: 16 para 1000000 registros
+Numero de comparacoes durante a execução : 389 para 1000000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 200 :0 para 1000000 registros
-Total de casos das cidades no intervalo selecionado: 109 para 1000000 registros
-Numero de comparacoes durante a execução : 843 para 1000000 registros
+Total de casos das cidades no intervalo selecionado: 189 para 1000000 registros
+Numero de comparacoes durante a execução : 7824 para 1000000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore AVL :4.795 para 1000000 registros
+Tempo de execução do algoritmo de insercao Arvore AVL :4.503 para 1000000 registros
 Numero de comparacoes durante a execução : 19341851 para 1000000 registros
 Tempo de execução do algoritmo de busca S1 Arvore AVL : 0 para 1000000 registros
-Total de casos da cidade selecionada: 109 para 1000000 registros
-Numero de comparacoes durante a execução : 293 para 1000000 registros
-Tempo de execução do algoritmo de busca S2 Arvore AVL : 0 para 1000000 registros
-Total de casos das cidades no intervalo selecionado: 109 para 1000000 registros
-Numero de comparacoes durante a execução : 293 para 1000000 registros
+Total de casos da cidade selecionada: 32 para 1000000 registros
+Numero de comparacoes durante a execução : 50 para 1000000 registros
+Tempo de execução do algoritmo de busca S2 Arvore AVL : 0.001 para 1000000 registros
+Total de casos das cidades no intervalo selecionado: 706 para 1000000 registros
+Numero de comparacoes durante a execução : 1099 para 1000000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :4.721 para 1000000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :4.293 para 1000000 registros
 Numero de comparacoes durante a execução : 35857652 para 1000000 registros
 Tempo de execução do algoritmo de busca S1 Arvore B de ordem 20 :0 para 1000000 registros
-Total de casos da cidade selecionada: 109 para 1000000 registros
-Numero de comparacoes durante a execução : 626 para 1000000 registros
+Total de casos da cidade selecionada: 32 para 1000000 registros
+Numero de comparacoes durante a execução : 138 para 1000000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 20 :0 para 1000000 registros
-Total de casos das cidades no intervalo selecionado: 109 para 1000000 registros
-Numero de comparacoes durante a execução : 626 para 1000000 registros
+Total de casos das cidades no intervalo selecionado: 706 para 1000000 registros
+Numero de comparacoes durante a execução : 3259 para 1000000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :12.55 para 1000000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :11.575 para 1000000 registros
 Numero de comparacoes durante a execução : 157597814 para 1000000 registros
 Tempo de execução do algoritmo de busca Arvore B de ordem 200 :0 para 1000000 registros
-Total de casos da cidade selecionada: 109 para 1000000 registros
-Numero de comparacoes durante a execução : 752 para 1000000 registros
+Total de casos da cidade selecionada: 32 para 1000000 registros
+Numero de comparacoes durante a execução : 475 para 1000000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 200 :0 para 1000000 registros
-Total de casos das cidades no intervalo selecionado: 109 para 1000000 registros
-Numero de comparacoes durante a execução : 752 para 1000000 registros
+Total de casos das cidades no intervalo selecionado: 706 para 1000000 registros
+Numero de comparacoes durante a execução : 8663 para 1000000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore AVL :5.219 para 1000000 registros
+Tempo de execução do algoritmo de insercao Arvore AVL :4.649 para 1000000 registros
 Numero de comparacoes durante a execução : 19345436 para 1000000 registros
 Tempo de execução do algoritmo de busca S1 Arvore AVL : 0 para 1000000 registros
-Total de casos da cidade selecionada: 109 para 1000000 registros
-Numero de comparacoes durante a execução : 285 para 1000000 registros
+Total de casos da cidade selecionada: 36 para 1000000 registros
+Numero de comparacoes durante a execução : 78 para 1000000 registros
 Tempo de execução do algoritmo de busca S2 Arvore AVL : 0 para 1000000 registros
-Total de casos das cidades no intervalo selecionado: 109 para 1000000 registros
-Numero de comparacoes durante a execução : 285 para 1000000 registros
+Total de casos das cidades no intervalo selecionado: 1447 para 1000000 registros
+Numero de comparacoes durante a execução : 1379 para 1000000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :4.992 para 1000000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :4.447 para 1000000 registros
 Numero de comparacoes durante a execução : 36287118 para 1000000 registros
 Tempo de execução do algoritmo de busca S1 Arvore B de ordem 20 :0 para 1000000 registros
-Total de casos da cidade selecionada: 109 para 1000000 registros
-Numero de comparacoes durante a execução : 625 para 1000000 registros
+Total de casos da cidade selecionada: 36 para 1000000 registros
+Numero de comparacoes durante a execução : 233 para 1000000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 20 :0 para 1000000 registros
-Total de casos das cidades no intervalo selecionado: 109 para 1000000 registros
-Numero de comparacoes durante a execução : 625 para 1000000 registros
+Total de casos das cidades no intervalo selecionado: 1447 para 1000000 registros
+Numero de comparacoes durante a execução : 4151 para 1000000 registros
 
 
-Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :12.854 para 1000000 registros
+Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :11.771 para 1000000 registros
 Numero de comparacoes durante a execução : 155888635 para 1000000 registros
 Tempo de execução do algoritmo de busca Arvore B de ordem 200 :0 para 1000000 registros
-Total de casos da cidade selecionada: 109 para 1000000 registros
-Numero de comparacoes durante a execução : 825 para 1000000 registros
+Total de casos da cidade selecionada: 36 para 1000000 registros
+Numero de comparacoes durante a execução : 353 para 1000000 registros
 Tempo de execução do algoritmo de busca S2 Arvore B de ordem 200 :0 para 1000000 registros
-Total de casos das cidades no intervalo selecionado: 109 para 1000000 registros
-Numero de comparacoes durante a execução : 825 para 1000000 registros
+Total de casos das cidades no intervalo selecionado: 1447 para 1000000 registros
+Numero de comparacoes durante a execução : 11294 para 1000000 registros
 
 
 MEDIAS
 
 
-Tempo de execução médio do algoritmo de insercao Arvore AVL : 4.9478 para 1000000 registros
-Numero de comparacoes durante a execução : 19464087 para 1000000 registros
-Tempo de execução médio do algoritmo de Busca S1 Arvore B de ordem 20 : 0 para 1000000 registros
+Tempo de execução médio do algoritmo de insercao Arvore AVL : 4.234 para 1000000 registros
+Numero de comparacoes médio durante a execução : 19464087 para 1000000 registros
 Tempo de execução médio do algoritmo de Busca S1 Arvore AVL : 0 para 1000000 registros
-Numero de comparacoes durante a execução : 291.4 para 1000000 registros
-Media do total de casos durante a execução : 109 para 1000000 registros
-Tempo de execução médio do algoritmo de Busca S2 Arvore AVL : 0 para 1000000 registros
-Media do total de casos das cidades no intervalo selecionado: 109 para 1000000 registros
-Numero de comparacoes durante a execução : 291.4 para 1000000 registros
+Numero de comparacoes médio durante a execução : 50.6 para 1000000 registros
+Media do total de casos durante a execução : 16.8 para 1000000 registros
+Tempo de execução médio do algoritmo de Busca S2 Arvore AVL : 0.0002 para 1000000 registros
+Media do total de casos das cidades no intervalo selecionado: 478.6 para 1000000 registros
+Numero de comparacoes médio durante a execução : 1007.2 para 1000000 registros
 
 
-Tempo de execução médio do algoritmo de insercao Arvore B de ordem 20 : 4.5864 para 1000000 registros
-Numero de comparacoes durante a execução : 35621733 para 1000000 registros
+Tempo de execução médio do algoritmo de insercao Arvore B de ordem 20 : 3.989 para 1000000 registros
+Numero de comparacoes médio durante a execução : 35621733 para 1000000 registros
 Tempo de execução médio do algoritmo de Busca S1 Arvore B de ordem 20 : 0 para 1000000 registros
-Numero de comparacoes durante a execução : 637.6 para 1000000 registros
-Media do total de casos durante a execução : 109 para 1000000 registros
+Numero de comparacoes médio durante a execução : 157.8 para 1000000 registros
+Media do total de casos durante a execução : 16.8 para 1000000 registros
 Tempo de execução médio do algoritmo de Busca S2 Arvore B de ordem 20 : 0 para 1000000 registros
-Media do total de casos das cidades no intervalo selecionado: 109 para 1000000 registros
-Numero de comparacoes durante a execução : 637.6 para 1000000 registros
+Media do total de casos das cidades no intervalo selecionado: 478.6 para 1000000 registros
+Numero de comparacoes médio durante a execução : 3092.8 para 1000000 registros
 
 
-Tempo de execução médio do algoritmo de insercao Arvore B de ordem 200 : 11.1634 para 1000000 registros
-Numero de comparacoes durante a execução : 153917674 para 1000000 registros
-Tempo de execução médio do algoritmo de Busca S1 Arvore B de ordem 200 : 0.0002 para 1000000 registros
-Numero de comparacoes durante a execução : 807.6 para 1000000 registros
-Media do total de casos durante a execução : 109 para 1000000 registros
+Tempo de execução médio do algoritmo de insercao Arvore B de ordem 200 : 10.5126 para 1000000 registros
+Numero de comparacoes médio durante a execução : 153917674 para 1000000 registros
+Tempo de execução médio do algoritmo de Busca S1 Arvore B de ordem 200 : 0 para 1000000 registros
+Numero de comparacoes médio durante a execução : 532.6 para 1000000 registros
+Media do total de casos durante a execução : 16.8 para 1000000 registros
 Tempo de execução médio do algoritmo de Busca S2 Arvore B de ordem 200 : 0 para 1000000 registros
-Media do total de casos das cidades no intervalo selecionado: 109 para 1000000 registros
-Numero de comparacoes durante a execução : 807.6 para 1000000 registros
+Media do total de casos das cidades no intervalo selecionado: 478.6 para 1000000 registros
+Numero de comparacoes médio durante a execução : 10844.6 para 1000000 registros
 
 
 

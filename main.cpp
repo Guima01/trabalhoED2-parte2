@@ -635,13 +635,13 @@ void seleciona(int selecao, string path)
 
         cout << "Digite o codigo da cidade para S1:" << endl;
         cin >> codigo;
-        cout << "Digite a latitude 1 para S2:" << endl;
+        cout << "Digite a maior latitude 1 para S2:" << endl;
         cin >> latitude1;
-        cout << "Digite a longitude 1 para S2:" << endl;
+        cout << "Digite a maior longitude 1 para S2:" << endl;
         cin >> longitude1;
-        cout << "Digite a latitude 2 para S2:" << endl;
+        cout << "Digite a menor latitude 2 para S2:" << endl;
         cin >> latitude2;
-        cout << "Digite a longitude 2 para S2:" << endl;
+        cout << "Digite a menor longitude 2 para S2:" << endl;
         cin >> longitude2;
 
         vector<RegistrosCoordenados> registrosCoordenados;
