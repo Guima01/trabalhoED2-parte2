@@ -71,12 +71,12 @@ bool AVLtree::menorElemento(Registro *candidatoInicio, Registro *candidatoFim)
 }
 
 // INSERÇÃO
-void AVLtree::insere(int val, int &comparacoes)
+void AVLtree::insere(int val)
 {
-    raiz = auxInsere(raiz, val, comparacoes);
+    raiz = auxInsere(raiz, val);
 }
 
-NoAVL *AVLtree::auxInsere(NoAVL *p, int val, int &comparacoes)
+NoAVL *AVLtree::auxInsere(NoAVL *p, int val)
 {
     if (p == NULL)
     {
@@ -88,13 +88,11 @@ NoAVL *AVLtree::auxInsere(NoAVL *p, int val, int &comparacoes)
     }
     else if (menorElemento(registros->getRegistroFromTable(val), registros->getRegistroFromTable(p->getValor())))
     {
-        comparacoes += 1;
-        p->setEsq(auxInsere(p->getEsq(), val, comparacoes));
+        p->setEsq(auxInsere(p->getEsq(), val));
     }
     else if (!menorElemento(registros->getRegistroFromTable(val), registros->getRegistroFromTable(p->getValor())))
     {
-        comparacoes += 1;
-        p->setDir(auxInsere(p->getDir(), val, comparacoes));
+        p->setDir(auxInsere(p->getDir(), val));
     }
     else
         return p;

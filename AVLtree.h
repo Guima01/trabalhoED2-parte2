@@ -15,7 +15,7 @@ public:
 
     void busca(string code,int &totalCasos, int &comparacoes); // BUSCA
 
-    void insere(int val, int &comparacoes); // INSERÇÃO
+    void insere(int val); // INSERÇÃO
 
     void imprime(HashTable *registros); // IMPRESSÃO NO TERMINAL
 
@@ -33,7 +33,7 @@ private:
 
     // FUNÇÕES AUX
     void auxBusca(NoAVL *p, string code, int &totalCasos, int &comparacoes); // BUSCA
-    NoAVL* auxInsere(NoAVL *p, int val, int &comparacoes); // INSERÇÃO
+    NoAVL* auxInsere(NoAVL *p, int val); // INSERÇÃO
     void auxSaidaArqv(NoAVL *p, int nivel, ofstream &saida, HashTable *registros); // IMPRESSÃO POR ARQUIVO
     
     void imprimePorNivel(NoAVL* p, int nivel, HashTable *registros); // IMPRESSÃO NO TERMINAL

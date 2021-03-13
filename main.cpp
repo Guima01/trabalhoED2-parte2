@@ -242,7 +242,6 @@ void moduloTesteAlgoritmos(string path, int id, int numeroRegistros)
         ifstream arquivoProcessado;
         arquivoProcessado.open(caminho, ios::in);
 
-        int comparacoes = 0;
         int hashIndex;
         int tam = leLinhaArquivoProcessadoPraN(registros, arquivoProcessado, numeroRegistros);
         HashTable *hash = new HashTable(tam);
@@ -269,11 +268,11 @@ void moduloTesteAlgoritmos(string path, int id, int numeroRegistros)
 
             if (identificaOrdenacao == 3)
             {
-                AVL->insere(hashIndex, comparacoes);
+                AVL->insere(hashIndex);
             }
             else
             {
-                arvb->insere(hashIndex, comparacoes);
+                arvb->insere(hashIndex);
             }
         }
 
@@ -351,10 +350,6 @@ void analiseParaMRegistros(HashTable *hash, vector<RegistrosCoordenados> registr
     vector<Registro> registros2;
     registros2 = registros;
 
-    int comparacaoBTree20Media = 0;
-    int comparacaoBTree200Media = 0;
-    int comparacaoAvlMedia = 0;
-
     double tempoMediaAvl = 0;
     double tempoMediaBtree20 = 0;
     double tempoMediaBtree200 = 0;
@@ -389,9 +384,6 @@ void analiseParaMRegistros(HashTable *hash, vector<RegistrosCoordenados> registr
         ArvoreB *Btree20 = new ArvoreB(10, hash);
         ArvoreB *Btree200 = new ArvoreB(100, hash);
 
-        int comparacaoBTree20 = 0;
-        int comparacaoBTree200 = 0;
-        int comparacaoAvl = 0;
 
         int comparacaoBuscaBtree20 = 0;
         int comparacaoBuscaBtree200 = 0;
@@ -416,15 +408,13 @@ void analiseParaMRegistros(HashTable *hash, vector<RegistrosCoordenados> registr
         for (int i = 0; i < m; i++)
         {
             int index = hash->searchFromCodeAndDate(registros2[i].getCode(), registros2[i].getDate());
-            avlTree->insere(index, comparacaoAvl);
+            avlTree->insere(index);
         }
         timeStop = clock();
 
         saida << "Tempo de execução do algoritmo de insercao Arvore AVL :" << ((double)(timeStop - timeStart) / CLOCKS_PER_SEC) << " para " << m << " registros" << endl;
-        saida << "Numero de comparacoes durante a execução : " << comparacaoAvl << " para " << m << " registros" << endl;
 
         tempoMediaAvl += ((double)(timeStop - timeStart) / CLOCKS_PER_SEC);
-        comparacaoAvlMedia += comparacaoAvl;
 
         timeStart = clock();
         avlTree->busca(codigo, totalCasosAVLtree, comparacaoBuscaAVLtree);
@@ -460,16 +450,14 @@ void analiseParaMRegistros(HashTable *hash, vector<RegistrosCoordenados> registr
         for (int i = 0; i < m; i++)
         {
             int index = hash->searchFromCodeAndDate(registros2[i].getCode(), registros2[i].getDate());
-            Btree20->insere(index, comparacaoBTree20);
+            Btree20->insere(index);
         }
 
         timeStop = clock();
 
         saida << "Tempo de execução do algoritmo de insercao Arvore B de ordem 20 :" << ((double)(timeStop - timeStart) / CLOCKS_PER_SEC) << " para " << m << " registros" << endl;
-        saida << "Numero de comparacoes durante a execução : " << comparacaoBTree20 << " para " << m << " registros" << endl;
 
         tempoMediaBtree20 += ((double)(timeStop - timeStart) / CLOCKS_PER_SEC);
-        comparacaoBTree20Media += comparacaoBTree20;
 
         //S1
         timeStart = clock();
@@ -507,15 +495,13 @@ void analiseParaMRegistros(HashTable *hash, vector<RegistrosCoordenados> registr
         for (int i = 0; i < m; i++)
         {
             int index = hash->searchFromCodeAndDate(registros2[i].getCode(), registros2[i].getDate());
-            Btree200->insere(index, comparacaoBTree200);
+            Btree200->insere(index);
         }
         timeStop = clock();
 
         saida << "Tempo de execução do algoritmo de insercao Arvore B de ordem 200 :" << ((double)(timeStop - timeStart) / CLOCKS_PER_SEC) << " para " << m << " registros" << endl;
-        saida << "Numero de comparacoes durante a execução : " << comparacaoBTree200 << " para " << m << " registros" << endl;
 
         tempoMediaBtree200 += ((double)(timeStop - timeStart) / CLOCKS_PER_SEC);
-        comparacaoBTree200Media += comparacaoBTree200;
 
         //S1
         timeStart = clock();
@@ -554,7 +540,6 @@ void analiseParaMRegistros(HashTable *hash, vector<RegistrosCoordenados> registr
           << endl;
 
     saida << "Tempo de execução médio do algoritmo de insercao Arvore AVL : " << tempoMediaAvl / 5 << " para " << m << " registros" << endl;
-    saida << "Numero de comparacoes médio durante a execução : " << comparacaoAvlMedia / 5 << " para " << m << " registros" << endl;
     saida << "Tempo de execução médio do algoritmo de Busca S1 Arvore AVL : " << tempoMedioBuscaAvl / 5 << " para " << m << " registros" << endl;
     saida << "Numero de comparacoes médio durante a execução : " << comparacaoMediaBuscaAvl / 5 << " para " << m << " registros" << endl;
     saida << "Media do total de casos durante a execução : " << totalCasosMedioAvl / 5 << " para " << m << " registros" << endl;
@@ -565,7 +550,6 @@ void analiseParaMRegistros(HashTable *hash, vector<RegistrosCoordenados> registr
           << endl;
 
     saida << "Tempo de execução médio do algoritmo de insercao Arvore B de ordem 20 : " << tempoMediaBtree20 / 5 << " para " << m << " registros" << endl;
-    saida << "Numero de comparacoes médio durante a execução : " << comparacaoBTree20Media / 5 << " para " << m << " registros" << endl;
     saida << "Tempo de execução médio do algoritmo de Busca S1 Arvore B de ordem 20 : " << tempoMedioBuscaBtree20 / 5 << " para " << m << " registros" << endl;
     saida << "Numero de comparacoes médio durante a execução : " << comparacaoMediaBuscaBTree20 / 5 << " para " << m << " registros" << endl;
     saida << "Media do total de casos durante a execução : " << totalCasosMedioBtree20 / 5 << " para " << m << " registros" << endl;
@@ -576,7 +560,6 @@ void analiseParaMRegistros(HashTable *hash, vector<RegistrosCoordenados> registr
           << endl;
 
     saida << "Tempo de execução médio do algoritmo de insercao Arvore B de ordem 200 : " << tempoMediaBtree200 / 5 << " para " << m << " registros" << endl;
-    saida << "Numero de comparacoes médio durante a execução : " << comparacaoBTree200Media / 5 << " para " << m << " registros" << endl;
     saida << "Tempo de execução médio do algoritmo de Busca S1 Arvore B de ordem 200 : " << tempoMedioBuscaBtree200 / 5 << " para " << m << " registros" << endl;
     saida << "Numero de comparacoes médio durante a execução : " << comparacaoMediaBuscaBTree200 / 5 << " para " << m << " registros" << endl;
     saida << "Media do total de casos durante a execução : " << totalCasosMedioBtree200 / 5 << " para " << m << " registros" << endl;

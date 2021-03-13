@@ -26,9 +26,9 @@ class ArvoreB
 
     void calculaTotalCasosCidade(NoB* no, string code, int &comparacoes, int &totalCasos);
 
-    void insereNo(NoB* raiz, int key, int &comparacoes);
-    void cisaoFilho(NoB* raiz, int position, int &comparacoes);
-    void insere(int key, int &comparacoes);
+    void insereNo(NoB* raiz, int key);
+    void cisaoFilho(NoB* raiz, int position);
+    void insere(int key);
 
 
 
