@@ -102,41 +102,9 @@ void leLinha(QuadTree &quad, ifstream &arq, int linhas)
     }
 }
 
-int leLinhaArquivoProcessado(vector<Registro> &registros, ifstream &arq)
-{
-    // HashTable *hashzada = new HashTable(1431490);
-    string str;
-    int cases, deaths, cont = 0;
-    for (int i = 0; getline(arq, str); i++)
-    {
-        if (i != 0)
-        {
-            Registro *registra = new Registro();
-
-            vector<string> stringDados = split(str, ',');
-
-            cases = atoi(stringDados[4].c_str());
-            deaths = atoi(stringDados[5].c_str());
-
-            registra->setDate(stringDados[0]);
-            registra->setState(stringDados[1]);
-            registra->setName(stringDados[2]);
-            registra->setCode(stringDados[3].substr(0, 6));
-            registra->setCases(cases);
-            registra->setDeaths(deaths);
-
-            registros.push_back(*registra);
-        }
-        cont++;
-    }
-    cout << "Leitura do arquivo brazil_covid19_cities_processado.csv finalizada." << cont - 1 << endl
-         << endl;
-    return cont - 1;
-}
-
 int leLinhaArquivoProcessadoPraN(vector<Registro> &registros, ifstream &arq, int n)
 {
-    HashTable *hashzada = new HashTable(1431490);
+    HashTable *hash = new HashTable(1431490);
     string str;
     int cases, deaths, cont = 0;
     for (int i = 0; getline(arq, str); i++)
@@ -166,7 +134,7 @@ int leLinhaArquivoProcessadoPraN(vector<Registro> &registros, ifstream &arq, int
         }
         cont++;
     }
-    cout << "Leitura do arquivo brazil_covid19_cities_processado.csv finalizada." << cont << endl
+    cout << "Leitura do arquivo brazil_covid19_cities_processado.csv finalizada." << endl
          << endl;
     return cont;
 }
@@ -230,25 +198,41 @@ void moduloTesteAlgoritmos(string path, int id, int numeroRegistros)
         caminho += "brazil_covid19_cities_processado.csv";
         ifstream arquivoProcessado;
         arquivoProcessado.open(caminho, ios::in);
-        int tam = leLinhaArquivoProcessado(registros, arquivoProcessado);
-        HashTable *hashzada = new HashTable(1431490);
+        
+        int tam = leLinhaArquivoProcessadoPraN(registros, arquivoProcessado, numeroRegistros);
+        HashTable *hash = new HashTable(tam);
         int hashIndex;
         for (int i = 0; i < tam; i++)
+            hash->insert(&registros[i]);
+        if(id == 1){
+            //printa no console
+            for (int i = 0; i < tam; i++)
         {
-            hashzada->insert(&registros[i]);
+            hashIndex = hash->searchFromCodeAndDate(registros[i].getCode(), registros[i].getDate());
+            cout  << hash->getRegistroFromTable(hashIndex)->getDate() << ",";
+            cout << hash->getRegistroFromTable(hashIndex)->getState() << ",";
+            cout << hash->getRegistroFromTable(hashIndex)->getName() << ",";
+            cout << hash->getRegistroFromTable(hashIndex)->getCode() << ",";
+            cout << hash->getRegistroFromTable(hashIndex)->getCases() << ",";
+            cout << hash->getRegistroFromTable(hashIndex)->getDeaths() << endl;
         }
-        ofstream saida("printandoHash.txt");
+
+        }
+        else{
+            ofstream saida("printandoHash.txt");
         saida << "date,state,name,code,cases,deaths" << endl;
-        for (int i = 0; i < registros.size(); i++)
+        for (int i = 0; i < tam; i++)
         {
-            hashIndex = hashzada->searchFromCodeAndDate(registros[i].getCode(), registros[i].getDate());
-            saida << hashzada->getRegistroFromTable(hashIndex)->getDate() << ",";
-            saida << hashzada->getRegistroFromTable(hashIndex)->getState() << ",";
-            saida << hashzada->getRegistroFromTable(hashIndex)->getName() << ",";
-            saida << hashzada->getRegistroFromTable(hashIndex)->getCode() << ",";
-            saida << hashzada->getRegistroFromTable(hashIndex)->getCases() << ",";
-            saida << hashzada->getRegistroFromTable(hashIndex)->getDeaths() << endl;
+            hashIndex = hash->searchFromCodeAndDate(registros[i].getCode(), registros[i].getDate());
+            saida << hash->getRegistroFromTable(hashIndex)->getDate() << ",";
+            saida << hash->getRegistroFromTable(hashIndex)->getState() << ",";
+            saida << hash->getRegistroFromTable(hashIndex)->getName() << ",";
+            saida << hash->getRegistroFromTable(hashIndex)->getCode() << ",";
+            saida << hash->getRegistroFromTable(hashIndex)->getCases() << ",";
+            saida << hash->getRegistroFromTable(hashIndex)->getDeaths() << endl;
         }
+        }
+        
     }
     else if (identificaOrdenacao == 3 || identificaOrdenacao == 4)
     {
@@ -570,35 +554,35 @@ void analiseParaMRegistros(HashTable *hash, vector<RegistrosCoordenados> registr
           << endl;
 
     saida << "Tempo de execução médio do algoritmo de insercao Arvore AVL : " << tempoMediaAvl / 5 << " para " << m << " registros" << endl;
-    saida << "Numero de comparacoes durante a execução : " << comparacaoAvlMedia / 5 << " para " << m << " registros" << endl;    saida << "Tempo de execução médio do algoritmo de Busca S1 Arvore B de ordem 20 : " << tempoMedioBuscaBtree20 / 5 << " para " << m << " registros" << endl;
+    saida << "Numero de comparacoes médio durante a execução : " << comparacaoAvlMedia / 5 << " para " << m << " registros" << endl;
     saida << "Tempo de execução médio do algoritmo de Busca S1 Arvore AVL : " << tempoMedioBuscaAvl / 5 << " para " << m << " registros" << endl;
-    saida << "Numero de comparacoes durante a execução : " << comparacaoMediaBuscaAvl / 5 << " para " << m << " registros" << endl;
+    saida << "Numero de comparacoes médio durante a execução : " << comparacaoMediaBuscaAvl / 5 << " para " << m << " registros" << endl;
     saida << "Media do total de casos durante a execução : " << totalCasosMedioAvl / 5 << " para " << m << " registros" << endl;
     saida << "Tempo de execução médio do algoritmo de Busca S2 Arvore AVL : " << tempoMedioBuscaAvlS2 / 5 << " para " << m << " registros" << endl;
     saida << "Media do total de casos das cidades no intervalo selecionado: " << totalCasosMedioAvlS2 / 5 << " para " << m << " registros" << endl;
-    saida << "Numero de comparacoes durante a execução : " << comparacaoMediaBuscaAvlS2 / 5 << " para " << m << " registros" << endl
+    saida << "Numero de comparacoes médio durante a execução : " << comparacaoMediaBuscaAvlS2 / 5 << " para " << m << " registros" << endl
           << endl
           << endl;
 
     saida << "Tempo de execução médio do algoritmo de insercao Arvore B de ordem 20 : " << tempoMediaBtree20 / 5 << " para " << m << " registros" << endl;
-    saida << "Numero de comparacoes durante a execução : " << comparacaoBTree20Media / 5 << " para " << m << " registros" << endl;
+    saida << "Numero de comparacoes médio durante a execução : " << comparacaoBTree20Media / 5 << " para " << m << " registros" << endl;
     saida << "Tempo de execução médio do algoritmo de Busca S1 Arvore B de ordem 20 : " << tempoMedioBuscaBtree20 / 5 << " para " << m << " registros" << endl;
-    saida << "Numero de comparacoes durante a execução : " << comparacaoMediaBuscaBTree20 / 5 << " para " << m << " registros" << endl;
+    saida << "Numero de comparacoes médio durante a execução : " << comparacaoMediaBuscaBTree20 / 5 << " para " << m << " registros" << endl;
     saida << "Media do total de casos durante a execução : " << totalCasosMedioBtree20 / 5 << " para " << m << " registros" << endl;
     saida << "Tempo de execução médio do algoritmo de Busca S2 Arvore B de ordem 20 : " << tempoMedioBuscaBtree20S2 / 5 << " para " << m << " registros" << endl;
     saida << "Media do total de casos das cidades no intervalo selecionado: " << totalCasosMedioBtree20S2 / 5 << " para " << m << " registros" << endl;
-    saida << "Numero de comparacoes durante a execução : " << comparacaoMediaBuscaBTree20S2 / 5 << " para " << m << " registros" << endl
+    saida << "Numero de comparacoes médio durante a execução : " << comparacaoMediaBuscaBTree20S2 / 5 << " para " << m << " registros" << endl
           << endl
           << endl;
 
     saida << "Tempo de execução médio do algoritmo de insercao Arvore B de ordem 200 : " << tempoMediaBtree200 / 5 << " para " << m << " registros" << endl;
-    saida << "Numero de comparacoes durante a execução : " << comparacaoBTree200Media / 5 << " para " << m << " registros" << endl;
+    saida << "Numero de comparacoes médio durante a execução : " << comparacaoBTree200Media / 5 << " para " << m << " registros" << endl;
     saida << "Tempo de execução médio do algoritmo de Busca S1 Arvore B de ordem 200 : " << tempoMedioBuscaBtree200 / 5 << " para " << m << " registros" << endl;
-    saida << "Numero de comparacoes durante a execução : " << comparacaoMediaBuscaBTree200 / 5 << " para " << m << " registros" << endl;
+    saida << "Numero de comparacoes médio durante a execução : " << comparacaoMediaBuscaBTree200 / 5 << " para " << m << " registros" << endl;
     saida << "Media do total de casos durante a execução : " << totalCasosMedioBtree200 / 5 << " para " << m << " registros" << endl;
     saida << "Tempo de execução médio do algoritmo de Busca S2 Arvore B de ordem 200 : " << tempoMedioBuscaBtree200S2 / 5 << " para " << m << " registros" << endl;
     saida << "Media do total de casos das cidades no intervalo selecionado: " << totalCasosMedioBtree200S2 / 5 << " para " << m << " registros" << endl;
-    saida << "Numero de comparacoes durante a execução : " << comparacaoMediaBuscaBTree200S2 / 5 << " para " << m << " registros" << endl
+    saida << "Numero de comparacoes médio durante a execução : " << comparacaoMediaBuscaBTree200S2 / 5 << " para " << m << " registros" << endl
           << endl
           << endl
           << endl
@@ -626,7 +610,7 @@ void seleciona(int selecao, string path)
         arquivoProcessado.open(caminho, ios::in);
 
         int hashIndex;
-        int tam = leLinhaArquivoProcessado(registros, arquivoProcessado);
+        int tam = leLinhaArquivoProcessadoPraN(registros, arquivoProcessado, 1431490);
 
         ofstream saida("Analise das estruturas.txt");
         HashTable *hash = new HashTable(1431490);

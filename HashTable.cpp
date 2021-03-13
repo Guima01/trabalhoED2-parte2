@@ -11,7 +11,12 @@ using namespace std;
 
 HashTable::HashTable(int size)
 {
-    this->tableSize = size + 429451; //1860941-TAMANHOREG
+    float plusSize;
+    if(size == 1431490 )
+        plusSize=429451;
+    else plusSize = 0.3*size; 
+    
+    this->tableSize = size + plusSize; //1860941-TAMANHOREG
     this->currentSize = 0;
     table = new HashEntry *[tableSize];
     for (int i = 0; i < tableSize; i++)
